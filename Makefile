@@ -1,5 +1,3 @@
-
-# LaTeX Makefile
 FILE=thesis
 
 all: $(FILE).pdf
@@ -15,7 +13,6 @@ clean:
 	rm -rf *.ilg
 	rm -rf *.lot
 	rm -rf *.lof
-	rm -rf *.ind
 	rm -rf *.idx
 	rm -rf *.aux
 	rm -rf *.toc
@@ -29,3 +26,5 @@ $(FILE).pdf: thesis.tex bib/thesis.bib sty/*.sty
 	bibtex $(FILE)
 	pdflatex -shell-escape $(FILE).tex
 	pdflatex -shell-escape $(FILE).tex
+	mkdir -p tmp
+	mv *.{ind,blg,out,bbl,log,ilg,aux,toc} tmp/
