@@ -1,8 +1,5 @@
-FILE=thesis
-
-all: $(FILE).pdf
-
-.PHONY: clean
+all: build
+.PHONY: clean 
 
 clean:
 	rm -rf *.blg 
@@ -16,15 +13,16 @@ clean:
 	rm -rf *.idx
 	rm -rf *.aux
 	rm -rf *.toc
-	rm -f ${FILE}.pdf
+	rm -f thesis.pdf
+	rm -f output.pdf
 
 
-$(FILE).pdf: thesis.tex bib/thesis.bib sty/*.sty
-	pdflatex -shell-escape $(FILE).tex
-	pdflatex -shell-escape $(FILE).tex
-	makeindex $(FILE).tex
-	bibtex $(FILE)
-	pdflatex -shell-escape $(FILE).tex
-	pdflatex -shell-escape $(FILE).tex
+build:
+	pdflatex -shell-escape -jobname output thesis.tex 
+	pdflatex -shell-escape -jobname output thesis.tex 
+	makeindex thesis.tex
+	bibtex output
+	pdflatex -shell-escape -jobname output thesis.tex 
+	pdflatex -shell-escape -jobname output thesis.tex 
 	mkdir -p tmp
 	mv *.{ind,blg,out,bbl,log,ilg,aux,toc} tmp/
