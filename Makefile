@@ -1,4 +1,4 @@
-all: build
+all: build log
 .PHONY: clean 
 
 clean:
@@ -16,6 +16,8 @@ clean:
 	rm -f thesis.pdf
 	rm -f output.pdf
 
+log:
+	pdfinfo output.pdf -isodates | grep -E "(CreationDate|Pages|File size)" | xargs echo >> logs/size_log.txt
 
 build:
 	pdflatex -shell-escape -jobname output thesis.tex 
