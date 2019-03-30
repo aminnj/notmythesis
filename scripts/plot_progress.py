@@ -130,7 +130,7 @@ print p
 fig.autofmt_xdate()
 
 fig.set_tight_layout(True)
-fig.savefig("{}/figs/misc/progress.png".format(basedir))
 fig.savefig("{}/figs/misc/progress.pdf".format(basedir))
+fig.savefig("{}/figs/misc/progress.png".format(basedir))
 
 os.system("ic {}/figs/misc/progress.png".format(basedir))
