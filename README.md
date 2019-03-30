@@ -1,4 +1,5 @@
 ## This is not my thesis
 
+### Progress
+
 ![progress](figs/misc/progress.png)
-![progress](figs/misc/progress.pdf)
