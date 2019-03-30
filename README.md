@@ -2,4 +2,4 @@
 
 ### Progress
 
-![progress](figs/misc/progress.png)
+![](figs/misc/progress.png)
