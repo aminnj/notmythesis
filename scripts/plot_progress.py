@@ -71,7 +71,7 @@ ys_low = (ylatest + slope*0.7*(xs-xlatest))*np.exp(-15*xnorms)
 # ax.plot(xs,ys,color="b",marker="o")
 print xs
 print xdeadline
-ax.fill_between(xs,ys_low,ys_high,color="C0",alpha=0.25,label="projected 95% confidence")
+ax.fill_between(xs,ys_low,ys_high,color="C0",alpha=0.25,label="projected 95% lack-of-confidence-in-myself bands")
 print df
 
 ax.legend()

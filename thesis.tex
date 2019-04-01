@@ -37,12 +37,19 @@
 \newcommand{\sthirteen}{\ensuremath{\sqrt{\mathrm{s}}=13~\mathrm{TeV}}\xspace}
 \newcommand{\ifb}{fb\ensuremath{{}^{-1}}}
 
+% \def\dsp{\def\baselinestretch{1.0}\large\normalsize} % FIXME remove this line when compiling final thesis
+% https://stackoverflow.com/questions/1465665/passing-command-line-arguments-to-latex-document/1466610#1466610
+\ifdefined\myownflag
+    \def\dsp{\def\baselinestretch{1.0}\large\normalsize} % FIXME remove this line when compiling final thesis
+\fi
+
 %---Set Margins ------------------------------------------------------
 \setlength\oddsidemargin{0.25 in} \setlength\evensidemargin{0.25 in} \setlength\textwidth{6.25 in} \setlength\textheight{8.50 in}
 \setlength\footskip{0.25 in} \setlength\topmargin{0 in} \setlength\headheight{0.25 in} \setlength\headsep{0.25 in}
 
 %%%---DOCUMENT---%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+
 
 %=== Preliminary Pages ============================================
 \begin{frontmatter}
@@ -87,32 +94,11 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
-%=== Introduction ============================================
-\chapter{Introduction}
-
-\begin{section}{Info}
-Some facts
-
-\begin{itemize}
-
-\item Standard model missing some stuff
-\item LHC smashes protons together very fast
-\item CMS detector is very big
-\item Analyze CMS data to find stuff beyond the standard model (e.g., SUZY)
-\item Did not find anything
-
-\end{itemize}
-
-The results presented in this thesis correspond to the published results in Refs.~\cite{CMS:myTOPRun2PAS,CMS:mySUSRun2PAS,CMS:myTOP2016,CMS:mySUS2016}
-
-\end{section}
-
-% \begin{figure}[t]
-% \centerline{\includegraphics[width=.35\textwidth]{figs/testfig1.pdf}
-% \hspace{1cm}\includegraphics[width=.45\textwidth]{figs/testfig2.pdf}}
-% \caption{Figure Captions.}
-% \label{fig:label}
-% \end{figure}
+\input{tex/introduction}
+\input{tex/theory}
+\input{tex/cms}
+\input{tex/analysis}
+\input{tex/summary}
 
 %=== Appendix ============================================
 \appendix
@@ -120,7 +106,6 @@ The results presented in this thesis correspond to the published results in Refs
 \dsp
 
 \chapter{Appendix Title}{\label{appendix:a}}
-
 \input{tex/toy_statistics}
 
 
