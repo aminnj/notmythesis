@@ -18,7 +18,7 @@ clean:
 	rm -f smalloutput.pdf
 
 plot:
-	python scripts/plot_progress.py
+	python3 scripts/plot_progress.py
 
 log:
 	pdfinfo output.pdf -isodates | grep -E "(CreationDate|Pages|File size)" | xargs echo >> logs/size_log.txt
