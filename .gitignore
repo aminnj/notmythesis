@@ -1,6 +1,15 @@
+*.blg
 *.aux
 *.out
 *.toc
 *.log
+thesis.pdf
 output.pdf
 smalloutput.pdf
+tmp
+sources
+examples
+*gz
+.DS_Store
+notes.txt
+blah.txt
