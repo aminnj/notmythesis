@@ -2,3 +2,5 @@
 *.out
 *.toc
 *.log
+output.pdf
+smalloutput.pdf

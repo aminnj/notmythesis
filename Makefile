@@ -36,11 +36,5 @@ build:
 # single spaced small version
 small:
 	pdflatex -shell-escape -jobname smalloutput "\def\myownflag{}\input{thesis}" -interaction=batchmode
-	# pdflatex -shell-escape -jobname smalloutput "\def\myownflag{}\input{thesis}"
-	# makeindex thesis.tex
-	# bibtex smalloutput
-	# pdflatex -shell-escape -jobname smalloutput "\def\myownflag{}\input{thesis}"
-	# pdflatex -shell-escape -jobname smalloutput "\def\myownflag{}\input{thesis}"
-	# mkdir -p tmp
-	# mv -f *.{ind,blg,out,bbl,log,ilg,aux,toc} tmp/
-	mv -f *.{out,log,aux,toc,4ct,4tc,tmp,xref} tmp/
+	# mv -f *.{out,log,aux,toc,4ct,4tc,tmp,xref} tmp/
+	mv -f *.{out,log,aux,toc} tmp/
