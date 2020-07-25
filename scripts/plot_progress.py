@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # coding: utf-8
 import os
 import sys
@@ -32,8 +32,10 @@ with open("{}/logs/size_log.txt".format(basedir),"r") as fh:
 df = pd.DataFrame(data,columns=["date","pages","kb"])
 df["date"] = pd.to_datetime(df["date"])
 
+df = df.set_index("date")["2020":].reset_index()
+
 fig,ax = plt.subplots()
-ax.plot(df["date"],df["pages"],label="actual")
+ax.plot(df["date"],df["pages"],label="actual", marker=".")
 ax.set_ylim([0.,100.])
 ax.set_ylabel("PDF page count")
 
@@ -55,14 +57,15 @@ ylatest = df["pages"].values[-1]
 x0, y0 = ax.get_xlim()[0],ax.get_ylim()[0]
 x1, y1 = ax.get_xlim()[1],ax.get_ylim()[1]
 
-ax.set_xlim([None, ax.get_xlim()[1]+20])
+# ax.set_xlim([None, ax.get_xlim()[1]+90])
+ax.set_xlim([None, ax.get_xlim()[1]+15])
 
 slope = (ylatest-yfirst)/(xlatest-xfirst)
 xs = np.linspace(xlatest,xdeadline,100)
 xnorms = (xs-xlatest)/(xs.max()-xs.min())
 ys_high = (ylatest + slope*1.5*(xs-xlatest))*np.exp(-10*xnorms)
 ys_low = (ylatest + slope*0.7*(xs-xlatest))*np.exp(-15*xnorms)
-ax.fill_between(xs,ys_low,ys_high,color="C0",alpha=0.25,label="projected 95% lack-of-confidence-in-myself bands")
+ax.fill_between(xs,ys_low,ys_high,color="C0",alpha=0.25,label="projected 95% \nlack-of-confidence-in-myself \nbands")
 
 ax.legend()
 

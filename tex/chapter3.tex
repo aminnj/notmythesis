@@ -1,1 +1,100 @@
 \chapter{Objects and variables}
+\mytodo{make todo}
+
+\section{Jets, MET}
+\subsection{Jet identification, corrections}
+\subsection{MET}
+\subsection{B tagging}
+% performance plot
+% define njets, nb here
+
+
+\section{Leptons}
+
+\subsection{Identification}
+
+\subsection{Isolation}
+\mytodo{already reworded}
+
+Conceptually, a lepton can be labeled isolated if the ratio of 
+energy in a cone surrounding the lepton to the energy of the lepton itself
+(``relative isolation'') is below a certain threshold.
+However, we instead use three more sophisticated variables, improving upon this concept for robustness,
+to classify leptons as isolated:
+\begin{itemize}
+    \item ``mini-isolation'' $\miniiso$: 
+    \begin{equation}
+        \miniiso = \frac{\sum_R \pt(h^\pm) - \mbox{max}(0, \sum_R \pt(h^0)+\pt(\gamma) - \rho\mathcal{A}\left(\frac{R}{0.3}\right)^2}{\pt(\ell)}.
+    \end{equation}
+    where $\rho$ is the event-level energy density from pileup,
+    and $\sum_R\pt(h^\pm)$, $\sum_R\pt(h^0)$, $\sum_R\pt(\gamma)$ 
+    are the sums of the $\pt$ of charged hadrons, neutral hadrons, and photons, respectively.
+    The sum is performed within a cone of radius $R$, which depends on lepton \pt:
+    \begin{equation}
+        R = \frac{10}{\mbox{min}(\mbox{max}(\pt(\ell), 50), 200)}
+    \end{equation}
+    The effective areas $\mathcal{A}$ are constants calculated in coarse bins of
+    lepton $\eta$ such that the last term of the numerator represents the
+    contribution from pileup and is subtracted off.
+    Requiring $\miniiso$ to be below a particular value ensures that the
+    lepton is isolated.
+
+    \item \ptratio, defined as the ratio of the lepton \pt to the
+    \pt of the jet geometrically closest to, or containing, the lepton:
+    \begin{equation}
+        \ptratio = \frac{\pt(\ell)}{\pt(\text{jet})}
+    \end{equation}
+    In order to avoid an
+    over-correction on prompt leptons, the application of the jet energy
+    correction to mitigate is only applied on the hadronic part of the jet.
+    That is, the denominator of $\ptratio$ is corrected for pileup effects
+    after the lepton is subtracted out, and the lepton is subsequently added back.
+
+    \item \ptrel:
+    \begin{equation}
+        \ptrel=\frac{\left|\left(\vec{p}(\text{jet})-\vec{p}(\ell)\right) 
+        \times \vec{p}(\ell)\right| }{|\vec{p}(\text{jet})-\vec{p}(\ell)|}
+    \end{equation}
+    This variable is a measure of the relative transverse separation between the lepton 
+    and matching jet. For leptons arising from the decay of B mesons, for example,
+    this quantity exhibits a kinematic cutoff of a few GeV. For leptons that
+    happen to overlap accidentally with jets, \ptrel compares too uncorrelated
+    quantities and exhibits no kinematic cutoff, so this quantity can be large.
+    This property allows us to recover leptons that would be labeled non-isolated
+    by the previous two variables.
+\end{itemize}
+
+Using the above three variables, we classify a lepton
+as isolated if the following boolean condition is satisfied:
+\begin{equation}
+  \miniiso < I_1 \wedge ( \ptratio > I_2 \vee \ptrel > I_3 )
+\end{equation}
+where $I_i$ threshold values depend on the lepton flavor and PU conditions
+of the flavor of the lepton. These values are tabulated in \ref{tab:isoWPs}.
+
+\begin{table}[h]
+    \label{tab:isoWPs}
+    \centering
+    \caption{Isolation working points }
+    \begin{tabular}{|l||c|c|c|c|}
+        \hline
+        & e/$\mu$ loose WP &  $\mu$ tight WP & e tight WP \\ \hline 
+        $I_1$ & 0.4 & 0.16 (2016), 0.11 (2017/2018) & 0.12 (2016), 0.07 (2017/2018) \\
+        $I_2$ & 0  & 0.76 (2016), 0.74 (2017/2018) & 0.80 (2016), 0.78 (2017/2018) \\
+        $I_3$ & 0  & 7.2 (2016), 6.8 (2017/2018) & 7.2 (2016), 8.0 (2017/2018) \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{Trigger}
+trigger plot
+
+\section{Key variables}
+mtmin njets nleps, ...
+% mtmin, njets nle
+
+\section{Event-level BDT}
+% bdt for four top
+describe bdt example, variables, training, result ROC
+
+\section{Signal regions}
+\mytodo{where do baseline selections go??}
