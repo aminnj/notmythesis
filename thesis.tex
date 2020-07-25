@@ -15,6 +15,7 @@
 \usepackage{bibentry}
 \usepackage{lipsum}
 \usepackage{commath}
+\usepackage{todonotes}
 %\usepackage{subfigure} (Subfigure package clashes with another package)
 
 %---New Definitions and Commands------------------------------------------------------
@@ -73,12 +74,40 @@
 \newcommand{\CLs}{\ensuremath{\text{CL}_\text{s}}\xspace}
 \newcommand{\CLsb}{\ensuremath{\text{CL}_\text{s+b}}\xspace}
 \newcommand{\cPZpr}{\ensuremath{Z^\prime}\xspace}
+\newcommand{\MTmin}{\ensuremath{\mT^{\text{min}}}\xspace}
+
+\newcommand{\gluino}{\ensuremath{\tilde{g}}}
+\newcommand{\susyq}{\ensuremath{\tilde{q}}}
+\newcommand{\susytop}{\ensuremath{\tilde{t}}}
+\newcommand{\susytopone}{\ensuremath{\tilde{t}_1}}
+\newcommand{\susytoptwo}{\ensuremath{\tilde{t}_2}}
+\newcommand{\ptcorr}{\ensuremath{\pt^\text{corr}}\xspace}
+\newcommand{\nisrjet}{\ensuremath{N_\mathrm{J}^\text{ISR}}\xspace}
+\newcommand{\sbottomone}{\ensuremath{\tilde{b}_1}}
+\newcommand{\lsp}{\ensuremath{\tilde{\chi}_1^0}}
+\newcommand{\neutralinotwo}{\ensuremath{\tilde{\chi}_2^0}}
+\newcommand{\chiminus}{\ensuremath{\tilde{\chi}_1^{-}}}
+\newcommand{\chiplus}{\ensuremath{\tilde{\chi}_1^{+}}}
+\newcommand{\chiplmin}{\ensuremath{\tilde{\chi}_1^{\pm}}}
+\newcommand{\Totttt}{\ensuremath{\mathrm{T1\PQt\PQt\PQt\PQt}}\xspace}
+\newcommand{\Tftttt}{\ensuremath{\mathrm{T5\PQt\PQt\PQt\PQt}}\xspace}
+\newcommand{\Tfttcc}{\ensuremath{\mathrm{T5\PQt\PQt\PQc\PQc}}\xspace}
+\newcommand{\TfqqqqWZ}{\ensuremath{\mathrm{T5\PQq\PQq\PQq\PQq\PW\PZ}}\xspace}
+\newcommand{\TfqqqqWW}{\ensuremath{\mathrm{T5\PQq\PQq\PQq\PQq\PW\PW}}\xspace}
+\newcommand{\TsttWW}{\ensuremath{\mathrm{T6\PQt\PQt\PW\PW}}\xspace}
+\newcommand{\TsttHZ}{\ensuremath{\mathrm{T6\PQt\PQt\PH\PZ}}\xspace}
+\newcommand{\TfttbbWW}{\ensuremath{\mathrm{T5\PQt\PQt\PQb\PQb\PW\PW}}\xspace}
+\newcommand{\Totbs}{\ensuremath{\mathrm{T1\PQt\PQb\PQs}}\xspace}
+\newcommand{\ToqqqqL}{\ensuremath{\mathrm{T1\PQq\PQq\PQq\PQq L}}\xspace}
+
+\newcommand{\mytodo}[1]{\todo[inline, color=red!40]{#1}}
 
 % \def\dsp{\def\baselinestretch{1.0}\large\normalsize} % FIXME remove this line when compiling final thesis
 % https://stackoverflow.com/questions/1465665/passing-command-line-arguments-to-latex-document/1466610#1466610
 \ifdefined\myownflag
-    \def\dsp{\def\baselinestretch{1.0}\large\normalsize} % FIXME remove this line when compiling final thesis
+    \def\dsp{\def\baselinestretch{1.0}\large\normalsize}
 \fi
+% uncomment ifdefined, fi lines to go back to double space
 
 %---Set Margins ------------------------------------------------------
 \setlength\oddsidemargin{0.25 in} \setlength\evensidemargin{0.25 in} \setlength\textwidth{6.25 in} \setlength\textheight{8.50 in}
@@ -131,20 +160,19 @@
 
 \input{tex/outline}
 
-% \input{tex/chapter1} % Introduction
-% \input{tex/chapter2} % Same-sign dilepton final state
-% \input{tex/chapter3} % Objects and variables
-% \input{tex/chapter4} % Background estimation
+\input{tex/chapter1} % Introduction
+\input{tex/chapter2} % Same-sign dilepton final state
+\input{tex/chapter3} % Objects and variables
+\input{tex/chapter4} % Background estimation
 \input{tex/chapter5} % Results and interpretations
-% \input{tex/chapter6} % Summary and conclusions
+\input{tex/chapter6} % Summary and conclusions
 
 %=== Appendix ============================================
 \appendix
 
 \dsp
 
-% \chapter{Statistics}{\label{appendix:a}}
-%  \input{tex/toy_statistics}
+ \input{tex/toy_statistics}
 
 \end{mainmatter}
 

@@ -3,8 +3,325 @@
 \section{SUSY results}
 \label{sec:ssresults}
 
+The distributions of the variables used to define the SRs after the event selection are
+shown in Fig.~\ref{fig:kinem}.
+Background yields shown as stacked histograms in Figs.~\ref{fig:kinem}, \ref{fig:SRrun2}, and \ref{fig:SRrun2b} are
+those determined following baseline selections for the inclusive SUSY analysis.
+The overall data yields exceed expectation by an amount close to the systematic uncertainty.
+However, no particular trend that is not covered by the uncertainties discussed in the previous sections,
+is seen in the distributions.
+The significance of the excess is of similar magnitude in all categories, with a maximum of around 2 standard deviations (s.d.) in the off-\PZ ML category. 
+
+The results of the search, broken down by SR,
+are presented in Figs.~\ref{fig:SRrun2} and~\ref{fig:SRrun2b}.
+Expected background event yields, total uncertainties, and observed event yields in the SRs used in this search
+are summarized in Table~\ref{tab:slimyields}.
+No significant deviation with respect to the SM background prediction is observed.
+The largest excess of events found by fitting the data with the background-only
+hypothesis is in HH SR54,
+corresponding to a local significance of 2.6 s.d.
+Its neighboring bin, HH SR55, which is adjacent along the \HT dimension, has a
+deficit of events in the data corresponding to a
+significance of $1.8$ s.d.
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=.48\textwidth]{figs/ssp/br_ht.pdf}
+\includegraphics[width=.48\textwidth]{figs/ssp/br_met.pdf}
+\includegraphics[width=.48\textwidth]{figs/ssp/br_mtmin.pdf}
+\includegraphics[width=.48\textwidth]{figs/ssp/br_njets.pdf}
+\includegraphics[width=.48\textwidth]{figs/ssp/br_nbtags.pdf}
+\includegraphics[width=.48\textwidth]{figs/ssp/br_charge.pdf}
+\\
+\caption{Distributions of the main analysis variables after the event selection:
+\HT, \ptmiss, \MTmin, \Njets, \Nbjets, and the charge of the SS pair,
+    where the last bin includes the overflow (where applicable). The hatched area represents the total statistical and systematic uncertainty in the background prediction.
+The lower panels show the ratio of the observed event yield to the background prediction.
+The prediction for the SUSY model \Totttt with $m_{\gluino}=1600\GeV$ and $m_{\lsp}=600\GeV$ is overlaid.
+}
+\label{fig:kinem}
+\end{figure*}
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=.50\textwidth]{figs/ssp/SRHH_TOTAL.pdf}
+\includegraphics[width=.50\textwidth]{figs/ssp/SRHL_TOTAL.pdf}
+\includegraphics[width=.50\textwidth]{figs/ssp/SRLL_TOTAL.pdf}
+\\
+\caption{Expected and observed SR yields for the HH, HL, LL signal categories.
+The hatched area represents the total statistical and systematic uncertainty in the background prediction.
+}
+\label{fig:SRrun2}
+\end{figure*}
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=.50\textwidth]{figs/ssp/SRLM_TOTAL.pdf}
+\includegraphics[width=.50\textwidth]{figs/ssp/SRMLONZ_TOTAL.pdf}
+\includegraphics[width=.50\textwidth]{figs/ssp/SRMLOFFZ_TOTAL.pdf}
+\\
+\caption{Expected and observed SR yields for the LM, on-\PZ ML, off-\PZ ML signal categories. 
+The hatched area represents the total statistical and systematic uncertainty in the background prediction.
+}
+\label{fig:SRrun2b}
+\end{figure*}
+
+
+\begin{table*}[!hbtp]
+\centering
+\label{tab:slimyields}
+\begin{scriptsizetabular}{ccc|ccc|ccc}
+\hline
+\multicolumn{3}{c|}{HH regions}    &    \multicolumn{3}{c|}{HL regions}    &    \multicolumn{3}{c}{LM regions} \\ \hline                                    
+ SR    &    Expected SM    &    Obs.    &                                 
+ SR    &    Expected SM    &    Obs.    &                                 
+ SR    &    Expected SM    &    Obs. \\                                    
+ \hline                                                
+1   &    $1560\pm300 $    &   1673   &   1   &   $1390\pm300 $    &   1593   &   1   &    $235\pm47 $    &    309 \\
+2   &    $582\pm93 $    &   653   &   2   &   $348\pm67 $    &   337   &   2   &    $19.3\pm5.2 $    &    26 \\
+3   &    $100\pm25 $    &   128   &   3   &   $26.9\pm8.8 $    &   39   &   3   &    $142\pm39 $    &    156 \\
+4   &    $39.5\pm8.5 $    &   54   &   4   &   $35.9\pm9.1 $    &   34   &   4   &    $32.2\pm8.8 $    &    38 \\
+5   &    $57.7\pm9.9 $    &   53   &   5   &   $29.8\pm6.0 $    &   34   &   5   &    $53.0\pm9.1 $    &    69 \\
+6   &    $32.5\pm7.1 $    &   24   &   6   &   $22.2\pm7.2 $    &   12   &   6   &    $22.0\pm4.0 $    &    30 \\
+7   &    $5.5\pm1.8 $    &   7   &   7   &   $4.7\pm1.4 $    &   6   &   7   &    $10.1\pm2.0 $    &    21 \\
+8   &    $22.9\pm5.1 $    &   33   &   8   &   $1100\pm280 $    &   1342   &   8   &    $1.53\pm0.48 $    &    3 \\
+9   &    $19.5\pm3.9 $    &   20   &   9   &   $299\pm71 $    &   330   &   9   &    $1.58\pm0.41 $    &    0 \\
+10   &    $9.6\pm1.9 $    &   11   &   10   &   $9.1\pm2.3 $    &   8   &   10   &    $2.9\pm2.9 $    &    1 \\
+11   &    $940\pm270 $    &   1115   &   11   &   $6.4\pm1.6 $    &   9   &   11   &    $1.31\pm0.93 $    &    4 \\
+12   &    $340\pm81 $    &   384   &   12   &   $42.1\pm9.2 $    &   49   &       &      &    \\\cline{7-9}
+13   &    $36.3\pm9.5 $    &   40   &   13   &   $33.0\pm8.4 $    &   39   &    \multicolumn{3}{c}{on-\PZ ML regions} \\\cline{7-9}            
+14   &    $26.8\pm7.4 $    &   26   &   14   &   $25.8\pm5.9 $    &   25   &    SR    &    Expected SM    &    Obs. \\\cline{7-9} 
+15   &    $42.7\pm8.6 $    &   68   &   15   &   $2.8\pm2.0 $    &   7   &   1   &    $840\pm170 $    &    985 \\
+16   &    $37.9\pm8.6 $    &   41   &   16   &   $2.5\pm1.3 $    &   2   &   2   &    $107\pm21 $    &    136 \\
+17   &    $26.5\pm6.2 $    &   29   &   17   &   $222\pm42 $    &   260   &   3   &    $119\pm27 $    &    146 \\
+18   &    $14.3\pm3.6 $    &   13   &   18   &   $86\pm15 $    &   104   &   4   &    $11.1\pm2.1 $    &    10 \\ 
+19   &    $10.6\pm2.5 $    &   12   &   19   &   $2.22\pm0.90 $    &   4   &   5   &    $109\pm24 $    &    126 \\ 
+20   &    $12.3\pm2.9 $    &   14   &   20   &   $3.2\pm1.1 $    &   4   &   6   &    $19.3\pm4.1 $    &    24 \\
+21   &    $9.2\pm2.7 $    &   17   &   21   &   $19.8\pm3.8 $    &   28   &   7   &    $42\pm10 $    &    47 \\
+22   &    $10.1\pm2.1 $    &   17   &   22   &   $16.1\pm3.0 $    &   19   &   8   &    $3.47\pm0.84 $    &    3 \\
+23   &    $272\pm43 $    &   354   &   23   &   $4.7\pm1.3 $    &   1   &   9   &    $327\pm54 $    &    419 \\
+24   &    $147\pm25 $    &   177   &   24   &   $4.0\pm1.2 $    &   2   &   10   &    $46.5\pm8.4 $    &    53 \\
+25   &    $15.3\pm2.9 $    &   12   &   25   &   $4.0\pm1.1 $    &   5   &   11   &    $51.3\pm9.1 $    &    62 \\
+26   &    $11.4\pm2.4 $    &   19   &   26   &   $8.5\pm2.4 $    &   7   &   12   &    $15.6\pm2.8 $    &    27 \\
+27   &    $33.4\pm5.4 $    &   49   &   27   &   $8.4\pm2.5 $    &   7   &   13   &    $131\pm27 $    &    162 \\
+28   &    $30.1\pm4.9 $    &   38   &   28   &   $8.9\pm2.2 $    &   11   &   14   &    $19.9\pm4.3 $    &    26 \\
+29   &    $10.4\pm2.2 $    &   9   &   29   &   $10.9\pm3.1 $    &   11   &   15   &    $26.9\pm6.1 $    &    35 \\
+30   &    $6.6\pm1.3 $    &   7   &   30   &   $1.25\pm0.39 $    &   3   &   16   &    $7.8\pm1.8 $    &    12 \\
+31   &    $6.9\pm1.5 $    &   6   &   31   &   $1.92\pm0.37 $    &   4   &   17   &    $14.0\pm3.1 $    &    19 \\
+32   &    $5.9\pm1.1 $    &   14   &   32   &   $2.77\pm0.56 $    &   3   &   18   &    $84\pm15 $    &    117 \\
+33   &    $6.1\pm1.6 $    &   7   &   33   &   $19.1\pm4.1 $    &   23   &   19   &    $18.2\pm3.3 $    &    26 \\
+34   &    $6.8\pm1.3 $    &   10   &   34   &   $7.5\pm1.5 $    &   9   &   20   &    $40.4\pm7.6 $    &    34 \\
+35   &    $8.8\pm1.5 $    &   16   &   35   &   $2.12\pm0.49 $    &   5   &   21   &    $4.92\pm0.88 $    &    7 \\
+36   &    $8.7\pm2.0 $    &   11   &   36   &   $0.47\pm0.33 $    &   1   &   22   &    $46.9\pm9.9 $    &    50 \\
+37   &    $9.4\pm1.9 $    &   7   &   37   &   $2.75\pm0.77 $    &   4   &   23   &    $5.8\pm1.2 $    &    10 \\ 
+38   &    $7.0\pm1.3 $    &   5   &   38   &   $1.68\pm0.50 $    &   0   &      &      &    \\\cline{7-9}
+39   &    $9.6\pm2.1 $    &   9   &   39   &   $0.97\pm0.97 $    &   0   &    \multicolumn{3}{c}{off-\PZ ML regions} \\\cline{7-9}            
+40   &    $8.6\pm1.7 $    &   11   &   40   &   $2.83\pm0.70 $    &   7   &    SR    &    Expected SM    &    Obs. \\\cline{7-9} 
+41   &    $1.10\pm0.32 $    &   2   &   41   &   $3.8\pm3.8 $    &   0   &   1   &    $222\pm36 $    &    285 \\
+42   &    $0.63\pm0.49 $    &   0   &   42   &   $4.9\pm1.0 $    &   9   &   2   &    $2.7\pm1.7 $    &    2 \\
+43   &    $0.67\pm0.60 $    &   1   &   43   &   $2.36\pm0.72 $    &   5   &   3   &    $35.5\pm6.4 $    &    34 \\
+44   &    $0.74\pm0.27 $    &   1   &       &       &      &   4   &    $0.99\pm0.31 $    &    2 \\\cline{4-6}
+45   &    $0.71\pm0.53 $    &   1   &    \multicolumn{3}{c|}{LL regions}                &   5   &    $22.1\pm4.0 $    &    29 \\\cline{4-6}
+46   &    $47.8\pm9.7 $    &   59   &    SR    &    Expected SM    &    Obs.    &   6   &    $9.7\pm1.7 $    &    8 \\\cline{4-6}
+47   &    $17.3\pm3.8 $    &   24   &   1   &    $23.0\pm7.2 $    &   29   &   7   &    $217\pm44 $    &    272 \\
+48   &    $10.3\pm2.9 $    &   11   &   2   &    $5.0\pm1.6 $    &   6   &   8   &    $37.7\pm6.8 $    &    56 \\
+49   &    $2.06\pm0.49 $    &   3   &   3   &    $23.8\pm6.6 $    &   27   &   9   &    $21.4\pm3.7 $    &    21 \\
+50   &    $6.5\pm1.1 $    &   13   &   4   &    $4.7\pm1.5 $    &   7   &   10   &    $10.9\pm1.9 $    &    18 \\
+51   &    $3.72\pm0.79 $    &   4   &   5   &    $8.0\pm1.9 $    &   15   &   11   &    $89\pm14 $    &    112 \\
+52   &    $1.21\pm0.29 $    &   4   &   6   &    $2.0\pm1.1 $    &   0   &   12   &    $15.6\pm2.4 $    &    20 \\
+53   &    $0.44\pm0.44 $    &   2   &   7   &    $1.61\pm0.59 $    &   3   &   13   &    $16.4\pm2.7 $    &    23 \\
+54   &    $9.8\pm1.8 $    &   24   &   8   &    $0.06\pm0.06 $    &   0   &   14   &    $5.36\pm0.95 $    &    7 \\
+55   &    $7.3\pm1.4 $    &   4   &       &       &      &   15   &    $9.0\pm1.6 $    &    12 \\
+56   &    $4.44\pm0.98 $    &   6   &       &       &      &   16   &    $28.4\pm3.9 $    &    46 \\
+57   &    $5.7\pm1.1 $    &   6   &       &       &      &   17   &    $0.72\pm0.41 $    &    2 \\
+58   &    $4.0\pm1.0 $    &   6   &       &       &      &   18   &    $17.8\pm2.8 $    &    25 \\
+59   &    $2.24\pm0.53 $    &   2   &       &       &      &   19   &    $0.89\pm0.29 $    &    0 \\
+60   &    $1.83\pm0.44 $    &   5   &       &       &      &   20   &    $17.7\pm3.3 $    &    31 \\
+61   &    $1.88\pm0.40 $    &   5   &       &       &      &   21   &    $1.20\pm0.32 $    &    2 \\
+62   &    $1.35\pm0.56 $    &   0   &       &       &      &      &      &   \\
+\hline                                                
+\end{scriptsizetabular}                                              
+\caption{
+Expected background event yields, total uncertainties, and observed event yields in the SRs used in this search.
+}
+\end{table*}                                                
+
 \section{SUSY interpretations}
-\label{sec:ssresults}
+\label{sec:ssinterpretations}
+
+These results are then interpreted as experimental constraints on the cross sections for
+the various signal models. For each model,
+event yields in all SRs are used to obtain exclusion limits
+on the production cross section at 95\% confidence level (\CL) with
+an asymptotic formulation of the modified frequentist \CLs
+criterion~\cite{STAT:Junk1999kv,STAT:Read2002hq,STAT:ATLPHYSPUB2011011,STAT:Cowan2010js},
+where uncertainties are incorporated as nuisance parameters and profiled~\cite{STAT:ATLPHYSPUB2011011}.
+This procedure takes advantage of the differences in the distribution of events amongst the SR between the various SM backgrounds and the signal considered.
+The normalizations of the various backgrounds are in particular allowed to float within their uncertainties in the global fit, resulting in several backgrounds (nonprompt lepton, $\ttbar \PW/\PZ/\PH$ and rare processes) being pulled up by around $1$ s.d. for most of the signal points considered, which are often characterized by a distinctive distribution of events across the SRs. 
+This observation is consistent with the current measurements of $\ttbar \PW$ and $\ttbar \PZ$ processes performed by the ATLAS and CMS Collaborations~\cite{ATLAS:ttV,CMS:ttV}.
+The limits obtained are then used together with the theoretical cross section
+calculations to exclude regions of SUSY parameter space.
+
+
+Figure~\ref{fig:t1ttxx_scan_xsec} shows observed and expected exclusion limits
+for simplified models of gluino pair production with each gluino decaying
+to off- or on-shell third-generation squarks,
+\Totttt, \TfttbbWW, \Tftttt, and \Tfttcc.
+Similarly, Figs.~\ref{fig:t5qqqqvv_scan_xsec} and~\ref{fig:t5qqqqww_scan_xsec} show the corresponding limits for \TfqqqqWZ and \TfqqqqWW, with
+two different assumptions on the chargino mass.
+Note that the \TfqqqqWZ model assumes equal probabilities for
+the decay of the gluino into \chiplus, \chiminus, and \neutralinotwo.
+The exclusion limits for \TsttWW and \TsttHZ are displayed in
+Figs.~\ref{fig:t6ttww_scan_xsec} and~\ref{fig:t6tthz_scan_xsec},
+respectively.
+In the \TsttHZ model, the heavier top squark decays
+into a lighter top squark and a \PZ\ or \PH\ boson. The three
+sets of exclusion limits shown in Fig.~\ref{fig:t6tthz_scan_xsec}
+correspond to the branching fraction $\mathcal{B}(\susytoptwo\to\susytopone\PZ)$ having values of
+0, 50, and 100\%.
+
+Finally, Fig.~\ref{fig:rpvlimits} shows observed and expected limits on
+the cross section of gluino pair production as a function of the gluino masses in
+the two RPV models.
+The observed and expected exclusions on the gluino mass are similar and reach 2.1 and 1.7 \TeV for the \ToqqqqL and \Totbs models, respectively.
+
+The analysis sensitivity for the various models studied in Figs.~\ref{fig:t1ttxx_scan_xsec}--\ref{fig:t6tthz_scan_xsec} is often driven by the event yields in a few SRs (off-\PZ ML21, HH53 and HH52), where a slight excess of data is observed.
+This in particular applies to the uncompressed mass regime, resulting in an observed limit weaker than the expected one by one or two s.d.
+In the compressed mass regime, however, other SRs can become dominant, for example when the hadronic activity becomes limited. 
+This happens in the \TfqqqqWZ and \TfqqqqWW models where the gluino and the lightest neutralino present a limited mass splitting (the region close to the diagonal in the left plots of Figs.~\ref{fig:t5qqqqvv_scan_xsec} and ~\ref{fig:t5qqqqww_scan_xsec}). In those scenarios the on-\PZ ML4 and HH3 SRs provide the best sensitivity, respectively. 
+Additionally, if the intermediate chargino is nearly degenerate in mass with the lightest neutralino, both leptons become soft and LL SRs such as LL2 become relevant. Such a situation is encountered in the phase space region close to the diagonal in the right plots of Figs.~\ref{fig:t5qqqqvv_scan_xsec} and ~\ref{fig:t5qqqqww_scan_xsec}.
+On-\PZ SRs (especially on-\PZ ML23) become important for models where an on-shell \PZ boson is produced (bottom plot in Fig.~\ref{fig:t6tthz_scan_xsec}).
+The limits on the RPV models presented in Fig.~\ref{fig:rpvlimits} are mostly driven by another set of SRs (HH62 and LM11, the latter becoming more relevant for lower masses).
+
+
+Compared to the previous versions of the
+analysis~\cite{CMS:mySUS2016,CMS:SUS16041}, the limits for the RPC models
+extend the gluino and squark mass observed and expected exclusions by up to
+200\GeV because of the increase in the integrated luminosity and the
+corresponding re-optimization of SR definitions. These results also
+complement searches for gluino pair production conducted by CMS in final
+states with 0 or 1
+lepton~\cite{CMS:2019tlp,CMS:Sirunyan2019ctn,CMS:Sirunyan2019xwh}. 
+For the \Totttt
+scenario, the expected sensitivity of this analysis suffers from a lower
+branching fraction that makes it uncompetitive in the uncompressed mass
+regime. However, for a nearly degenerate mass spectrum, the SM background
+becomes of higher importance and the presence of an SS lepton pair
+significantly reduces it, leading to a similar sensitivity. The constraints
+on the two RPV models that were not previously included demonstrate the
+sensitivity of the analysis to RPV scenarios. The final state is particularly
+well suited to study the \ToqqqqL model since no leptonic branching fraction
+penalty applies, resulting in exclusion limits on the gluino mass beyond 2.1
+TeV, comparable to other results in fully hadronic final
+states~\cite{CMS:Sirunyan2019ctn,CMS:Sirunyan2019xwh}. The limits obtained on the
+\Totbs model are stronger than those previously obtained in the one-lepton
+channel based on the analysis of the 2016 dataset~\cite{CMS:Sirunyan2017dhe}.
+They are expected to remain competitive after an update with the full Run 2
+dataset.
+
+
+
+Model-independent limits are also set on the product of cross section, branching fraction, detector acceptance, and reconstruction efficiency,
+for the production of an SS lepton pair with at least two extra jets and $\HT>300\GeV$.
+For this purpose, we select events from the HH and LM categories
+and calculate limits as a function of minimum \ptmiss or \HT requirements
+starting at 300 and 1400\GeV, respectively.
+In order to remove the overlap between the two conditions, events selected for the \HT scan must also satisfy $\ptmiss<300\GeV$.
+The corresponding limits are presented in Fig.~\ref{fig:milimits}.
+
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t1tttt.pdf}
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t1ttbb.pdf}
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t5tttt.pdf}
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t5ttcc.pdf}
+\caption{ Exclusion regions at 95\% \CL in the $m_{\lsp}$ versus
+  $m_{\gluino}$ plane for the \Totttt~(upper left) and \TfttbbWW~(upper right) models, with off-shell third-generation squarks, and the
+    \Tftttt~(lower left) and \Tfttcc (lower right) models, with on-shell third-generation squarks.
+For the \TfttbbWW model, $m_{\chiplmin} = m_{\lsp} + 5\GeV$, for the \Tftttt model, $m_{\susytop} - m_{\lsp} = m_{\PQt}$, and
+for the \Tfttcc model, $m_{\susytop} - m_{\lsp} = 20\GeV$ and the decay proceeds through $\susytop \to \PQc \lsp$.
+The right-hand side color scale indicates the excluded cross section values for a given point in the SUSY particle mass plane.
+The solid black curves represent the observed exclusion limits
+assuming the approximate-NNLO+NNLL cross sections
+(thick line), or their variations of $\pm 1$ standard deviations (s.d.) (thin lines).
+The dashed red curves show the expected limits with the corresponding $\pm 1$ s.d. and $\pm 2$ s.d. uncertainties.
+Excluded regions are to the left and below the limit curves.
+}
+\label{fig:t1ttxx_scan_xsec}
+\end{figure*}
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t5qqqqvv.pdf}
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t5qqqqvvdm20.pdf}
+\caption{Exclusion regions at 95\% \CL in the plane of $m_{\lsp}$ versus $m_{\gluino}$ for the \TfqqqqWZ model
+with $m_{\chiplmin}=0.5(m_{\gluino} + m_{\lsp})$~(left) and with $m_{\chiplmin} = m_{\lsp} + 20\GeV$~(right).
+The notations are as in Fig.~\ref{fig:t1ttxx_scan_xsec}.  }
+\label{fig:t5qqqqvv_scan_xsec}
+\end{figure*}
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t5qqqqww.pdf}
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t5qqqqwwdm20.pdf}
+\caption{Exclusion regions at 95\% \CL in the plane of $m_{\lsp}$ versus $m_{\gluino}$ for the \TfqqqqWW model
+with $m_{\chiplmin}=0.5(m_{\gluino} + m_{\lsp})$~(left) and with $m_{\chiplmin} = m_{\lsp} + 20\GeV$~(right).
+The notations are as in Fig.~\ref{fig:t1ttxx_scan_xsec}.  }
+\label{fig:t5qqqqww_scan_xsec}
+\end{figure*}
+
+
+
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_t6ttww.pdf}\\
+\caption{ Exclusion regions at 95\% \CL in the plane of $m_{\chiplmin}$ versus $m_{\sbottomone}$ for the \TsttWW model with $m_{\lsp}=50\GeV$.
+    The notations are as in Fig.~\ref{fig:t1ttxx_scan_xsec}. }
+\label{fig:t6ttww_scan_xsec}
+\end{figure*}
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=.45\textwidth]{figs/ssp/scan_t6tthzbrh.pdf}
+\includegraphics[width=.45\textwidth]{figs/ssp/scan_t6tthzbrb.pdf} \\
+\includegraphics[width=.45\textwidth]{figs/ssp/scan_t6tthzbrz.pdf}
+\\
+\caption{
+Exclusion regions at 95\% \CL in the plane of $m(\susytopone)$ versus
+$m(\susytoptwo)$ for the \TsttHZ model with $m(\susytopone)-m(\lsp)=175\GeV$.
+The three exclusions represent $\mathcal{B}(\susytoptwo\to\susytopone\PZ)$ of
+0, 50, and 100\%, respectively.
+The notations are as in Fig.~\ref{fig:t1ttxx_scan_xsec}.
+}
+\label{fig:t6tthz_scan_xsec}
+\end{figure*}
+
+\begin{figure*}[!hbtp]
+\centering
+    \includegraphics[width=0.45\textwidth]{figs/ssp/scan_rpv_t1qqqql.pdf}
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_rpv_t1tbs.pdf}\\
+\caption{
+          Upper limits at 95\% \CL on the cross section for RPV gluino pair production with each gluino decaying into four quarks and one lepton (\ToqqqqL, left), and
+    each gluino decaying into a top, bottom, and strange quarks (\Totbs, right).
+    }
+\label{fig:rpvlimits}
+\end{figure*}
+
+
+
+\begin{figure*}[!hbtp]
+\centering
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_milimits_met.pdf}
+\includegraphics[width=0.45\textwidth]{figs/ssp/scan_milimits_ht.pdf}
+\caption{Upper limits at 95\% \CL on the product of cross section, detector acceptance, and selection efficiency, $\sigma \! \mathcal{A} \epsilon$,
+for the production of an SS lepton pair with at least two jets, as a function of the minimum \ptmiss threshold, when $\HT>300\GeV$ (left), or the minimum \HT threshold, when $\ptmiss<300\GeV$ (right).
+    }
+\label{fig:milimits}
+\end{figure*}
+
+
 
 \section{Four top results}
 \label{sec:ftresults}
@@ -109,11 +426,6 @@ The lower panels show the ratios of the observed event yield to the total predic
 
 \begin{table*}[htb!]
 \centering
-    \caption{
-        The post-fit predicted background, $\tttt$ signal, and total yields with
-          their total uncertainties and the observed number of events
-          in the control and signal regions in data for the cut-based analysis.
-}
 \label{tab:srcryields}
     \begin{tabular}{ccccc}
         & SM background  & $\tttt$   & Total   & Observed \\
@@ -135,6 +447,11 @@ SR12 & $2.03\pm0.48$    & $0.59\pm0.34$ & $2.62\pm0.54$    & 2 \\
 SR13 & $1.09\pm0.28$    & $0.69\pm0.39$ & $1.78\pm0.44$    & 2 \\
 SR14 & $0.87\pm0.30$    & $0.80\pm0.45$ & $1.67\pm0.52$    & 1 \\
 \end{tabular}
+    \caption{
+        The post-fit predicted background, $\tttt$ signal, and total yields with
+          their total uncertainties and the observed number of events
+          in the control and signal regions in data for the cut-based analysis.
+}
 \end{table*}
 
 
@@ -142,11 +459,6 @@ SR14 & $0.87\pm0.30$    & $0.80\pm0.45$ & $1.67\pm0.52$    & 1 \\
 
 \begin{table*}[htb!]
 \centering
-    \caption{
-        The post-fit predicted background and $\tttt$ signal, and total yields with
-          their total uncertainties and the observed number of events
-          in the control and signal regions in data for the BDT analysis.
-}
 \label{tab:srdiscyields}
     \begin{tabular}{ccccc}
         & SM background  & $\tttt$   & Total   & Observed \\
@@ -172,6 +484,11 @@ SR16 & $2.49\pm0.61$    & $3.4\pm1.3$   & $5.9\pm1.3$      & 7 \\
 SR17 & $0.57\pm0.36$    & $1.08\pm0.42$ & $1.65\pm0.50$    & 3 \\
 
 \end{tabular}
+    \caption{
+        The post-fit predicted background and $\tttt$ signal, and total yields with
+          their total uncertainties and the observed number of events
+          in the control and signal regions in data for the BDT analysis.
+}
 
 \end{table*}
 
