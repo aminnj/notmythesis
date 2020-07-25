@@ -13,3 +13,5 @@ examples
 .DS_Store
 notes.txt
 blah.txt
+*.fdb_latexmk
+*.fls

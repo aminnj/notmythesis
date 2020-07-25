@@ -14,6 +14,7 @@
 \usepackage{setspace}
 \usepackage{bibentry}
 \usepackage{lipsum}
+\usepackage{commath}
 %\usepackage{subfigure} (Subfigure package clashes with another package)
 
 %---New Definitions and Commands------------------------------------------------------
@@ -25,8 +26,6 @@
 \def\C{\mbb{C}}
 \def\half{\frac{1}{2}}
 \def\filler{\phantom{fillerfillerfiller}}
-\newcommand{\be}{\begin{equation}}
-\newcommand{\ee}{\end{equation}}
 \newcommand{\mbb}[1]{\mathbb{#1}}
 \newcommand{\mrm}[1]{\mathrm{#1}}
 \newcommand{\mcal}[1]{\mathcal{#1}}
@@ -34,10 +33,46 @@
 \newcommand{\ph}[1]{\phantom{#1}}
 \newcommand{\udten}[3]{#1^{#2}_{\ph{#2}#3}}
 \newcommand{\duten}[3]{#1^{\ph{#2}#3}_{#2}}
-\newcommand{\pd}[2]{\frac{\p#1}{\p#2}}
-\newcommand{\D}[2]{\frac{d#1}{d#2}}
 \newcommand{\sthirteen}{\ensuremath{\sqrt{\mathrm{s}}=13~\mathrm{TeV}}\xspace}
 \newcommand{\ifb}{fb\ensuremath{{}^{-1}}}
+\newcommand{\fbinv}{\ifb}
+
+\newcommand{\sslumi}{137\fbinv}
+\newcommand{\Njets}{\ensuremath{N_\text{jets}}\xspace}
+\newcommand{\Nbjets}{\ensuremath{N_\mathrm{b}}\xspace}
+\newcommand{\Nleps}{\ensuremath{N_\ell}\xspace}
+\newcommand{\ttbar}{\ensuremath{t\bar{t}}\xspace}
+\newcommand{\tttt}{\ensuremath{\ttbar\ttbar}\xspace}
+\newcommand{\ttZ}{\ensuremath{\ttbar Z}\xspace}
+\newcommand{\ttW}{\ensuremath{\ttbar W}\xspace}
+\newcommand{\ttH}{\ensuremath{\ttbar H}\xspace}
+\newcommand{\xsectttt}{\ensuremath{\sigma(pp\to\tttt})\xspace}
+\newcommand{\unit}[1]{\ensuremath{\text{\,#1}}\xspace}
+\newcommand{\PQu}{u\xspace}
+\newcommand{\PQd}{d\xspace}
+\newcommand{\PQs}{s\xspace}
+\newcommand{\PQc}{c\xspace}
+\newcommand{\PQb}{b\xspace}
+\newcommand{\PQt}{t\xspace}
+\newcommand{\PQq}{q\xspace}
+\newcommand{\PW}{W\xspace}
+\newcommand{\PZ}{Z\xspace}
+\newcommand{\PH}{H\xspace}
+\newcommand{\PSA}{A\xspace}
+\newcommand{\Pp}{p}
+\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand{\ET}{\ensuremath{E_{\mathrm{T}}}\xspace}
+\newcommand{\HT}{\ensuremath{H_{\mathrm{T}}}\xspace}
+\newcommand{\mT}{\ensuremath{m_{\mathrm{T}}}\xspace}
+\newcommand{\GeV}{\ensuremath{\text{GeV}}\xspace}
+\newcommand{\TeV}{\ensuremath{\text{TeV}}\xspace}
+\newcommand{\ETm}{\ensuremath{E_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\ptvecmiss}{\ensuremath{{\vec p}_{\mathrm{T}}^{\kern1pt\text{miss}}}\xspace}
+\newcommand{\ptmiss}{\ensuremath{\pt^\text{miss}}\xspace}
+\newcommand{\CL}{\ensuremath{\text{CL}}\xspace} % needs to be overridden to C.L. for APS. Look out for \CL.
+\newcommand{\CLs}{\ensuremath{\text{CL}_\text{s}}\xspace}
+\newcommand{\CLsb}{\ensuremath{\text{CL}_\text{s+b}}\xspace}
+\newcommand{\cPZpr}{\ensuremath{Z^\prime}\xspace}
 
 % \def\dsp{\def\baselinestretch{1.0}\large\normalsize} % FIXME remove this line when compiling final thesis
 % https://stackoverflow.com/questions/1465665/passing-command-line-arguments-to-latex-document/1466610#1466610
@@ -52,14 +87,12 @@
 %%%---DOCUMENT---%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-
 %=== Preliminary Pages ============================================
 \begin{frontmatter}
 	\input{tex/title}
 	\maketitle
 	\approvalpage
 	\copyrightpage
-	% \input{tex/dedicate}%comment out if you don't want a dedication
 	\input{tex/acknowledgements}
 	\input{tex/vitae}
 	\input{tex/abstract}
@@ -98,22 +131,20 @@
 
 \input{tex/outline}
 
-\input{tex/chapter1}
-\input{tex/chapter2}
-\input{tex/chapter3}
-\input{tex/chapter4}
-\input{tex/chapter5}
-\input{tex/chapter6}
+% \input{tex/chapter1} % Introduction
+% \input{tex/chapter2} % Same-sign dilepton final state
+% \input{tex/chapter3} % Objects and variables
+% \input{tex/chapter4} % Background estimation
+\input{tex/chapter5} % Results and interpretations
+% \input{tex/chapter6} % Summary and conclusions
 
 %=== Appendix ============================================
 \appendix
 
 \dsp
 
-\chapter{Appendix Title}{\label{appendix:a}}
-\input{tex/toy_statistics}
-
-% test
+% \chapter{Statistics}{\label{appendix:a}}
+%  \input{tex/toy_statistics}
 
 \end{mainmatter}
 
@@ -121,5 +152,6 @@
 \ssp
 \bibliographystyle{sty/JHEP3}
 \bibliography{bib/thesis}
+
 
 \end{document} 
