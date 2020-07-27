@@ -202,7 +202,7 @@ as isolated if the following boolean condition is satisfied:
   \miniiso < I_1 \wedge ( \ptratio > I_2 \vee \ptrel > I_3 )
 \end{equation}
 where $I_i$ threshold values depend on the lepton flavor and PU conditions
-of the flavor of the lepton. These values are tabulated in \ref{tab:isoWPs}.
+of the flavor of the lepton. These values are tabulated in Table~\ref{tab:isoWPs}.
 
 \begin{table}[h]
     \label{tab:isoWPs}
@@ -252,15 +252,42 @@ large tail extending beyond the W mass.
 \end{figure}
 
 \section{Trigger}
-\mytodo{todo}
-trigger plot
+\mytodo{todo, trigger plot}
+
+Clearly before one can analyze events, one must have collected them with the detector first.
+Triggers are meant to identify and save interesting events in data while making sure to not to overwhelm
+the readout hardware, reconstruction software, and storage used by CMS. 
+Same-sign searches make use of dilepton triggers
+which require at least two leptons at trigger level of a given $\pt$, usually along with some
+isolation quantities or $\HT$. For a given trigger rate, 
+the more stringent the requirements on isolation or $\HT$, the
+lower the thresholds on lepton $\pt$.
+
+In the SUSY analysis, based on trigger thresholds, 
+we only consider muons (electrons) with \pt of at least 10 (15) \GeV.
+For events with lepton $\pt < 25\GeV$ for both SS leptons, the set of signal triggers, depending on year
+and SS lepton pair flavor, is given in Table~\ref{tab:sstrigslow}, otherwise, the signal triggers in 
+Table~\ref{tab:sstrigshigh} are used.
+
+The \smft analysis considers muons and electrons with \pt of at least 20 \GeV. As a result,
+the modified signal trigger strategy summarized in Table~\ref{tab:fttrigs} is used.
+
+A set of single lepton triggers, listed in Table~\ref{tab:frtrigs},
+is used for the estimation of the fake rate, which
+will be discussed in the following chapter.
+
+Triggers are required for all events, data and simulation, and residual differences are corrected
+via trigger scale factors.
+\mytodo{trigger scale factors, plots}
+
+\input{tables/triggers}
 
 \section{Baseline selections}
 \mytodo{todo more details?}
 
 With the objects in place, we can now discuss the baseline selections used for the 
 inclusive SUSY analysis and the more restricted \smft analysis.
-As the name of this thesis suggests, both require the presence of at least
+As the title of this thesis suggests, both require the presence of at least
 two leptons (electrons or muons) with the same charge. 
 Appropriate triggers are required for data and all simulation.
 Subsequent
@@ -356,11 +383,11 @@ the most performant variables and retraining until the performance started to su
 Following the SUSY analysis baseline selection, we define 
 six exclusive categories depending on the kinematics of event and the leptons:
 \begin{itemize}
-\item High-High SS pair, significant \ptmiss (HH): exactly 2 leptons, both with $\pt>25 \GeV$, and $\ptmiss>50 \GeV$;
-\item High-Low SS pair, significant \ptmiss (HL): exactly 2 leptons, one with $\pt>25 \GeV$, one with $\pt<25 \GeV$, and $\ptmiss>50 \GeV$;
-\item Low-Low SS pair, significant \ptmiss (LL): exactly 2 leptons, both with $\pt<25 \GeV$ and $\ptmiss>50 \GeV$;
+\item High-High SS pair (HH): exactly 2 leptons, both with $\pt>25 \GeV$, and $\ptmiss>50 \GeV$;
+\item High-Low SS pair (HL): exactly 2 leptons, one with $\pt>25 \GeV$, one with $\pt<25 \GeV$, and $\ptmiss>50 \GeV$;
+\item Low-Low SS pair (LL): exactly 2 leptons, both with $\pt<25 \GeV$ and $\ptmiss>50 \GeV$;
 \item Low \ptmiss (LM): exactly 2 leptons, both with $\pt>25 \GeV$, and $\ptmiss<50 \GeV$; and
-\item Multilepton with an on-shell Z boson (on-\PZ ML): $\geq$3 leptons, at least one with $\pt>25 \GeV$, $\ptmiss>50 \GeV$, $\geq$ \PZ boson candidate formed by a pair of opposite-sign (OS), same-flavor leptons with $76 < m_{\ell\ell}< 106 \GeV$.
+\item Multilepton with an on-shell Z boson (on-\PZ ML): $\geq$3 leptons, at least one with $\pt>25 \GeV$, $\ptmiss>50 \GeV$, $\geq 1$ \PZ boson candidate formed by a pair of OS, same-flavor leptons with $76 < m_{\ell\ell}< 106 \GeV$.
 \item Multilepton without an on-shell Z boson (off-\PZ ML): same as on-\PZ ML but without a \PZ boson candidate.
 \end{itemize}
 

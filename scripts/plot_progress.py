@@ -36,7 +36,7 @@ df = df.set_index("date")["2020":].reset_index()
 
 fig,ax = plt.subplots()
 ax.plot(df["date"],df["pages"],label="actual", marker=".")
-ax.set_ylim([0.,100.])
+ax.set_ylim([0.,150.])
 ax.set_ylabel("PDF page count")
 
 deadline = datetime.date(2020,8,12)

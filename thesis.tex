@@ -80,7 +80,7 @@
 \newcommand{\MTmin}{\ensuremath{\mT^{\text{min}}}\xspace}
 \newcommand{\mtmin}{\MTmin}
 
-\newcommand{\NA}{-{}-}
+\newcommand{\NA}{--}
 
 \newcommand{\gluino}{\ensuremath{\tilde{g}}}
 \newcommand{\susyq}{\ensuremath{\tilde{q}}}
@@ -114,9 +114,9 @@
 
 % \def\dsp{\def\baselinestretch{1.0}\large\normalsize} % FIXME remove this line when compiling final thesis
 % https://stackoverflow.com/questions/1465665/passing-command-line-arguments-to-latex-document/1466610#1466610
-% \ifdefined\myownflag
+\ifdefined\myownflag
     \def\dsp{\def\baselinestretch{1.0}\large\normalsize}
-% \fi
+\fi
 % uncomment ifdefined, fi lines to go back to double space
 
 %---Set Margins ------------------------------------------------------
@@ -168,21 +168,21 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
-% \input{tex/outline}
+\input{tex/outline}
 
-% \input{tex/chapter1} % Introduction
-% \input{tex/chapter2} % Same-sign dilepton final state
+\input{tex/chapter1} % Introduction
+\input{tex/chapter2} % Same-sign dilepton final state
 \input{tex/chapter3} % Objects and variables
-% \input{tex/chapter4} % Background estimation
-% \input{tex/chapter5} % Results and interpretations
-% \input{tex/chapter6} % Summary and conclusions
+\input{tex/chapter4} % Background estimation
+\input{tex/chapter5} % Results and interpretations
+\input{tex/chapter6} % Summary and conclusions
 
 %=== Appendix ============================================
 \appendix
 
 \dsp
 
-% \input{tex/toy_statistics}
+\input{tex/toy_statistics}
 
 \end{mainmatter}
 
