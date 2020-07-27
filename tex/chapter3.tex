@@ -1,20 +1,152 @@
-\chapter{Objects and variables}
-\mytodo{make todo}
+\chapter{Objects and selections}
 
 \section{Jets, MET}
-\subsection{Jet identification, corrections}
-\subsection{MET}
-\subsection{B tagging}
-% performance plot
-% define njets, nb here
 
+\subsection{Jets}
+Jets are reconstructed from charged PF candidates clustered with the
+anti-$\mathrm{k_t}$ algorithm~\cite{CMS:Cacciari2008gp, CMS:Cacciari2011ma}
+using a distance parameter of 0.4. The jet \pt, calculated as the vector sum
+of the constituent PF candidates, is susceptible to contributions from pileup
+and detector effects. However, jet energy corrections, primarily
+parameterized by jet \pt and $\eta$, are derived using data and simulation to
+counteract these effects~\cite{CMS:Khachatryan2016kdb, CMS:PASJME16003}.
+
+Additional jet selections (tight jet identification) are applied to reject
+pathological jets:
+\begin{itemize}
+    \item neutral hadronic energy fraction $<$ 0.9
+    \item neutral electromagnetic energy fraction $<$ 0.9
+    \item number of constituents $>$ 1
+    \item charged hadron fraction $>$ 0
+    \item charged multiplicity $>$ 0
+\end{itemize}
+
+To avoid double counting of objects,
+selected jets are those that do not overlap with analysis leptons 
+(within a cone of $\Delta R \equiv \sqrt{\Delta\eta^2 + \Delta\phi^2} = 0.4$),
+and have $\pt>40\GeV$ and $|\eta|<2.4$. The multiplicity of selected jets
+is defined to be \Njets. The scalar sum of selected jet \pt
+is called \HT.
+
+\subsection{B-tagging}
+Many of the SUSY models probed in this analysis have a high multiplicity of
+top quarks; SM four top quark production has four. Each top quark decays into
+a b quark and W boson, so jets arising from b quarks are an important object
+to efficiently identify. Hadrons containing b quarks have lifetimes that
+allow them to travel on the order of a millimeter from the collision before
+decaying, creating tracks pointing to a secondary vertex. We use a deep
+neural network algorithm, DeepCSV~\cite{CMS:Sirunyan2017ezt}, which makes use
+of information such as tracks and secondary vertices to produce a
+discriminating value for b jets. A threshold value (the medium working point)
+on this discriminant is set such that the efficiency to correctly identify a
+b jet is approximately 65\% for jet \pt around 40\GeV while maintaining a
+misidentification rate of 1\% for light-flavor jets (udsg).
+
+This \Nbjets variable used in this analysis is defined as the multiplicity 
+of b-tagged jets with $\pt>25\GeV$ and $|\eta|<2.4$ which are
+not overlapping with leptons. The lower threshold compared
+to nominal jets above allows for increased signal acceptance for softer event
+topologies.
+
+\subsection{MET}
+
+The missing transverse energy,
+equivalently referred to as MET, $\slashed{E}_\mathrm{T}$, or $\ptmiss$, is defined
+as the magnitude of the negative of the vectorial sum of the $\vec{p_\mathrm{T}}$ of PF candidates in an
+event~\cite{CMS:Sirunyan2019kia}.
+
+The MET has a Type-I correction applied, which fully propagates
+the jet energy corrections into the computation:
+
+\begin{equation}
+    \vec{\slashed{E}}_\mathrm{T}
+    = \vec{\slashed{E}}_\mathrm{T}^\mathrm{raw}
+    - \sum_{\mathrm{jets}} \left( 
+        \vec{p}_\mathrm{T,jet}^\text{corr} 
+        - \vec{p}_\mathrm{T,jet}
+    \right)
+\end{equation}
+
+Additional event-level filters detailed in \cite{CMS:JetMETFilters} are applied 
+to reject pathological events associated with misreconstruction, or sources of 
+detector noise.
 
 \section{Leptons}
 
 \subsection{Identification}
 
+Muons are reconstructed by combining information from tracker hits
+with those in the muon system to form a global fit.
+The base identification criteria for reconstructed muons is encapsulated in the 
+``medium muon ID''~\cite{CMS:Sirunyan2019yvv} and requires
+a certain level of quality in the tracker and muon system track matching.
+
+Analysis muons must have $\pt>10\GeV$ and $|\eta|<2.4$. 
+We require that muons have a relative 
+uncertainty less than 20\% on the reconstructed momentum ($\delta \pt/\pt<0.2$).
+This ensures the charge of the momentum has not been misreconstructed.
+
+Analysis electrons must have $\pt>15\GeV$ and $|\eta|<2.5$.
+Electrons are identified by constructing a boosted decision tree (BDT) with
+a variety of variables tied to the track
+and ECAL deposits used to reconstruct the electron~\cite{CMS:Khachatryan2015hwa}.
+These include 
+\begin{itemize}
+    \item ECAL shower-shape variables
+    \begin{itemize}
+    \item $\sigma_{i\eta i\eta}$ (weighted width of shower along $\eta$)
+    \item $\sigma_{i\phi i\phi}$ (weighted width of shower along $\phi$)
+    \item cluster circularity
+    \item cluster $\eta$, $\phi$ widths
+    \item $\mathrm{R_9}$, the ratio of energy in 3x3 to 5x5 set of towers surrounding the seed crystal
+    \item H/E, the ratio of (adjacent) HCAL energy to ECAL deposits
+    \end{itemize}
+    \item track-cluster matching variables
+    \begin{itemize}
+    \item $E/p_\mathrm{in}$, $E/p_\mathrm{out}$, where $p_\mathrm{in/out}$ is the innermost/outermost track momentum
+    \item $\Delta \eta_\mathrm{in}$ ($\eta$ difference between cluster and inner track)
+    \item $\Delta \eta_\mathrm{out}$
+    \item $\Delta \phi_\mathrm{in}$ ($\phi$ difference between cluster and inner track)
+    \item $|1/E_\mathrm{clust} - 1/p|$
+    \end{itemize}
+    \item track variables
+    \begin{itemize}
+    \item $\chi^2$ quality of combinatorial track finder (CTF) and Gaussian-sum filter (GSF) tracks
+    \item number of CTF and GSF hits
+    \item $(p_\mathrm{in}-p_\mathrm{out})/p_\mathrm{in}$, fraction of energy lost through Brehmsstrahlung
+    \end{itemize}
+\end{itemize}
+
+The BDT discriminant is converted into a boolean decision per lepton with
+working points depending on the year and $\pt$, which will not be shown here 
+for the sake of brevity. We simply take and refer to two boolean decisions
+as the ``loose'' and ``tight" working points, where the tight WP has
+relatively lower efficiency to select electrons,
+but also a lower efficiency to misidentify
+other objects as electrons.
+
+For electrons, we additionally consider a conversion veto that locates and rejects $\gamma \rightarrow e^{+} e^{-}$,
+and a ``number of expected missing inner hits'' variable, which is the number of 
+detector hits in the inner tracker which should have registered a hit but did not.
+Electrons must have no such missing hits.
+Electrons must also have agreement between three different methods used to compute the charge~\cite{CMS:AN14164}.
+
+For both electrons and muons, we require $|d_\mathrm{xy}| < 0.05\unit{cm}$,
+$|d_\mathrm{z}| < 0.1\unit{cm}$,
+$\mathrm{SIP}_\mathrm{3D} < 4$. The variables $|d_\mathrm{xy}|$ and $|d_\mathrm{z}|$ are the transverse and longitudinal
+displacements between the primary interaction vertex (PV) and the point of closest approach (PCA) of the lepton's 
+track, respectively. The 3D impact parameter significance, $\mathrm{SIP}_\mathrm{3D}$,
+is defined as the 3D displacement between the PCA and PV divided by the measurement uncertainty.
+The reconstructed vertex with the largest value of $\Sigma \pt^2$ is taken as
+the PV. These variables and selections make sure the leptons are produced in a prompt fashion.
+
+The final lepton reconstruction and identification efficiency is between
+45\% and 70\% for electrons with $\pt > 25\GeV$, and between 70\% and 90\%
+for muons in the same momentum range. In the lower momentum range of 15-25\GeV
+for electrons, the efficiency is 40\%, and in the range of 10-25\GeV for muons,
+the efficiency is 55\%. 
+
 \subsection{Isolation}
-\mytodo{already reworded}
 
 Conceptually, a lepton can be labeled isolated if the ratio of 
 energy in a cone surrounding the lepton to the energy of the lepton itself
@@ -85,16 +217,193 @@ of the flavor of the lepton. These values are tabulated in \ref{tab:isoWPs}.
     \end{tabular}
 \end{table}
 
+\section{Other variables}
+
+We make use of the minimum transverse mass ($\mtmin$) which is defined as:
+\begin{equation}
+    \mtmin = \mathrm{min}\left[ \mT(\ell_1, \ETm), \mT(\ell_2, \ETm)\right ]
+\end{equation}
+where a single transverse mass term is given by
+\begin{equation}
+    \mtmin = \sqrt{2\pt(\ell) \ETm (1-\cos\Delta \phi_{\ell,\ETm})}
+\end{equation}
+and $\Delta \phi_{\ell,\ETm}$ is the azimuthal separation between the lepton
+and the \ptmiss vector.
+
+For events where \ptmiss arises primarily from neutrinos from W boson decays,
+as is the case with the pervasive $\ttbar$ and $W$ processes, this variable
+has a kinematic cutoff at the W boson mass, $m_{W}$. Signal events
+where the \ptmiss is generated from an energetic $\lsp$ particle
+will not exhibit such a kinematic cutoff.
+
+Figure~\ref{fig:mtminttbar} shows the distribution of $\mtmin$ for a signal hypothesis \Totttt and the
+\ttbar background, with the W boson mass marked as a vertical line. It is clear that 
+the \ttbar background is almost completely bounded by the W mass, while the signal has a
+large tail extending beyond the W mass.
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=.60\textwidth]{figs/misc/mtmin_signal_ttbar.pdf}
+\caption{
+    Normalized distribution of $\mtmin$ shown for signal hypothesis \Totttt and 
+    \ttbar background.
+}
+\label{fig:mtminttbar}
+\end{figure}
+
 \section{Trigger}
+\mytodo{todo}
 trigger plot
 
-\section{Key variables}
-mtmin njets nleps, ...
-% mtmin, njets nle
+\section{Baseline selections}
+\mytodo{todo more details?}
+
+With the objects in place, we can now discuss the baseline selections used for the 
+inclusive SUSY analysis and the more restricted \smft analysis.
+As the name of this thesis suggests, both require the presence of at least
+two leptons (electrons or muons) with the same charge. 
+Appropriate triggers are required for data and all simulation.
+Subsequent
+requirements on $\HT$, $\Njets$, $\Nbjets$, $\ptmiss$, and the leading/trailing lepton \pt are listed in 
+Table~\ref{tab:baselineselections}.
+
+\begin{table}[h]
+    \label{tab:baselineselections}
+    \centering
+    \caption{Summary of baseline selections}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        variable &  SUSY analysis & \smft analysis \\ \hline 
+        \Njets & $\geq 2$  & $\geq 2$  \\
+        \Nbjets & $\geq 0$  & $\geq 2$  \\
+        \HT & $\geq 80~\GeV$  & $\geq 300~\GeV$  \\
+        \ptmiss & $>0~\GeV$  & $>50~\GeV$  \\
+        $\pt(\ell_1)$ & $>15/10~\GeV$ (e/$\mu$)  & $>25~\GeV$  \\
+        $\pt(\ell_2)$ & $>15/10~\GeV$ (e/$\mu$)  & $>20~\GeV$  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+To reduce the background from production of low-mass resonances with
+charge-misidentified electrons, events that have a same-sign electron pair with invariant mass lower than 12\GeV
+are rejected. 
+
+For the SUSY analysis, we reject events with same-flavor lepton pairs
+that have an invariant mass ($m_{\ell\ell}$) less than 12\GeV. Such a selection
+reduces backgrounds arising from decays of b-hadrons, c-hadrons, and the Drell-Yan
+process.
+
+For the \smft analysis, events where a third lepton is identified with $\pt>7\GeV$ for electrons
+or $\pt>5\GeV$ for muons and which forms an opposite-sign (OS) same-flavor pair
+with $m_{\ell\ell}<12\GeV$ or in the range of 76-106\GeV are also rejected.
+However, for events with invariant mass in the range of 76-106\GeV where
+the $\pt>20\GeV$ for the third lepton, 
+this resonance veto is inverted
+and these events are instead used for a background control region 
+enriched in $\ttZ$ (CRZ) to be discussed in more detail in the next
+section. If a Z candidate is not found, a third tight lepton present in an event
+with $\pt>20\GeV$ contributes to the lepton multiplicity, $\Nleps$, which 
+starts at a value of 2 by virtue of the same-sign selection.
 
 \section{Event-level BDT}
-% bdt for four top
-describe bdt example, variables, training, result ROC
+\mytodo{todo more details?}
+
+For the SM four top quark analysis, a BDT is used to increase the signal to
+background ratio.
+
+The BDT classifier utilizes a gradient boosting algorithm 
+implemented using the xgboost framework~\cite{MISC:xgboost}
+to train 500 trees
+with a depth of 4 using simulation, and is based on the following 19
+variables:
+\begin{enumerate}
+    \item \Njets
+    \item \Nbjets (nominal, medium WP)
+    \item \Nleps
+    \item \ptmiss
+    \item \HT
+    \item \Nbjets (calculated with the loose WP)
+    \item \Nbjets (calculated with the tight WP)
+    \item scalar \pt sum of b-tagged jets
+    \item $p_\mathrm{T}(\ell_1)$
+    \item $p_\mathrm{T}(\ell_2)$
+    \item $p_\mathrm{T}(\ell_3)$
+    \item $p_\mathrm{T}(\mathrm{j}_1)$  (leading jet)
+    \item $p_\mathrm{T}(\mathrm{j}_6)$ (jet with sixth highest \pt)
+    \item $p_\mathrm{T}(\mathrm{j}_7)$ (jet with seventh highest \pt)
+    \item $p_\mathrm{T}(\mathrm{j}_8)$ (jet with eighth highest \pt)
+    \item $\Delta\phi(\ell_1,\ell_2)$
+    \item $m(\ell_1,\mathrm{j}_1)$
+    \item $q(\ell_1)$ (charge of the leading lepton)
+    \item $\mathrm{max}(m(j_\mathrm{i})/\pt(j_\mathrm{i}))$ over all selected jets in an event
+\end{enumerate}
+
+The charge of the leading lepton provides a discrimination handle against SM processes which are
+charge asymmetric due to the LHC preferring positive charge initial states.
+The maximum ratio of jet mass to \pt allows a handle to find jets which clustered together 
+multiple decay products of a top quark, for example.
+
+The variables were iteratively chosen from a larger pool of kinematic variables by selecting
+the most performant variables and retraining until the performance started to suffer.
+
 
 \section{Signal regions}
-\mytodo{where do baseline selections go??}
+\mytodo{todo}
+\mytodo{uncomment tables}
+
+\subsection{SUSY analysis}
+
+Following the SUSY analysis baseline selection, we define 
+six exclusive categories depending on the kinematics of event and the leptons:
+\begin{itemize}
+\item High-High SS pair, significant \ptmiss (HH): exactly 2 leptons, both with $\pt>25 \GeV$, and $\ptmiss>50 \GeV$;
+\item High-Low SS pair, significant \ptmiss (HL): exactly 2 leptons, one with $\pt>25 \GeV$, one with $\pt<25 \GeV$, and $\ptmiss>50 \GeV$;
+\item Low-Low SS pair, significant \ptmiss (LL): exactly 2 leptons, both with $\pt<25 \GeV$ and $\ptmiss>50 \GeV$;
+\item Low \ptmiss (LM): exactly 2 leptons, both with $\pt>25 \GeV$, and $\ptmiss<50 \GeV$; and
+\item Multilepton with an on-shell Z boson (on-\PZ ML): $\geq$3 leptons, at least one with $\pt>25 \GeV$, $\ptmiss>50 \GeV$, $\geq$ \PZ boson candidate formed by a pair of opposite-sign (OS), same-flavor leptons with $76 < m_{\ell\ell}< 106 \GeV$.
+\item Multilepton without an on-shell Z boson (off-\PZ ML): same as on-\PZ ML but without a \PZ boson candidate.
+\end{itemize}
+
+For the on-\PZ ML category, the calculation of $\mtmin$ uses leptons not 
+forming the Z candidate.
+
+The categories are structured to be generally sensitive to different SUSY models
+considered in the analysis. For example, the HH category gives sensitivity
+to many of the scenarios with large mass splittings between the 
+gluino and lightest neutralino (\Totttt, \TfttbbWW, \Tftttt, \TfqqqqWW).
+Lower \pt threshold categories, HL and LL, provide sensitivity to smaller 
+mass splittings, resulting in less energetic leptons. Models with
+Z bosons in the final state, such as \TfqqqqWZ and \TsttHZ, will typically
+fall into the ML categories. The LM category captures events that
+otherwise would be lost due to the $\ptmiss>50\GeV$ requirement in the
+HH, HL, and LL regions, and is particularly relevant for the 
+\ToqqqqL and \Totbs RPV models.
+
+
+Within each category, many signal regions (SRs) are formed based on 
+\Njets, \Nbjets, \HT, \ptmiss, SS charge, \mtmin.
+The SRs
+within the six categories, HH, HL, LL, LM, on-\PZ ML, and off-\PZ ML,
+are summarized in Tables~\ref{tab:SRDefHH}, \ref{tab:SRDefHL},
+\ref{tab:SRDefLL}, \ref{tab:SRDefLM}, \ref{tab:SRDefMLonZ} and
+\ref{tab:SRDefMLoffZ}, respectively. 
+
+\input{tables/sssr}
+
+\subsection{\smft analysis}
+
+Events passing the baseline selection are split into several signal and
+control regions, following two independent approaches. In the first approach,
+the variables \Njets, \Nbjets, and \Nleps are used to subdivide events into
+14 mutually exclusive SRs and a CR enriched in \ttW background (CRW), to
+complement the CRZ, as detailed in Table~\ref{tab:FTSRDef}.
+
+In the boosted decision tree (BDT) analysis, the CRZ is the only control
+region, and the remaining events are subdivided into 17 SRs by discretizing
+the discriminant output of a BDT trained to separate \tttt events from the
+sum of the SM backgrounds.
+
+At this point, it's worth noting that 
+three of the most performant input variables, \Njets, \Nbjets, and \Nleps, correspond to the variables used for the cut-based analysis.
+
+\input{tables/ftsr}
