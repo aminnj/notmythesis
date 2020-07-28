@@ -20,6 +20,10 @@
 \usepackage{multirow}
 %\usepackage{subfigure} (Subfigure package clashes with another package)
 
+% https://tex.stackexchange.com/questions/167660/subsection-not-showing-up-in-toc
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
 %---New Definitions and Commands------------------------------------------------------
 \def\p{\partial}
 \def\im{\mrm{im}}
@@ -169,7 +173,6 @@
 \renewcommand{\footrulewidth}{0pt}}
 
 \input{tex/outline}
-
 \input{tex/chapter1} % Introduction
 \input{tex/chapter2} % Same-sign dilepton final state
 \input{tex/chapter3} % Objects and variables
@@ -182,6 +185,7 @@
 
 \dsp
 
+\mytodo{appendix on hem issue?}
 \input{tex/toy_statistics}
 
 \end{mainmatter}
