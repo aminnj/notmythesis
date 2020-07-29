@@ -1,10 +1,190 @@
 \chapter{Same-sign dilepton final state}
 \mytodo{make todo}
 
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=.95\textwidth]{figs/misc/sm_xsecs.pdf} \\
+\caption{Summary of SM cross section measurements at CMS~\cite{CMS:SMxsecs}.}
+\label{fig:SMxsecs}
+\end{figure}
+
+
+\section{SUSY processes}
+\mytodo{reword, restructure}
+\mytodo{put plot of SUSY xsecs}
+
+\begin{table} [h!]
+\begin{center}
+\resizebox{0.99\textwidth}{!}{
+{\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{l|p{0.4\textwidth}cccc}
+\hline
+Model & Process & Constraint & Mass 1 & Mass 2 & RPV? \\
+\hline
+\Totttt & $\gluino\to\ttbar\lsp$ & \NA & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfttbbWW & $\gluino\to\cPqt\cPqb\chiplmin$ & $m_{\chiplmin}=m_{\lsp}+5\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\Tftttt & $\gluino\to\susytopone\cPqt$, $\susytopone\to\cPqt\lsp$ & $m_{\susytop}-m_{\lsp}=m_{\PQt}$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\Tfttcc & $\gluino\to\susytopone\cPqt$, $\susytopone\to\cPqc\lsp$ & $m_{\susytop}-m_{\lsp}=20\GeV$&  $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfqqqqWW & $\gluino\to\cPq\cPq'\chiplmin$, $\chiplmin\to\PW^{\pm}\lsp$ & $m_{\chiplmin}=0.5(m_{\gluino}+m_{\lsp})$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfqqqqWW & $\gluino\to\cPq\cPq'\chiplmin$, $\chiplmin\to\PW^{\pm}\lsp$ & $m_{\chiplmin}=m_{\lsp}+20\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfqqqqWZ & $\gluino\to\cPq\cPq'(\chiplmin/\neutralinotwo)$, \newline $\chiplmin\to\PW^{\pm}\lsp$, $\neutralinotwo\to\PZ\lsp$ & $m_{\chiplmin}=0.5(m_{\gluino}+m_{\lsp})$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfqqqqWZ & $\gluino\to\cPq\cPq'(\chiplmin/\neutralinotwo)$, \newline $\chiplmin\to\PW^{\pm}\lsp$, $\neutralinotwo\to\PZ\lsp$ & $m_{\chiplmin}=m_{\lsp}+20\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TsttWW & $\sbottomone\to\cPqt\chiplmin$ & $m_{\lsp}=50\GeV$ & $m_{\sbottomone}$ & $m_{\chiplmin}$ & \\
+\TsttHZ & $\susytoptwo\to\susytopone\PH$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$ & $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
+\TsttHZ & $\susytoptwo\to\susytopone(\PH/\PZ)$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$&  $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
+\TsttHZ & $\susytoptwo\to\susytopone\PZ$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$ & $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
+\ToqqqqL & $\gluino\to\cPq\cPq\bar{\cPq}\bar{\cPq}+e/\mu/\tau$ & \NA & $m_{\gluino}$ & \NA & Yes \\
+\Totbs & $\gluino\to\cPqt\cPqb\cPqs$ & \NA & $m_{\gluino}$ & \NA & Yes \\
+\hline
+\end{tabular}}}
+\caption{Summary of simplified SUSY models considered in this analysis. The third
+and second from last columns give the one/two masses which are scanned over. The last column
+marks processes with R parity violation.}
+\label{tab:susyprocesses}
+\end{center}
+\end{table}
+
+
+
+Gluino pair production models giving rise to signatures with up to four \cPqb\
+quarks and up to four \PW\ bosons are shown in Fig.~\ref{fig:susy_diag_set1}. In
+these models, the gluino decays to the lightest squark ($\gluino \to \susyq
+\cPq$), which in turn decays to same-flavor ($\susyq \to \cPq \lsp$) or
+different-flavor ($\susyq \to \cPq' \chiplmin$) quarks. The chargino
+($\chiplmin$) decays to a \PW\ boson and a neutralino ($\lsp$) via $\chiplmin
+\to \PW^{\pm} \lsp$, where the \lsp is taken to be the lightest stable SUSY
+particle and escapes detection.
+
+The first scenario, denoted by \Totttt and displayed in
+Fig.~\ref{fig:susy_diag_set1}a, includes an off-shell top squark ($\susytop$)
+leading to the three-body decay of the gluino, $\gluino \to \ttbar\lsp$,
+resulting in events with four \PW\ bosons and four \cPqb\ quarks.
+Figure~\ref{fig:susy_diag_set1}b presents a similar model (\TfttbbWW) where the
+gluino decay results in a chargino that further decays into a neutralino and
+a \PW\ boson. The model shown in Fig.~\ref{fig:susy_diag_set1}c (\Tftttt) is the
+same as \Totttt except that the intermediate top squark is on-shell. The mass
+splitting between the $\susytop$ and the \lsp is taken to be $m_{\susytop} -
+m_{\lsp} = m_{\cPqt}$, where $m_{\cPqt}$ is the top quark mass. This choice
+maximizes the kinematic differences between this model and \Totttt, and also
+corresponds to one of the most challenging regions of parameter space for the
+observation of the $\susytop \to \cPqt \lsp$ decay since the neutralino is
+produced at rest in the top squark rest frame. The decay chain of
+Fig.~\ref{fig:susy_diag_set1}d (\Tfttcc) is identical to that of \Tftttt except
+that the $\susytop$ decay involves a \PQc quark. In
+Fig.~\ref{fig:susy_diag_set1}e, the decay process includes a virtual light-flavor
+squark, leading to three-body decays of $\gluino \to \cPq \cPq' \chiplmin$ or
+$\gluino \to \cPq \cPq' \neutralinotwo$, with a resulting signature of two
+\PW\ bosons, two \PZ\ bosons, or one of each (the case shown in
+Fig.~\ref{fig:susy_diag_set2}e), and four light-flavor jets. This model,
+\TfqqqqWZ, with a resulting signature of one \PW\ boson and one \PZ\ boson,
+is studied with two different assumptions for the chargino mass:
+$m_{\chiplmin} = 0.5(m_{\gluino} + m_{\lsp})$, and $m_{\chiplmin} =
+m_{\lsp}+20 \GeV$, producing on- and off-shell bosons, respectively. The
+model is also considered with the assumption of decays to two \PW\ bosons
+exclusively (\TfqqqqWW).
+
+Figure~\ref{fig:susy_diag_set2}a shows a model of bottom squark production with
+subsequent decay of $\sbottomone \to \cPqt \chiplmin$, yielding two \cPqb\
+quarks and four \PW\ bosons. This model, \TsttWW, is considered as a function
+of the the lightest bottom squark, $\sbottomone$, and \chiplmin masses. The
+\lsp mass is fixed to be 50\GeV, causing two of the \PW\ bosons to be
+produced off-shell when the \chiplmin mass is less than approximately
+130\GeV. Figure~\ref{fig:susy_diag_set2}b displays a model similar to \TsttWW, but
+with top squark pair production and a subsequent decay of
+$\susytoptwo\to\susytopone\PH/\PZ$, with $\susytopone \to \cPqt\lsp$,
+producing signatures with two \PH\ bosons, two \PZ\ bosons, or one of each.
+In this model, \TsttHZ, the \lsp mass is fixed such that
+$m(\susytopone)-m(\lsp)=m_{\cPqt}$.
+
+The R parity violating decays considered in this analysis are \ToqqqqL
+(Fig.~\ref{fig:susy_diag_set3}a) and \Totbs (Fig.~\ref{fig:susy_diag_set3}b). In
+\ToqqqqL, the gluino decays to the lightest squark ($\gluino \to \susyq
+\cPq$), which in turn decays to a quark ($\susyq \to \cPq \lsp$), but decays
+with the $\lsp$ off shell (violating R parity) into two quarks and a charged
+lepton, giving rise to a prompt 5-body decay of the gluino. In \Totbs, each
+gluino decays into three different SM quarks (a top, a bottom, and a strange
+quark).
+
+\begin{figure}[htb!]
+    \centering
+    \subfloat[T1tttt]{\includegraphics[width=0.48\textwidth]{figs/ssp/diag_T1tttt}}
+    \subfloat[T5ttbbWW]{\includegraphics[width=0.48\textwidth]{figs/ssp/diag_T5ttbbWW}} \\
+    \subfloat[T5tttt]{\includegraphics[width=0.48\textwidth]{figs/ssp/diag_T5tttt}}
+    \subfloat[T5ttcc]{\includegraphics[width=0.48\textwidth]{figs/ssp/diag_T5ttcc}} \\
+    \subfloat[T5qqqqWZ]{\includegraphics[width=0.48\textwidth]{figs/ssp/diag_T5qqqqWZ}}
+\caption{Diagrams illustrating the simplified RPC SUSY models with gluino production considered in this analysis.}
+\label{fig:susy_diag_set1}
+\end{figure}
+
+\begin{figure}[htb!]
+    \centering
+    \subfloat[T6ttWW]{\includegraphics[width=0.48\textwidth]{figs/ssp/diag_T6ttWW}}
+    \subfloat[T6ttHZ]{\includegraphics[width=0.48\textwidth]{figs/ssp/diag_T6ttHZ}} \\
+\caption{Diagrams illustrating the simplified RPC SUSY models with squark production considered in this analysis.}
+\label{fig:susy_diag_set2}
+\end{figure}
+
+\begin{figure}[htb!]
+    \centering
+    \subfloat[T1qqqqL]{\includegraphics[width=0.53\textwidth]{figs/ssp/diag_T1qqqqL}}
+    \subfloat[T1tbs]{\includegraphics[width=0.45\textwidth]{figs/ssp/diag_T1tbs}} \\
+\caption{Diagrams illustrating the two simplified RPV SUSY models considered in this analysis.}
+\label{fig:susy_diag_set3}
+\end{figure}
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figs/ssan/plot_susy_xsecs}
+\caption{Strong production cross sections for SUSY processes at the LHC. Calculations from \cite{THEORY:SUSYxsecs}}.
+\label{fig:susy_xsecs}
+\end{figure}
+
+
 \section{Contributions to \tttt production}
 
 \subsection{On-shell}
 \mytodo{2hdm, dark matter}
+
+\begin{figure}[htb!]
+    \centering
+    \subfloat[]{\includegraphics[width=0.33\textwidth]{figs/ftan/bsm_tth_diagram}}
+    \subfloat[]{\includegraphics[width=0.33\textwidth]{figs/ftan/bsm_thw_diagram}}
+    \subfloat[]{\includegraphics[width=0.33\textwidth]{figs/ftan/bsm_thq_diagram}} \\
+\caption{BLAH}
+\label{fig:thdm_diagrams}
+\end{figure}
+
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figs/ftan/bsm_dm_diagrams}
+\caption{BLAH}
+\label{fig:dm_diagrams}
+\end{figure}
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figs/ftan/plot_1d_2hdm_xsec}
+\caption{BLAH}
+\label{fig:thdm_1d_xsec}
+\end{figure}
+
+\begin{figure}[htb!]
+    \centering
+    \subfloat[scalar]{\includegraphics[width=0.50\textwidth]{figs/ftan/plot_2d_2hdm_xsec_h}}
+    \subfloat[pseudoscalar]{\includegraphics[width=0.50\textwidth]{figs/ftan/plot_2d_2hdm_xsec_a}}
+\caption{BLAH}
+\label{fig:thdm_2d_xsecs}
+\end{figure}
+
+\begin{figure}[htb!]
+    \centering
+    \subfloat[scalar]{\includegraphics[width=0.50\textwidth]{figs/ftan/plot_2d_dmscalar_xsec_totsm}}
+    \subfloat[pseudoscalar]{\includegraphics[width=0.50\textwidth]{figs/ftan/plot_2d_dmpseudo_xsec_totsm}}
+\caption{BLAH}
+\label{fig:dm_2d_xsecs}
+\end{figure}
+
 
 \subsection{Off-shell}
 
@@ -43,18 +223,21 @@ The authors of Reference~\cite{THEORY:TopYukawaTTTT} have calculated the cross s
 These are given in Table~\ref{tab:yukawa} and are shown in Fig.~\ref{fig:cross_section_yt},
 where the figure shows a curve normalized such that the prediction matches the NLO calculation of 
 the \tttt cross section of $12.0^{+2.2}_{-2.5}\unit{fb}$ calculated in Ref.~\cite{THEORY:Frederix2017wme}.
+The upper and lower values given in Table~\ref{tab:yukawa} correspond to variations
+of the renormalization and factorization scale up and down by a factor of two, respectively.
 
 \begin{table} [h!]
 \begin{center}
-\begin{tabular}{l|c}
+{\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l|ccc}
 \hline
-   & [lower, central, upper] \\
+   & lower & central & upper \\
 \hline
-$ \sigma^{\text{SM}}(\tttt)_{g+Z/\gamma}  $ & [14.104, 9.997, 6.378] fb \\
-$ \sigma^{\text{SM}}(\tttt)_H $                  & [1.625, 1.167, 0.7655] fb \\
-$\sigma^{\text{SM}}_{\rm int} $                   & [-2.152, -1.547, -0.999] fb \\
+$ \sigma^{\text{SM}}(\tttt)_{g+Z/\gamma}  $ & 14.104 fb & 9.997 fb &  6.378 fb \\
+$ \sigma^{\text{SM}}(\tttt)_H $                  & 1.625 fb &  1.167 fb &  0.7655 fb \\
+$\sigma^{\text{SM}}_{\rm int} $                   & -2.152 fb &  -1.547 fb &  -0.999 fb \\
 \hline
-\end{tabular}
+\end{tabular}}
 \caption{LO calculation of the terms in equation~\ref{eq:yukawa} from
 Reference~\cite{THEORY:TopYukawaTTTT}.  
 The uncertainties are from private communications with the authors.}

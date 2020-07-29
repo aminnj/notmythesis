@@ -87,7 +87,7 @@ a certain level of quality in the tracker and muon system track matching.
 Analysis muons must have $\pt>10\GeV$ and $|\eta|<2.4$. 
 We require that muons have a relative 
 uncertainty less than 20\% on the reconstructed momentum ($\delta \pt/\pt<0.2$).
-This ensures the charge of the momentum has not been misreconstructed.
+This helps ensure that the charge of the muon track has not been misreconstructed.
 
 Analysis electrons must have $\pt>15\GeV$ and $|\eta|<2.5$.
 Electrons are identified by constructing a boosted decision tree (BDT) with
@@ -211,13 +211,14 @@ of the flavor of the lepton. These values are tabulated in Table~\ref{tab:isoWPs
     \label{tab:isoWPs}
     \centering
     \caption{Isolation working points }
-    \begin{tabular}{|l||c|c|c|c|}
+    {\renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{l|cccc}
         \hline
         & e/$\mu$ loose WP &  $\mu$ tight WP & e tight WP \\ \hline 
         $I_1$ & 0.4 & 0.16 (2016), 0.11 (2017/2018) & 0.12 (2016), 0.07 (2017/2018) \\
         $I_2$ & 0  & 0.76 (2016), 0.74 (2017/2018) & 0.80 (2016), 0.78 (2017/2018) \\
         $I_3$ & 0  & 7.2 (2016), 6.8 (2017/2018) & 7.2 (2016), 8.0 (2017/2018) \\ \hline
-    \end{tabular}
+    \end{tabular}}
 \end{table}
 
 \section{Other variables}
@@ -246,7 +247,7 @@ large tail extending beyond the W mass.
 
 \begin{figure}[!hbtp]
 \centering
-\includegraphics[width=.60\textwidth]{figs/misc/mtmin_signal_ttbar.pdf}
+\includegraphics[width=.70\textwidth]{figs/misc/mtmin_signal_ttbar.pdf}
 \caption{
     Normalized distribution of $\mtmin$ shown for signal hypothesis \Totttt and 
     \ttbar background.

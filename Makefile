@@ -22,6 +22,7 @@ plot:
 
 log:
 	pdfinfo output.pdf -isodates | grep -E "(CreationDate|Pages|File size)" | xargs echo >> logs/size_log.txt
+	tail -1 logs/size_log.txt
 
 build:
 	pdflatex -shell-escape -jobname output -draftmode thesis.tex -interaction=batchmode
@@ -38,3 +39,7 @@ small:
 	pdflatex -shell-escape -jobname smalloutput "\def\myownflag{}\input{thesis}" -interaction=batchmode
 	# mv -f *.{out,log,aux,toc,4ct,4tc,tmp,xref} tmp/
 	mv -f *.{out,log,aux,toc} tmp/
+
+push:
+	git commit -a -m "update"
+	git push

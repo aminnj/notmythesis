@@ -26,6 +26,7 @@ CreationDate: 2019-04-01T15:19:49-07 Pages: 21 File size: 322515 bytes
 CreationDate: 2019-04-01T15:25:38-07 Pages: 21 File size: 322497 bytes
 CreationDate: 2019-10-14T22:12:40-07 Pages: 21 File size: 322495 bytes
 CreationDate: 2020-07-17T17:53:32-07 Pages: 21 File size: 322494 bytes
+CreationDate: 2020-07-23T20:07:29-07 Pages: 21 File size: 322494 bytes
 CreationDate: 2020-07-24T20:07:29-07 Pages: 21 File size: 606277 bytes
 CreationDate: 2020-07-24T22:12:36-07 Pages: 52 File size: 1547778 bytes
 CreationDate: 2020-07-24T23:57:19-07 Pages: 56 File size: 1559453 bytes
@@ -33,3 +34,5 @@ CreationDate: 2020-07-26T21:26:45-07 Pages: 70 File size: 1643996 bytes
 CreationDate: 2020-07-26T23:18:57-07 Pages: 73 File size: 1650521 bytes
 CreationDate: 2020-07-27T20:08:15-07 Pages: 79 File size: 1713179 bytes
 CreationDate: 2020-07-27T21:01:44-07 Pages: 81 File size: 1755612 bytes
+CreationDate: 2020-07-28T19:34:33-07 Pages: 85 File size: 1899551 bytes
+CreationDate: 2020-07-28T22:09:55-07 Pages: 88 File size: 2152118 bytes

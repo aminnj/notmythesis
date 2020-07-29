@@ -32,7 +32,8 @@ with open("{}/logs/size_log.txt".format(basedir),"r") as fh:
 df = pd.DataFrame(data,columns=["date","pages","kb"])
 df["date"] = pd.to_datetime(df["date"])
 
-df = df.set_index("date")["2020":].reset_index()
+# df = df.set_index("date")["2020":].reset_index()
+df = df.set_index("date")["2020-07-23":].reset_index()
 
 fig,ax = plt.subplots()
 ax.plot(df["date"],df["pages"],label="actual", marker=".")
@@ -43,7 +44,7 @@ deadline = datetime.date(2020,8,12)
 plt.axvline(deadline,color="gray")
 ax.text(deadline,ax.get_ylim()[1],"actual deadline  ",horizontalalignment="right",verticalalignment="top",rotation=90,color="gray",fontsize=12)
 
-p = mpl.patches.Rectangle((0.,0.),height=1.0,width=0.9,transform=ax.transAxes)
+p = mpl.patches.Rectangle((0.,0.),height=1.0,width=0.56,transform=ax.transAxes)
 ax.grid(axis="both",linewidth=0.5,alpha=0.5,clip_path=p)
 
 xdeadline = mpl.dates.date2num(deadline)
@@ -63,8 +64,8 @@ ax.set_xlim([None, ax.get_xlim()[1]+15])
 slope = (ylatest-yfirst)/(xlatest-xfirst)
 xs = np.linspace(xlatest,xdeadline,100)
 xnorms = (xs-xlatest)/(xs.max()-xs.min())
-ys_high = (ylatest + slope*1.5*(xs-xlatest))*np.exp(-10*xnorms)
-ys_low = (ylatest + slope*0.7*(xs-xlatest))*np.exp(-15*xnorms)
+ys_high = (ylatest + slope*1.5*(xs-xlatest))*np.exp(-5*xnorms)
+ys_low = (ylatest + slope*0.7*(xs-xlatest))*np.exp(-8*xnorms)
 ax.fill_between(xs,ys_low,ys_high,color="C0",alpha=0.25,label="projected 95% \nlack-of-confidence-in-myself \nbands")
 
 ax.legend()
