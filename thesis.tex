@@ -54,6 +54,7 @@
 \newcommand{\smft}{SM \ensuremath{\ttbar\ttbar}\xspace}
 \newcommand{\ttZ}{\ensuremath{\ttbar Z}\xspace}
 \newcommand{\ttW}{\ensuremath{\ttbar W}\xspace}
+\newcommand{\ttgamma}{\ensuremath{\ttbar \gamma}\xspace}
 \newcommand{\xsectttt}{\ensuremath{\sigma(pp\to\tttt})\xspace}
 \newcommand{\unit}[1]{\ensuremath{\text{\,#1}}\xspace}
 \newcommand{\PQu}{u\xspace}
@@ -125,6 +126,35 @@
 \newcommand{\ptratio}{\ensuremath{\pt^\text{ratio}}\xspace}
 \newcommand{\ptrel}{\ensuremath{\pt^\text{rel}}\xspace}
 
+\newcommand{\ttjets}{\ensuremath{\ttbar\!+\!\mathrm{jets}}\xspace}
+\newcommand{\wjets}{\ensuremath{\PW\!\!+\!\mathrm{jets}}\xspace}
+\newcommand{\ttWW}{\ensuremath{\ttbar\PW\!\PW}\xspace}
+\newcommand{\ttWZ}{\ensuremath{\ttbar\PW\!\PZ}\xspace}
+\newcommand{\ttZZ}{\ensuremath{\ttbar\PZ\!\PZ}\xspace}
+\newcommand{\ttWH}{\ensuremath{\ttbar\PW\!\PH}\xspace}
+\newcommand{\ttZH}{\ensuremath{\ttbar\PZ\!\PH}\xspace}
+\newcommand{\ttHH}{\ensuremath{\ttbar\PH\!\PH}\xspace}
+
+\newcommand{\ttt}{\ensuremath{\ttbar\PQt}\xspace}
+\newcommand{\tttW}{\ensuremath{\ttbar\PQt\PW}\xspace}
+
+\newcommand{\WZ}{\ensuremath{\PW\!\PZ}\xspace}
+\newcommand{\ZZ}{\ensuremath{\PZ\!\PZ}\xspace}
+\newcommand{\Zgamma}{\ensuremath{\PZ\gamma}\xspace}
+\newcommand{\Wgamma}{\ensuremath{\PW\gamma}\xspace}
+\newcommand{\WpWp}{\ensuremath{\PW^\pm\PW^\pm}\xspace}
+
+\newcommand{\WWW}{\ensuremath{\PW\!\PW\!\PW}\xspace}
+\newcommand{\WWZ}{\ensuremath{\PW\!\PW\!\PZ}\xspace}
+\newcommand{\WZZ}{\ensuremath{\PW\!\PZ\!\PZ}\xspace}
+\newcommand{\ZZZ}{\ensuremath{\PZ\!\PZ\!\PZ}\xspace}
+\newcommand{\WWgamma}{\ensuremath{\PW\!\PW\gamma}\xspace}
+\newcommand{\WZgamma}{\ensuremath{\PW\!\PZ\gamma}\xspace}
+
+\newcommand{\tgamma}{\ensuremath{\PQt\gamma}\xspace}
+\newcommand{\tZgamma}{\ensuremath{\PQt\PZ\gamma}\xspace}
+\newcommand{\tWZ}{\ensuremath{\PQt\PW\!\PZ}\xspace}
+
 \newcommand{\mytodo}[1]{\todo[inline, color=red!40]{#1}}
 
 % \def\dsp{\def\baselinestretch{1.0}\large\normalsize} % FIXME remove this line when compiling final thesis
@@ -183,7 +213,6 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
-\input{tex/outline}
 \input{tex/chapter1} % Introduction
 \input{tex/chapter2} % Same-sign dilepton final state
 \input{tex/chapter3} % Objects and variables
@@ -196,8 +225,9 @@
 
 \dsp
 
-\mytodo{appendix on hem issue?}
 \input{tex/toy_statistics}
+
+% \mytodo{appendix on hem issue?}
 
 \end{mainmatter}
 
