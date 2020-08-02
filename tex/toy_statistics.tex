@@ -1,7 +1,7 @@
 \chapter{Statistics}
 \label{appendix:statistics}
 
-\begin{section}{Toy profile likelihood}
+\begin{section}{Profile likelihood}
 
 
 This section presents an introduction to the profile likelihood method
@@ -186,12 +186,12 @@ from the covariance matrix of nuisances $\theta$. Ultimately, one finds that
 with this approximation, the test statistic follows a noncentral chi-square distribution
 for one degree of freedom. See the continuing discussion in Ref.~\cite{STAT:Cowan2010js}. 
 This is exploited for huge computational gains, especially for SUSY scans which consist
-of hundreds to a few thousand mass points (number of hypotheses to test with the data 
+of hundreds to a few thousand mass points (number of signal hypotheses to test with the data 
 and background predictions).
 
-Returning to the curve in Figure~\ref{fig:toystat:qmu}, we can identify the significance of the the data from
+Returning to the curve in Figure~\ref{fig:toystat:qmu}, we can identify the significance of the data from
 one point. That is, how statistically significant would it be if just
-the background fluctuated to look like background+signal: 
+the background (null hypothesis) fluctuated to look like background+signal: 
 \begin{equation}
 Z_\text{obs} = \sqrt{q_0}
 \end{equation}

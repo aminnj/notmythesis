@@ -74,6 +74,7 @@ The hatched area represents the total statistical and systematic uncertainty in 
 
 \input{tables/ssslimyields}
                                
+\FloatBarrier
 
 \section{SUSY interpretations}
 \label{sec:ssinterpretations}
@@ -150,65 +151,6 @@ states~\cite{CMS:Sirunyan2019ctn,CMS:Sirunyan2019xwh}. The limits obtained on th
 channel based on the analysis of the 2016 dataset~\cite{CMS:Sirunyan2017dhe}.
 They are expected to remain competitive after an update with the full Run 2
 dataset.
-
-
-\subsection{Model-independent}
-
-For the generic production of an SS lepton pair with at least two jets and
-$\HT>300\GeV$, we set model-independent limits on the product of cross section, branching fraction,
-detector acceptance, and reconstruction efficiency.
-To do this, we select events from the HH and LM categories and calculate limits
-as a function of either the minimum \ptmiss or \HT requirements starting at 
-300 and 1400\GeV, respectively. Because there is an overlap between the two conditions,
-events that are selected for the limits as a function of \HT must also have 
-$\ptmiss<300\GeV$. Both sets of limits are shown in Fig.~\ref{fig:milimits}.
-
-In order to assist with future reinterpretations of the inclusive same-sign
-search results shown here, we calculated the expected and observed yields for
-a set of inclusive SRs, shown in Table~\ref{tab:inclusive_aggregate}. The
-last column in the table indicates the upper limit at 95\% \CL on the number
-of BSM events in each SR. The SRs are defiend to have on the order of 5 to 10
-expected background events, and we focus on events with large \HT, \ptmiss,
-\Nbjets, and/or \Njets. No uncertainty in the signal acceptance is assumed in
-calculating the limits in the table.
-
-\begin{table}[!h]
-\centering
-\label{tab:inclusive_aggregate}
-{\renewcommand{\arraystretch}{1.3}
-\resizebox{0.99\textwidth}{!}{
-  \begin{tabular}{c|cccccc|ccc}
-  \hline
-         SR     & Category              & \Njets   & \Nbjets  & \HT (\GeV)  & \ptmiss (\GeV) & \mtmin (\GeV) & SM expected       & Obs.  &  $N_\text{BSM}^\text{max} (95\%\ \CL)$ \\
-         \hline
-        ISR1  & \multirow{11}{*}{HH} & $\geq$2  & 0        & $\geq$1000  & $\geq$250  & \NA        & $12.7 \pm 7.4$ & 16 & 12.32  \\
-        ISR2  &                      & $\geq$2  & $\geq$2  & $\geq$1100  & \NA        & \NA        & $11.0 \pm 3.8$ & 14 & 11.33  \\
-        ISR3  &                      & $\geq$2  & 0        & \NA         & $\geq$500  & \NA        & $10.4 \pm 9.7$ & 13 & 11.26  \\
-        ISR4  &                      & $\geq$2  & $\geq$2  & \NA         & $\geq$300  & \NA        & $11.4 \pm 3.8$ & 17 & 14.22  \\
-        ISR5  &                      & $\geq$2  & 0        & \NA         & $\geq$250  & $\geq$120  & $6.6 \pm 5.7$  & 10 & 10.77  \\
-        ISR6  &                      & $\geq$2  & $\geq$2  & \NA         & $\geq$200  & $\geq$120  & $6.3 \pm 1.3$  & 8  & 8.22   \\
-        ISR7  &                      & $\geq$8  & \NA      & \NA         & \NA        & \NA        & $7.0 \pm 2.8$  & 12 & 12.17  \\
-        ISR8  &                      & $\geq$6  & \NA      & \NA         & \NA        & $\geq$120  & $6.2 \pm 1.4$  & 10 & 10.45  \\
-        ISR9  &                      & $\geq$2  & $\geq$3  & $\geq$800   & \NA        & \NA        & $7.8 \pm 3.5$  & 8  & 7.53   \\
-        \hline
-        ISR10 & \multirow{4}{*}{LL}  & $\geq$2  & \NA      & $\geq$700   & \NA        & \NA        & $10.4 \pm 9.0$ & 12 & 10.37  \\
-        ISR11 &                      & $\geq$2  & \NA      & \NA         & $\geq$200  & \NA        & $12.1 \pm 5.6$ & 13 & 9.94   \\
-        ISR12 &                      & $\geq$6  & \NA      & \NA         & \NA        & \NA        & $7.1 \pm 4.3$   & 7  & 7.10   \\
-        ISR13 &                      & $\geq$2  & $\geq$3  & \NA         & \NA        & \NA        & $1.61 \pm 0.39$ & 3  & 5.70   \\
-        \hline
-        ISR14 & \multirow{2}{*}{LM}  & $\geq$2  & 0        & $\geq$1200  & $<$50      & \NA        & $3.6 \pm 3.6$   & 3  & 5.10   \\
-        ISR15 &                      & $\geq$2  & $\geq$2  & $\geq$1000  & $<$50      & \NA        & $2.34 \pm 0.51$ & 4  & 6.41   \\
-        \hline
-        ISR16 & \multirow{2}{*}{ML}  & $\geq$2  & 0        & $\geq$1000  & $\geq$300  & \NA        & $5.6 \pm 1.6$   & 7  & 7.78   \\
-        ISR17 &                      & $\geq$2  & $\geq$2  & $\geq$1000  & \NA        & \NA        & $5.7 \pm 1.9$   & 7  & 7.62   \\ \hline
-\end{tabular}}
-}
-\caption{
-    Inclusive SR definitions, expected background yields and uncertainties, and observed yields, as well as the observed 95\% \CL upper limits on the number of BSM events contributing to each region.
-    % No uncertainty in the signal acceptance is assumed in calculating these limits. A dash (\NA) indicates that a particular selection is not required.
-    A dash (\NA) indicates that a particular selection is not required.
-}
-\end{table}
 
 \begin{figure*}[!hbtp]
 \centering
@@ -289,6 +231,29 @@ The notations are as in Fig.~\ref{fig:t1ttxx_scan_xsec}.
 \label{fig:rpvlimits}
 \end{figure*}
 
+\FloatBarrier
+
+\subsection{Model-independent}
+
+For the generic production of an SS lepton pair with at least two jets and
+$\HT>300\GeV$, we set model-independent limits on the product of cross section, branching fraction,
+detector acceptance, and reconstruction efficiency.
+To do this, we select events from the HH and LM categories and calculate limits
+as a function of either the minimum \ptmiss or \HT requirements starting at 
+300 and 1400\GeV, respectively. Because there is an overlap between the two conditions,
+events that are selected for the limits as a function of \HT must also have 
+$\ptmiss<300\GeV$. Both sets of limits are shown in Fig.~\ref{fig:milimits}.
+
+In order to assist with future reinterpretations of the inclusive same-sign
+search results shown here, we calculated the expected and observed yields for
+a set of inclusive SRs, shown in Table~\ref{tab:inclusive_aggregate}. The
+last column in the table indicates the upper limit at 95\% \CL on the number
+of BSM events in each SR. The SRs are defiend to have on the order of 5 to 10
+expected background events, and we focus on events with large \HT, \ptmiss,
+\Nbjets, and/or \Njets. No uncertainty in the signal acceptance is assumed in
+calculating the limits in the table.
+
+
 
 
 \begin{figure*}[!hbtp]
@@ -301,7 +266,45 @@ for the production of an SS lepton pair with at least two jets, as a function of
 \label{fig:milimits}
 \end{figure*}
 
+\begin{table}[!h]
+\centering
+\label{tab:inclusive_aggregate}
+{\renewcommand{\arraystretch}{1.3}
+\resizebox{0.99\textwidth}{!}{
+  \begin{tabular}{c|cccccc|ccc}
+  \hline
+         SR     & Category              & \Njets   & \Nbjets  & \HT (\GeV)  & \ptmiss (\GeV) & \mtmin (\GeV) & SM expected       & Obs.  &  $N_\text{BSM}^\text{max} (95\%\ \CL)$ \\
+         \hline
+        ISR1  & \multirow{11}{*}{HH} & $\geq$2  & 0        & $\geq$1000  & $\geq$250  & \NA        & $12.7 \pm 7.4$ & 16 & 12.32  \\
+        ISR2  &                      & $\geq$2  & $\geq$2  & $\geq$1100  & \NA        & \NA        & $11.0 \pm 3.8$ & 14 & 11.33  \\
+        ISR3  &                      & $\geq$2  & 0        & \NA         & $\geq$500  & \NA        & $10.4 \pm 9.7$ & 13 & 11.26  \\
+        ISR4  &                      & $\geq$2  & $\geq$2  & \NA         & $\geq$300  & \NA        & $11.4 \pm 3.8$ & 17 & 14.22  \\
+        ISR5  &                      & $\geq$2  & 0        & \NA         & $\geq$250  & $\geq$120  & $6.6 \pm 5.7$  & 10 & 10.77  \\
+        ISR6  &                      & $\geq$2  & $\geq$2  & \NA         & $\geq$200  & $\geq$120  & $6.3 \pm 1.3$  & 8  & 8.22   \\
+        ISR7  &                      & $\geq$8  & \NA      & \NA         & \NA        & \NA        & $7.0 \pm 2.8$  & 12 & 12.17  \\
+        ISR8  &                      & $\geq$6  & \NA      & \NA         & \NA        & $\geq$120  & $6.2 \pm 1.4$  & 10 & 10.45  \\
+        ISR9  &                      & $\geq$2  & $\geq$3  & $\geq$800   & \NA        & \NA        & $7.8 \pm 3.5$  & 8  & 7.53   \\
+        \hline
+        ISR10 & \multirow{4}{*}{LL}  & $\geq$2  & \NA      & $\geq$700   & \NA        & \NA        & $10.4 \pm 9.0$ & 12 & 10.37  \\
+        ISR11 &                      & $\geq$2  & \NA      & \NA         & $\geq$200  & \NA        & $12.1 \pm 5.6$ & 13 & 9.94   \\
+        ISR12 &                      & $\geq$6  & \NA      & \NA         & \NA        & \NA        & $7.1 \pm 4.3$   & 7  & 7.10   \\
+        ISR13 &                      & $\geq$2  & $\geq$3  & \NA         & \NA        & \NA        & $1.61 \pm 0.39$ & 3  & 5.70   \\
+        \hline
+        ISR14 & \multirow{2}{*}{LM}  & $\geq$2  & 0        & $\geq$1200  & $<$50      & \NA        & $3.6 \pm 3.6$   & 3  & 5.10   \\
+        ISR15 &                      & $\geq$2  & $\geq$2  & $\geq$1000  & $<$50      & \NA        & $2.34 \pm 0.51$ & 4  & 6.41   \\
+        \hline
+        ISR16 & \multirow{2}{*}{ML}  & $\geq$2  & 0        & $\geq$1000  & $\geq$300  & \NA        & $5.6 \pm 1.6$   & 7  & 7.78   \\
+        ISR17 &                      & $\geq$2  & $\geq$2  & $\geq$1000  & \NA        & \NA        & $5.7 \pm 1.9$   & 7  & 7.62   \\ \hline
+\end{tabular}}
+}
+\caption{
+    Inclusive SR definitions, expected background yields and uncertainties, and observed yields, as well as the observed 95\% \CL upper limits on the number of BSM events contributing to each region.
+    % No uncertainty in the signal acceptance is assumed in calculating these limits. A dash (\NA) indicates that a particular selection is not required.
+    A dash (\NA) indicates that a particular selection is not required.
+}
+\end{table}
 
+\FloatBarrier
 
 \section{\smft results}
 \label{sec:ftresults}
@@ -475,6 +478,8 @@ SR17 & $0.57\pm0.36$    & $1.08\pm0.42$ & $1.65\pm0.50$    & 3 \\
 
 \end{table*}
 
+\FloatBarrier
+
 \section{\smft interpretations}
 \label{sec:ftinterpretations}
 \mytodo{to reword}
@@ -500,6 +505,8 @@ Constraints on the production of such heavy particles can be interpreted in
 terms of 2HDM parameters~\cite{THEORY:Dicus1994bm,THEORY:Craig2015jba,THEORY:Craig2016ygr},
 or in the framework of simplified models of dark matter~\cite{THEORY:Boveia2016mrp,
 THEORY:Albert2017onk}.
+
+\FloatBarrier
 
 \subsection{Top quark yukawa coupling}
 \mytodo{to reword}
@@ -532,18 +539,34 @@ measurements~\cite{STAT:AtlasCmsHiggsComb}. However, these constraints require
 assumptions about the total width of the Higgs boson, while the \tttt-based
 limit does not. 
 
-\subsection{Oblique Higgs parameter}
-\mytodo{to reword}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=.70\textwidth]{figs/ftp/yukawa.pdf}
+\\
+\caption{
+    The observed \xsectttt (solid line) and 95\% \CL upper limit (hatched line) are shown as a function
+    of $\abs{y_{\PQt}/y_{\PQt}^{\mathrm{SM}}}$. The predicted value (dashed line)~\cite{THEORY:TopYukawaTTTT},
+    calculated at LO and scaled to the calculation from Ref.~\cite{THEORY:Frederix2017wme}, is also plotted.
+    The shaded band around the measured value gives the total uncertainty, while the shaded band around
+    the predicted curve shows the theoretical uncertainty associated with the renormalization and
+    factorization scales.
+}
+\label{fig:yukawa}
+\end{figure}
 
-For the $\hat{H}$ interpretation, the BDT analysis is
-repeated using simulated samples of \tttt signal events with different values
-of $\hat{H}$ to account for small acceptance and kinematic differences. 
-We rescale the \ttH cross section by
-$(1-\hat{H})^2$ to account for its $\hat{H}$
-dependency~\cite{THEORY:ObliqueHiggs2019}. This results in the 95\% \CL upper limit
-of $\hat{H} < 0.12$. For reference, the authors of
-Ref.~\cite{THEORY:ObliqueHiggs2019} used recent LHC on-shell Higgs boson
-measurements to set a constraint of $\hat{H} < 0.16$ at 95\% \CL.
+
+\FloatBarrier
+
+\subsection{Oblique Higgs parameter}
+
+To calculate an upper limit of $\hat{H}$, the BDT analysis is repeated
+several times using simulated samples of \tttt signal events with different
+values of $\hat{H}$ to account for small acceptance and kinematic
+differences. During each fit, we rescale the \ttH cross section by
+$(1-\hat{H})^2$ due to its $\hat{H}$ dependency. This results in the 95\% \CL
+upper limit of $\hat{H} < 0.12$. For reference, using recent LHC on-shell
+Higgs boson measurements, the authors of Ref.~\cite{THEORY:ObliqueHiggs2019}
+obtained a constraint of $\hat{H} < 0.16$ at 95\% \CL.
 
 
 \subsection{Off-shell particles}
@@ -565,6 +588,19 @@ associated interference, we set limits on the masses and couplings of these
 new particles, shown in Fig.~\ref{fig:ZprimePhiExclusions}. These limits
 exclude couplings larger than 1.2 for $m_{\phi}$ in the 25--340\GeV range and
 larger than 0.1 (0.9) for $m_{\cPZpr} = 25$ (300)\GeV.
+
+\begin{figure}[!hbtp]
+\centering
+    \includegraphics[width=.70\textwidth]{figs/ftp/plot_2d_phizprime.pdf}
+\caption{
+    The 95\% \CL exclusion regions in the plane of the $\phi/\cPZpr$-top quark coupling versus
+    $m_{\phi}$ or $m_{\cPZpr}$. The excluded regions are above the hatched lines.
+    }
+\label{fig:ZprimePhiExclusions}
+\end{figure}
+
+
+\FloatBarrier
 
 \subsection{On-shell particles}
 \mytodo{to reword}
@@ -595,31 +631,6 @@ for $g_\mathrm{DM} = 1$ and for two different assumptions of $g_\mathrm{SM}$.
 Large sections of the phase space of simplified dark matter models are excluded, and the reach of this analysis is complementary
 to that of analyses
 considering decays of $\PH/\PSA$ into invisible dark matter candidates, such as those of Refs.~\cite{CMS:DMsingletop, ATLAS:Aaboud2017rzf}.
-
-\begin{figure}[!hbtp]
-\centering
-\includegraphics[width=.70\textwidth]{figs/ftp/yukawa.pdf}
-\\
-\caption{
-    The observed \xsectttt (solid line) and 95\% \CL upper limit (hatched line) are shown as a function
-    of $\abs{y_{\PQt}/y_{\PQt}^{\mathrm{SM}}}$. The predicted value (dashed line)~\cite{THEORY:TopYukawaTTTT},
-    calculated at LO and scaled to the calculation from Ref.~\cite{THEORY:Frederix2017wme}, is also plotted.
-    The shaded band around the measured value gives the total uncertainty, while the shaded band around
-    the predicted curve shows the theoretical uncertainty associated with the renormalization and
-    factorization scales.
-}
-\label{fig:yukawa}
-\end{figure}
-
-\begin{figure}[!hbtp]
-\centering
-    \includegraphics[width=.70\textwidth]{figs/ftp/plot_2d_phizprime.pdf}
-\caption{
-    The 95\% \CL exclusion regions in the plane of the $\phi/\cPZpr$-top quark coupling versus
-    $m_{\phi}$ or $m_{\cPZpr}$. The excluded regions are above the hatched lines.
-    }
-\label{fig:ZprimePhiExclusions}
-\end{figure}
 
 \begin{figure*}[!hbtp]
 \centering
@@ -661,3 +672,5 @@ considering decays of $\PH/\PSA$ into invisible dark matter candidates, such as 
     }
 \label{fig:DMLimits}
 \end{figure*}
+
+\FloatBarrier

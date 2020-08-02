@@ -43,7 +43,8 @@
 % \scriptsizessp is a still smaller version of the same thing.
 \def\ssp{\def\baselinestretch{1.0}\large\normalsize}
 %\def\dsp{\def\baselinestretch{1.5}\large\normalsize}
-\def\dsp{\def\baselinestretch{1.655}\large\normalsize}
+% \def\dsp{\def\baselinestretch{1.655}\large\normalsize}
+\def\dsp{\def\baselinestretch{2.0}\large\normalsize}
 \def\smallssp{\def\baselinestretch{1.0}\large\small}
 \def\scriptsizessp{\def\baselinestretch{1.0}\large\scriptsize}
 

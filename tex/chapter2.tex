@@ -8,48 +8,29 @@
 \label{fig:SMxsecs}
 \end{figure}
 
+\FloatBarrier
 
 \section{SUSY processes}
-\mytodo{reword, restructure}
-\mytodo{put plot of SUSY xsecs}
-
-\begin{table} [h!]
-\begin{center}
-\resizebox{0.99\textwidth}{!}{
-{\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{l|p{0.4\textwidth}cccc}
-\hline
-Model & Process & Constraint & Mass 1 & Mass 2 & RPV? \\
-\hline
-\Totttt & $\gluino\to\ttbar\lsp$ & \NA & $m_{\gluino}$ & $m_{\lsp}$ & \\
-\TfttbbWW & $\gluino\to\cPqt\cPqb\chiplmin$ & $m_{\chiplmin}=m_{\lsp}+5\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
-\Tftttt & $\gluino\to\susytopone\cPqt$, $\susytopone\to\cPqt\lsp$ & $m_{\susytop}-m_{\lsp}=m_{\PQt}$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
-\Tfttcc & $\gluino\to\susytopone\cPqt$, $\susytopone\to\cPqc\lsp$ & $m_{\susytop}-m_{\lsp}=20\GeV$&  $m_{\gluino}$ & $m_{\lsp}$ & \\
-\TfqqqqWW & $\gluino\to\cPq\cPq'\chiplmin$, $\chiplmin\to\PW^{\pm}\lsp$ & $m_{\chiplmin}=0.5(m_{\gluino}+m_{\lsp})$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
-\TfqqqqWW & $\gluino\to\cPq\cPq'\chiplmin$, $\chiplmin\to\PW^{\pm}\lsp$ & $m_{\chiplmin}=m_{\lsp}+20\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
-\TfqqqqWZ & $\gluino\to\cPq\cPq'(\chiplmin/\neutralinotwo)$, \newline $\chiplmin\to\PW^{\pm}\lsp$, $\neutralinotwo\to\PZ\lsp$ & $m_{\chiplmin}=0.5(m_{\gluino}+m_{\lsp})$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
-\TfqqqqWZ & $\gluino\to\cPq\cPq'(\chiplmin/\neutralinotwo)$, \newline $\chiplmin\to\PW^{\pm}\lsp$, $\neutralinotwo\to\PZ\lsp$ & $m_{\chiplmin}=m_{\lsp}+20\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
-\TsttWW & $\sbottomone\to\cPqt\chiplmin$ & $m_{\lsp}=50\GeV$ & $m_{\sbottomone}$ & $m_{\chiplmin}$ & \\
-\TsttHZ & $\susytoptwo\to\susytopone\PH$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$ & $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
-\TsttHZ & $\susytoptwo\to\susytopone(\PH/\PZ)$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$&  $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
-\TsttHZ & $\susytoptwo\to\susytopone\PZ$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$ & $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
-\ToqqqqL & $\gluino\to\cPq\cPq\bar{\cPq}\bar{\cPq}+e/\mu/\tau$ & \NA & $m_{\gluino}$ & \NA & Yes \\
-\Totbs & $\gluino\to\cPqt\cPqb\cPqs$ & \NA & $m_{\gluino}$ & \NA & Yes \\
-\hline
-\end{tabular}}}
-\caption{Summary of simplified SUSY models considered in this analysis. The third
-and second from last columns give the one/two masses which are scanned over. The last column
-marks processes with R parity violation.}
-\label{tab:susyprocesses}
-\end{center}
-\end{table}
+\mytodo{reword}
 
 
+Many SUSY models with strong pair production mechanisms result in
+final states with a number of leptons, ideal for SS final states.
+Cross sections of pair production models with gluinos and squarks 
+are shown in Fig.~\ref{fig:susy_xsecs}, and are as low as a few \fbinv 
+for gluino/squark masses between 1.5\TeV and 2\TeV.
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figs/ssan/plot_susy_xsecs}
+\caption{Strong production cross sections for SUSY processes at the LHC. Calculations from \cite{THEORY:SUSYxsecs}}.
+\label{fig:susy_xsecs}
+\end{figure}
 
 Gluino pair production models giving rise to signatures with up to four \cPqb\
 quarks and up to four \PW\ bosons are shown in Fig.~\ref{fig:susy_diag_set1}. In
 these models, the gluino decays to the lightest squark ($\gluino \to \susyq
-\cPq$), which in turn decays to same-flavor ($\susyq \to \cPq \lsp$) or
+\cPq$), which then decays to same-flavor ($\susyq \to \cPq \lsp$) or
 different-flavor ($\susyq \to \cPq' \chiplmin$) quarks. The chargino
 ($\chiplmin$) decays to a \PW\ boson and a neutralino ($\lsp$) via $\chiplmin
 \to \PW^{\pm} \lsp$, where the \lsp is taken to be the lightest stable SUSY
@@ -132,59 +113,210 @@ quark).
 \label{fig:susy_diag_set3}
 \end{figure}
 
-\begin{figure}[htb!]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figs/ssan/plot_susy_xsecs}
-\caption{Strong production cross sections for SUSY processes at the LHC. Calculations from \cite{THEORY:SUSYxsecs}}.
-\label{fig:susy_xsecs}
-\end{figure}
+A summary of 14 simplified SUSY models tabulated in Table~\ref{tab:susyprocesses}.
 
+\begin{table} [h!]
+\begin{center}
+\resizebox{0.99\textwidth}{!}{
+{\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{l|p{0.4\textwidth}cccc}
+\hline
+Model & Process & Constraint & Mass 1 & Mass 2 & RPV? \\
+\hline
+\Totttt & $\gluino\to\ttbar\lsp$ & \NA & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfttbbWW & $\gluino\to\cPqt\cPqb\chiplmin$ & $m_{\chiplmin}=m_{\lsp}+5\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\Tftttt & $\gluino\to\susytopone\cPqt$, $\susytopone\to\cPqt\lsp$ & $m_{\susytop}-m_{\lsp}=m_{\PQt}$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\Tfttcc & $\gluino\to\susytopone\cPqt$, $\susytopone\to\cPqc\lsp$ & $m_{\susytop}-m_{\lsp}=20\GeV$&  $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfqqqqWW & $\gluino\to\cPq\cPq'\chiplmin$, $\chiplmin\to\PW^{\pm}\lsp$ & $m_{\chiplmin}=0.5(m_{\gluino}+m_{\lsp})$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfqqqqWW & $\gluino\to\cPq\cPq'\chiplmin$, $\chiplmin\to\PW^{\pm}\lsp$ & $m_{\chiplmin}=m_{\lsp}+20\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfqqqqWZ & $\gluino\to\cPq\cPq'(\chiplmin/\neutralinotwo)$, \newline $\chiplmin\to\PW^{\pm}\lsp$, $\neutralinotwo\to\PZ\lsp$ & $m_{\chiplmin}=0.5(m_{\gluino}+m_{\lsp})$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TfqqqqWZ & $\gluino\to\cPq\cPq'(\chiplmin/\neutralinotwo)$, \newline $\chiplmin\to\PW^{\pm}\lsp$, $\neutralinotwo\to\PZ\lsp$ & $m_{\chiplmin}=m_{\lsp}+20\GeV$ & $m_{\gluino}$ & $m_{\lsp}$ & \\
+\TsttWW & $\sbottomone\to\cPqt\chiplmin$ & $m_{\lsp}=50\GeV$ & $m_{\sbottomone}$ & $m_{\chiplmin}$ & \\
+\TsttHZ & $\susytoptwo\to\susytopone\PH$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$ & $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
+\TsttHZ & $\susytoptwo\to\susytopone(\PH/\PZ)$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$&  $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
+\TsttHZ & $\susytoptwo\to\susytopone\PZ$, $\susytopone\to\cPqt\lsp$ & $m_{\susytopone}-m_{\lsp}=175\GeV$ & $m_{\susytoptwo}$ & $m_{\susytopone}$ & \\
+\ToqqqqL & $\gluino\to\cPq\cPq\bar{\cPq}\bar{\cPq}+e/\mu/\tau$ & \NA & $m_{\gluino}$ & \NA & Yes \\
+\Totbs & $\gluino\to\cPqt\cPqb\cPqs$ & \NA & $m_{\gluino}$ & \NA & Yes \\
+\hline
+\end{tabular}}}
+\caption{Summary of simplified SUSY models considered in this analysis. The third
+and second from last columns give the one/two masses which are scanned over. The last column
+marks processes with R parity violation.}
+\label{tab:susyprocesses}
+\end{center}
+\end{table}
+
+
+\FloatBarrier
 
 \section{Contributions to \tttt production}
 
-\subsection{On-shell}
-\mytodo{2hdm, dark matter}
+Contributions from BSM physics to \tttt production at CMS can be 
+broadly categorized as on-shell (usually involving heavy BSM intermediate particles coupling
+to $\ttbar$), or off-shell (usually involving light BSM intermediate particles, or
+modifications to the SM Higgs boson propagator or couplings).
 
-\begin{figure}[htb!]
+\subsection{On-shell}
+
+\subsubsection{Two Higgs doublet models}
+
+In the spirit of generality, a simple possible extension of the SM 
+is the two Higgs doublet model (2HDM)~\cite{THEORY:Branco2011iw}.
+For example, the Minimal Supersymmetric Standard Model (MSSM)
+has two Higgs doublets instead of the SM's single doublet.
+Two doublets provides for five physical states: 
+a light scalar boson $h$, a heavy scalar boson $\PH$, a heavy pseudoscalar boson $\PSA$, and
+two charged bosons $\PH^\pm$. Their masses ($m_h, m_\PH, m_\PSA, m_{\PH^\pm}$)
+consitute four of the six parameters used in the 2HDM. The other two are $\tan\beta$,
+which is the ratio of vacuum expectation values of the two Higgs doublets,
+and $\alpha$, which is the rotation angle that diagonalizes the mass matrix of the
+two CP-even scalar states $h$ and $\PH$.
+
+Given that observation of a new boson in 2012~\cite{CMS:HiggsObservation,ATLAS:HiggsObservation},
+has since been shown to have very SM Higgs-like properties,
+there should be a phenomenological constraint on 2HDM theories to
+account for this. Fortunately, in a Type-II 2HDM in the alignment limit,
+$\sin(\beta-\alpha)\rightarrow 1$,
+the CP-even scalar $h$ has
+couplings which are SM-like, meaning it can be identified with the particle
+discovered, and other states constitute new physics to be discovered.
+
+In Type-II 2HDM, the couplings of the heavy scalar and pseudoscalar to SM
+vector bosons are also suppressed, and vanish as
+$\cos(\beta-\alpha)\rightarrow 0$. In this limit, production happens mainly
+through gluon-fusion. However, the direct search for such new physics via
+resonant \ttbar production is hampered by interference with the massive SM
+production of \ttbar~\cite{THEORY:Gaemers1984sj,THEORY:Dicus1994bm}. As an
+alternative to direct production, since the branching ratio of the heavy
+scalar state $\PH$ to up-type quarks (e.g., the top quark) is proportional to
+$1/\tan\beta$, at low $\tan\beta$, associated production with three and four
+top quark final states provide a relatively clean handle to probe Type-II
+2HDM scenarios~\cite{THEORY:Craig2015jba,THEORY:Craig2016ygr}. The one or two top quark
+associated production modes are shown in Fig.~\ref{fig:thdm_diagrams}, where
+the intermediate heavy boson decays into $\ttbar$ at low $\tan\beta$, resulting in
+final states of $\tttt$, $\PQt\bar{\PQt}\PQt\PQq$, and $\PQt\bar{\PQt}\PQt\PW$, respectively.
+Heavy boson with masses above twice that of the top quark ($m_{\PH/\PSA}>350\GeV$)
+almost exclusively decay into \ttbar.
+Thus, a SM search for \tttt would be optimized to directly probe the first of these three final states,
+while still retaining sensitivity to the latter two, for sufficiently massive 
+scalar and pseudoscalar bosons to allow for on-shell decays into \ttbar.
+
+\begin{figure}[htbp!]
     \centering
-    \subfloat[]{\includegraphics[width=0.33\textwidth]{figs/ftan/bsm_tth_diagram}}
-    \subfloat[]{\includegraphics[width=0.33\textwidth]{figs/ftan/bsm_thw_diagram}}
-    \subfloat[]{\includegraphics[width=0.33\textwidth]{figs/ftan/bsm_thq_diagram}} \\
-\caption{BLAH}
+    \subfloat[]{\includegraphics[width=0.40\textwidth]{figs/ftan/bsm_tth_diagram}}
+    \subfloat[]{\includegraphics[width=0.40\textwidth]{figs/ftan/bsm_thw_diagram}} \\
+    \subfloat[]{\includegraphics[width=0.40\textwidth]{figs/ftan/bsm_thq_diagram}}
+\caption{Diagrams for scalar (pseudoscalar) production in association with 
+one or two top quarks.}
 \label{fig:thdm_diagrams}
 \end{figure}
 
+\FloatBarrier
 
-\begin{figure}[htb!]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figs/ftan/bsm_dm_diagrams}
-\caption{BLAH}
-\label{fig:dm_diagrams}
-\end{figure}
-
-\begin{figure}[htb!]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figs/ftan/plot_1d_2hdm_xsec}
-\caption{BLAH}
-\label{fig:thdm_1d_xsec}
-\end{figure}
+Leading order cross sections (times branching ratio into \ttbar) for a Type-II 2HDM scenario in the exact alignment limit 
+are shown in Fig.~\ref{fig:thdm_2d_xsecs}, as a function of mediator mass and $\tan\beta$.
+Processes with $\PH$ and $\PSA$ mediators
+are considered separately and the charged bosons $\PH^\pm$ are decoupled by setting their
+masses to $10\TeV$. Cross sections are generally slowly falling as a function of increasing mass
+and sharply falling for increasing $\tan\beta$. One dimensional cross sections
+for three particular values of $\tan\beta$ are shown in Fig.~\ref{fig:thdm_1d_xsec},
+and range from approximately 45\ifb at the $2m_\PQt$ threshold to 9\ifb at $m_\PH=650\GeV$
+for $\tan\beta=1$.
 
 \begin{figure}[htb!]
     \centering
     \subfloat[scalar]{\includegraphics[width=0.50\textwidth]{figs/ftan/plot_2d_2hdm_xsec_h}}
     \subfloat[pseudoscalar]{\includegraphics[width=0.50\textwidth]{figs/ftan/plot_2d_2hdm_xsec_a}}
-\caption{BLAH}
+\caption{Cross sections times branching ratio into \ttbar for a heavy scalar boson $\PH$ 
+or heavy pseudocalar boson $\PSA$ as a function of boson mass and $\tan\beta$.}
 \label{fig:thdm_2d_xsecs}
+\end{figure}
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figs/ftan/plot_1d_2hdm_xsec}
+\caption{Cross sections times branching ratio into \ttbar for a heavy scalar boson $\PH$ 
+or heavy pseudocalar boson $\PSA$ as a function of boson mass for three assumptions of 
+$\tan\beta$ ($0.8, 1.0, 1.4$).}
+\label{fig:thdm_1d_xsec}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Simplified dark matter models}
+
+Similarly to 2HDM, simplified dark matter (DM) models with scalar or pseudoscalar
+mediators decaying into a pair of dark matter or SM particles can be
+probed~\cite{THEORY:DMsingletop}. The production of these mediators,
+and subsequent decay into invisible dark matter particles,
+in association with a one or two top
+quarks, was performed by CMS with the 2016 dataset
+Ref.\cite{CMS:DMsingletop,CMS:DMttpair}. The production diagrams are shown in
+Fig.~\ref{fig:dm_diagrams}.
+
+In the framework of a simplified dark matter model, where the scalar ($\phi$)
+or pseudoscalar ($\mathrm{a}$) mediator couples dark matter and SM particles,
+the relevant terms of the interaction lagrangian are of the form
+\[
+    \mathcal{L}_{\phi}=g_{\chi}\phi\bar{\chi}\chi + \frac{g_\mathrm{q} \phi}{\sqrt{2}} \sum_{\mathrm{f}} y_\mathrm{f} \bar{\mathrm{f}} \mathrm{f}
+    \quad\quad\quad
+    \mathcal{L}_{a}=i g_{\chi}a\bar{\chi}\gamma^5\chi + \frac{i g_\mathrm{q} \mathrm{a}}{\sqrt{2}} \sum_{\mathrm{f}} y_\mathrm{f} \bar{\mathrm{f}} \gamma^5 \mathrm{f}
+\]
+where $y_\mathrm{f}$ are the fermionic yukawa couplings. The coupling
+constants $g_\chi$ and $g_\mathrm{q}$ give the relative strengths of the
+mediator coupling to dark matter and SM particles, and are used
+interchangeably with $g_\mathrm{DM}$ and $g_\mathrm{SM}$, respectively. The
+model has four free parameters ($g_\chi$, $g_\mathrm{q}$, $m_\chi$, and
+$m_\mathrm{a}$) which are reduced to two with the assumption of $g_\chi =
+g_\mathrm{q} = 1$.
+
+When the mediator mass is above $2 m_\mathrm{t} \approx 350\GeV$, on-shell
+decay to \ttbar becomes kinematically accessible, resulting in three or four top
+quark final states, so we instead consider a version of the diagrams of
+Fig.~\ref{fig:dm_diagrams} with a decay of the mediator into \ttbar rather
+than a pair of (invisible) dark matter particles $\chi\bar{\chi}$.
+Consequently, the production diagrams and kinematics are identical to those
+of the Type-II 2HDM for certain assumptions of mediator mass, dark matter mass,
+and $\tan\beta$, and $\phi/\mathrm{a}$ can be identified as $\PH/\PSA$.
+
+In this way, the three or four top quark final states
+allow complementarity with the CMS analysis from Ref.~\cite{CMS:DMsingletop} which relied on
+a final state with \ttbar and missing transverse energy, provided that
+the DM mass is sufficiently large to allow for on-shell decays of the mediator into \ttbar.
+
+The product of cross section and branching ratio of the mediators into \ttbar,
+under the assumption of $g_\mathrm{DM}=g_\mathrm{SM}=1$, is shown in 
+Fig.~\ref{fig:dm_2d_xsecs}. Note that when $2 m_{\chi}>m_{\PH/\PSA}$,
+the decay of the mediators into DM is suppressed in favor of the next-leading mode,
+\ttbar, and thus the cross sections become independent of $m_\chi$ above the
+marked diagonals. The cross sections at large $m_\chi$ are nearly
+identical to those of the 2HDM with $\tan\beta = 1$ shown previously.
+However, below the diagonal, the mediator prefers to decay into $\chi\bar{\chi}$
+and a search for three or four top quark final states loses sensitivity.
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figs/ftan/bsm_dm_diagrams}
+\caption{Diagrams for scalar (pseudoscalar) production in association with a
+\ttbar pair (top left), associated t-channel single top (top right),
+associated $\PQt\PW$ (bottom row). The mediator subsequently decays into 
+a pair of invisible DM particles $\chi\bar{\chi}$.}
+\label{fig:dm_diagrams}
 \end{figure}
 
 \begin{figure}[htb!]
     \centering
     \subfloat[scalar]{\includegraphics[width=0.50\textwidth]{figs/ftan/plot_2d_dmscalar_xsec_totsm}}
     \subfloat[pseudoscalar]{\includegraphics[width=0.50\textwidth]{figs/ftan/plot_2d_dmpseudo_xsec_totsm}}
-\caption{BLAH}
+\caption{Cross sections (times branching ratio into $\ttbar$), assuming
+$g_\mathrm{DM}=g_\mathrm{SM}=1$, in the plane of $m_\chi$ versus $m_{\PH/\PSA}$ (left/right).
+}
 \label{fig:dm_2d_xsecs}
 \end{figure}
 
+
+
+\FloatBarrier
 
 \subsection{Off-shell}
 
@@ -255,6 +387,8 @@ The uncertainties are from private communications with the authors.}
     \label{fig:cross_section_yt}
 \end{figure}
 
+\FloatBarrier
+
 \subsubsection{Light off-shell mediators}
 
 The production of \tttt may also be influenced by a neutral scalar mediator
@@ -294,6 +428,8 @@ via crossing points that are projected onto the x axis.
     \label{fig:cross_section_zprimephi}
 \end{figure}
 
+\FloatBarrier
+
 \subsubsection{Oblique Higgs parameter}
 
 In a universal effective field theory framework, the Higgs oblique
@@ -314,7 +450,7 @@ couplings
     \kappa_f = 1-{\hat H}.
 \end{equation}
 
-Using the latest combined fits of ATLAS for the (on-shell) fermionic couplings,
+Using the latest combined fits from the ATLAS experiment for the (on-shell) fermionic couplings,
 with 80$\mathrm{fb}^{-1}$ of 13TeV data, the authors of Ref.~\cite{THEORY:ObliqueHiggs2019} find a constraint on
 the oblique parameter of $\hat{H} < 0.16$ at 95\% CL.
 

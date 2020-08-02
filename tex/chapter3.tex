@@ -12,14 +12,24 @@ parameterized by jet \pt and $\eta$, are derived using data and simulation to
 counteract these effects~\cite{CMS:Khachatryan2016kdb, CMS:PASJME16003}.
 
 Additional jet selections (tight jet identification) are applied to reject
-pathological jets:
+pathological jets. For data collected during 2016, they are
+\begin{itemize}
+    \item neutral hadronic energy fraction $<$ 0.99
+    \item neutral electromagnetic energy fraction $<$ 0.99
+    \item number of constituents $>$ 1
+    \item charged hadronic energy fraction $>$ 0
+    \item charged multiplicity $>$ 0
+    \item charged electromagnetic energy fraction $>$ 0
+\end{itemize}
+\noindent and for data collected during 2017 and 2018, the selections are
 \begin{itemize}
     \item neutral hadronic energy fraction $<$ 0.9
     \item neutral electromagnetic energy fraction $<$ 0.9
     \item number of constituents $>$ 1
-    \item charged hadron fraction $>$ 0
+    \item charged hadronic energy fraction $>$ 0
     \item charged multiplicity $>$ 0
 \end{itemize}
+
 
 To avoid double counting of objects,
 selected jets are those that do not overlap with analysis leptons 
@@ -247,7 +257,7 @@ large tail extending beyond the W mass.
 
 \begin{figure}[!hbtp]
 \centering
-\includegraphics[width=.70\textwidth]{figs/misc/mtmin_signal_ttbar.pdf}
+\includegraphics[width=.70\textwidth]{figs/misc/mtmin_signal_ttbar}
 \caption{
     Normalized distribution of $\mtmin$ shown for signal hypothesis \Totttt and 
     \ttbar background.
@@ -256,7 +266,6 @@ large tail extending beyond the W mass.
 \end{figure}
 
 \section{Trigger}
-\mytodo{todo, trigger plot}
 
 Clearly before one can analyze events, one must have collected them with the detector first.
 Triggers are meant to identify and save interesting events in data while making sure to not to overwhelm
@@ -280,14 +289,48 @@ A set of single lepton triggers, listed in Table~\ref{tab:frtrigs},
 is used for the estimation of the fake rate, which
 will be discussed in the following chapter.
 
-Triggers are required for all events, data and simulation, and residual differences are corrected
-via trigger scale factors.
-\mytodo{trigger scale factors, plots}
-
 \input{tables/triggers}
 
+\FloatBarrier
+
+Triggers are required for all events in data and simulation, and residual
+differences are corrected via trigger scale factors, which are applied to
+simulation to bring agreement with data. These scale factors are computed via
+the tag and probe method to measure the efficiencies in data and simulation
+before taking the ratio. Efficiencies for dilepton triggers are the product
+of efficiencies for individual lepton selections (``lepton legs''). The tag
+and probe method defines the efficiency for a lepton leg as the number of
+events where the probed lepton candidate matches the studied lepton leg
+within $\Delta R$ of 0.4, divided by the total number of selected events. 
+
+For example, to measure the efficiency for the isolated Mu17 leg of the 
+dimuon trigger in 2018 data from Table~\ref{tab:sstrigshigh}, we 
+first select events firing the HLT\_IsoMu27 trigger in the 
+single muon dataset. Tag and probe pairs within the Z boson mass window
+are required to pass the offline analysis lepton selection to reduce 
+the fake contribution and eliminate the need for parametric fits.
+The efficiency for the trigger leg is then calculated as the probability 
+for the probe to pass the Mu17 leg selections. These efficiencies in data and 
+simulation are shown as a function of
+muon \pt in Fig.~\ref{fig:triggermuonpt}. Their ratio, in the bottom panel,
+is the trigger efficiency for this lepton leg and is within 1\% of unity
+in the plateau region of muon $\pt > 20\GeV$.
+The actual scale factors are derived in bins of \pt and $\eta$, 
+for each of the three years, and each of the triggers.
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=.70\textwidth]{figs/ssan/eff_1d_mu17_2018}
+\caption{
+    Efficiencies for the leading Mu17 leg of the high \pt isolated 
+    dimuon trigger used in 2018, separately for data and simulation.
+}
+\label{fig:triggermuonpt}
+\end{figure}
+
+\FloatBarrier
+
 \section{Baseline selections}
-\mytodo{todo more details?}
 
 With the objects in place, we can now discuss the baseline selections used for the 
 inclusive SUSY analysis and the more restricted \smft analysis.
@@ -302,6 +345,7 @@ Table~\ref{tab:baselineselections}.
     \label{tab:baselineselections}
     \centering
     \caption{Summary of baseline selections}
+    {\renewcommand{\arraystretch}{1.2}
     \begin{tabular}{|l|c|c|}
         \hline
         variable &  SUSY analysis & \smft analysis \\ \hline 
@@ -312,7 +356,7 @@ Table~\ref{tab:baselineselections}.
         $\pt(\ell_1)$ & $>15/10~\GeV$ (e/$\mu$)  & $>25~\GeV$  \\
         $\pt(\ell_2)$ & $>15/10~\GeV$ (e/$\mu$)  & $>20~\GeV$  \\
         \hline
-    \end{tabular}
+    \end{tabular}}
 \end{table}
 
 To reduce the background from production of low-mass resonances with
@@ -337,9 +381,8 @@ with $\pt>20\GeV$ contributes to the lepton multiplicity, $\Nleps$, which
 starts at a value of 2 by virtue of the same-sign selection.
 
 \section{Event-level BDT}
-\mytodo{todo more details?}
 
-For the SM four top quark analysis, a BDT is used to increase the signal to
+For the more targeted SM four top quark analysis, a BDT is used to increase the signal to
 background ratio.
 
 The BDT classifier utilizes a gradient boosting algorithm 
@@ -352,7 +395,6 @@ variables:
     \item \Nbjets (nominal, medium WP)
     \item \Nleps
     \item \ptmiss
-    \item \HT
     \item \Nbjets (calculated with the loose WP)
     \item \Nbjets (calculated with the tight WP)
     \item scalar \pt sum of b-tagged jets
@@ -364,6 +406,7 @@ variables:
     \item $p_\mathrm{T}(\mathrm{j}_7)$ (jet with seventh highest \pt)
     \item $p_\mathrm{T}(\mathrm{j}_8)$ (jet with eighth highest \pt)
     \item $\Delta\phi(\ell_1,\ell_2)$
+    \item $\Delta\eta(\ell_1,\ell_2)$
     \item $m(\ell_1,\mathrm{j}_1)$
     \item $q(\ell_1)$ (charge of the leading lepton)
     \item $\mathrm{max}(m(j_\mathrm{i})/\pt(j_\mathrm{i}))$ over all selected jets in an event
@@ -377,10 +420,32 @@ multiple decay products of a top quark, for example.
 The variables were iteratively chosen from a larger pool of kinematic variables by selecting
 the most performant variables and retraining until the performance started to suffer.
 
+Training was performed on simulation with a loosened \smft baseline selection 
+to prevent issues with training by increasing statistics:
+\begin{itemize}
+    \item $\Nbjets \geq 2$
+    \item $\HT \geq 300~\GeV$
+    \item $\ptmiss>50~\GeV$
+    \item $\pt(\ell_1)>15~\GeV$
+    \item $\pt(\ell_2)>15~\GeV$
+\end{itemize}
+
+The raw discriminant values for signal and background separated into test and train sets
+is shown in Fig.~\ref{fig:xgboostdisc}. There is little to no overtraining
+observed.
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=.70\textwidth]{figs/ftan/xgboostdisc}
+\caption{
+    Raw discriminant values for training and testing sets.
+}
+\label{fig:xgboostdisc}
+\end{figure}
+
+\FloatBarrier
 
 \section{Signal regions}
-\mytodo{todo}
-\mytodo{uncomment tables}
 
 \subsection{SUSY analysis}
 
@@ -423,18 +488,20 @@ are summarized in Tables~\ref{tab:SRDefHH}, \ref{tab:SRDefHL},
 
 \subsection{\smft analysis}
 
-Events passing the baseline selection are split into several signal and
+Events passing the \smft baseline selection are split into several signal and
 control regions, following two independent approaches. In the first approach,
 the variables \Njets, \Nbjets, and \Nleps are used to subdivide events into
 14 mutually exclusive SRs and a CR enriched in \ttW background (CRW), to
 complement the CRZ, as detailed in Table~\ref{tab:FTSRDef}.
 
-In the boosted decision tree (BDT) analysis, the CRZ is the only control
+In the BDT approach, the CRZ is the only control
 region, and the remaining events are subdivided into 17 SRs by discretizing
-the discriminant output of a BDT trained to separate \tttt events from the
+the discriminant output of the BDT trained to separate \tttt events from the
 sum of the SM backgrounds.
 
 At this point, it's worth noting that 
-three of the most performant input variables, \Njets, \Nbjets, and \Nleps, correspond to the variables used for the cut-based analysis.
+three of the most performant input variables for the BDT,
+\Njets, \Nbjets, and \Nleps, already 
+correspond to the variables used for the cut-based analysis.
 
 \input{tables/ftsr}
