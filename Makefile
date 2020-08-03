@@ -1,21 +1,24 @@
 all: build log
-.PHONY: clean 
+.PHONY: clean
 
 clean:
-	rm -rf *.blg 
-	rm -rf *.out 
-	rm -rf *.bbl 
-	rm -rf *.log
-	rm -rf *.ind
-	rm -rf *.ilg
-	rm -rf *.lot
-	rm -rf *.lof
-	rm -rf *.idx
-	rm -rf *.aux
-	rm -rf *.toc
+	rm -f *.blg
+	rm -f *.out
+	rm -f *.bbl
+	rm -f *.log
+	rm -f *.ind
+	rm -f *.ilg
+	rm -f *.lot
+	rm -f *.lof
+	rm -f *.idx
+	rm -f *.aux
+	rm -f *.toc
 	rm -f thesis.pdf
 	rm -f output.pdf
 	rm -f smalloutput.pdf
+	rm -f *.fdb_latexmk
+	rm -f *.fls
+	rm -f *.synctex.gz
 
 plot:
 	python3 scripts/plot_progress.py
@@ -25,7 +28,7 @@ log:
 	tail -1 logs/size_log.txt
 
 build:
-	latexmk -f thesis.tex -view=pdf -c
+	latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf thesis.tex
 	cp thesis.pdf output.pdf
 
 buildold:
@@ -34,7 +37,7 @@ buildold:
 	bibtex output
 	makeindex thesis.tex
 	pdflatex -shell-escape -jobname output -draftmode thesis.tex -interaction=batchmode
-	pdflatex -shell-escape -jobname output thesis.tex 
+	pdflatex -shell-escape -jobname output thesis.tex
 	mkdir -p tmp
 	mv *.{ind,blg,out,bbl,log,ilg,aux,toc} tmp/
 
