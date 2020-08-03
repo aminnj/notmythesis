@@ -25,6 +25,10 @@ log:
 	tail -1 logs/size_log.txt
 
 build:
+	latexmk -f thesis.tex -view=pdf -c
+	cp thesis.pdf output.pdf
+
+buildold:
 	pdflatex -shell-escape -jobname output -draftmode thesis.tex -interaction=batchmode
 	pdflatex -shell-escape -jobname output thesis.tex -interaction=batchmode
 	bibtex output

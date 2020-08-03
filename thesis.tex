@@ -11,6 +11,7 @@
 \usepackage{xspace}
 \usepackage{braket}
 \usepackage{color}
+\usepackage{xcolor}
 \usepackage{setspace}
 \usepackage{bibentry}
 \usepackage{lipsum}
@@ -72,6 +73,7 @@
 \newcommand{\PW}{W\xspace}
 \newcommand{\PZ}{Z\xspace}
 \newcommand{\PH}{H\xspace}
+\newcommand{\PV}{V\xspace}
 \newcommand{\PSA}{A\xspace}
 \newcommand{\Pp}{p}
 \newcommand{\ttH}{\ensuremath{\ttbar\PH}\xspace}
@@ -134,14 +136,18 @@
 \newcommand{\ttWH}{\ensuremath{\ttbar\PW\!\PH}\xspace}
 \newcommand{\ttZH}{\ensuremath{\ttbar\PZ\!\PH}\xspace}
 \newcommand{\ttHH}{\ensuremath{\ttbar\PH\!\PH}\xspace}
+\newcommand{\ttVV}{\ensuremath{\ttbar\PV\!\PV}\xspace}
 
 \newcommand{\ttt}{\ensuremath{\ttbar\PQt}\xspace}
 \newcommand{\tttW}{\ensuremath{\ttbar\PQt\PW}\xspace}
 
 \newcommand{\WZ}{\ensuremath{\PW\!\PZ}\xspace}
 \newcommand{\ZZ}{\ensuremath{\PZ\!\PZ}\xspace}
+\newcommand{\WH}{\ensuremath{\PW\!\PH}\xspace}
+\newcommand{\ZH}{\ensuremath{\PZ\!\PH}\xspace}
 \newcommand{\Zgamma}{\ensuremath{\PZ\gamma}\xspace}
 \newcommand{\Wgamma}{\ensuremath{\PW\gamma}\xspace}
+\newcommand{\Xgamma}{\ensuremath{X\gamma}\xspace}
 \newcommand{\WpWp}{\ensuremath{\PW^\pm\PW^\pm}\xspace}
 
 \newcommand{\WWW}{\ensuremath{\PW\!\PW\!\PW}\xspace}
@@ -156,11 +162,12 @@
 \newcommand{\tWZ}{\ensuremath{\PQt\PW\!\PZ}\xspace}
 
 \newcommand{\mytodo}[1]{\todo[inline, color=red!40]{#1}}
+\newcommand{\stodo}{{\color{red}{\textbf{TODO}}}\xspace}
 
 % \def\dsp{\def\baselinestretch{1.0}\large\normalsize} % FIXME remove this line when compiling final thesis
 % https://stackoverflow.com/questions/1465665/passing-command-line-arguments-to-latex-document/1466610#1466610
 % \ifdefined\myownflag
-    % \def\dsp{\def\baselinestretch{1.0}\large\normalsize}
+    \def\dsp{\def\baselinestretch{1.0}\large\normalsize}
 % \fi
 % uncomment ifdefined, fi lines to go back to double space
 
@@ -213,19 +220,19 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
-\input{tex/chapter1} % Introduction
-\input{tex/chapter2} % Same-sign dilepton final state
-\input{tex/chapter3} % Objects and variables
+% \input{tex/chapter1} % Introduction
+% \input{tex/chapter2} % Same-sign dilepton final state
+% \input{tex/chapter3} % Objects and variables
 \input{tex/chapter4} % Background estimation
-\input{tex/chapter5} % Results and interpretations
-\input{tex/chapter6} % Summary and conclusions
+% \input{tex/chapter5} % Results and interpretations
+% \input{tex/chapter6} % Summary and conclusions
 
 %=== Appendix ============================================
 \appendix
 
 \dsp
 
-\input{tex/toy_statistics}
+% \input{tex/toy_statistics}
 
 % \mytodo{appendix on hem issue?}
 
