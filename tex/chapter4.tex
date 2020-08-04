@@ -5,12 +5,13 @@ There are three main classes of backgrounds that survive the inclusive SUSY or
 in the final state (giving a real SS pair), backgrounds with at least one nonprompt lepton,
 and backgrounds that actually have an OS pair with one lepton having misreconstructed charge.
 
-The first class of backgrounds are ``rare'' (have low cross section) and are estimated from
+The first class of backgrounds produce prompt leptons
+but are relatively ``rare'' (have low cross section) and are estimated from
 simulation, with appropriate correction factors and uncertainties to be discussed in the next
 sections. This class can be further subdivided by the physical process:
 
 \begin{itemize}
-    \item \textbf{Diboson}: \\ \WZ, \ZZ, \WH, \ZH, \Zgamma, \Wgamma, and \WpWp
+    \item \textbf{Diboson}: \\ \WZ, \ZZ, \WW, \WH, \ZH, \Zgamma, \Wgamma, and \WpWp
     \item \textbf{Triboson}: \\ \WWW, \WWZ, \WZZ, \ZZZ, \WWgamma, and \WZgamma
     \item \textbf{Single top quark and bosons}: \\ \tgamma, \tZgamma, and \tWZ
     \item \textbf{Top quark pair and one boson}: \\ \ttW, \ttZ, \ttH, and \ttgamma
@@ -33,13 +34,13 @@ tricky to only use simulation, and a data-driven method is used instead.
 The last class of backgrounds consists of those with a charge-misidentified lepton, or,
 more colloquially ``flips'', which essentially
 converts an OS pair into a SS pair. Thus, the biggest source of this background is 
-the highest cross-section OS process: Drell-Yan (DY, $\PZ/\gamma\rightarrow \ell^\pm \ell^\mp$). Similarly to
+the highest cross-section OS process: DY. Similarly to
 the nonprompt background, this background uses a data-driven method instead of 
 relying completely on simulation.
 
-\section{Rare SM}
+\section{Prompt SM}
 
-The large set of physics processes listed in the previous section as rare SM processes
+The large set of physics processes listed in the previous section as prompt SM processes
 are estimated from simulation and are grouped into larger categories, singling out
 specific processes which are important to either  the inclusive SUSY analysis
 or the \smft analysis. The process categories and constitutent physics processes/simulations
@@ -54,16 +55,20 @@ are:
 
 And for the \smft analysis, there are two additional categories:
 \begin{itemize}
-    \item ``\textbf{Rare}'': \ttt, \tttW, \ZZ, \WH, \ZH, \WZgamma, \WWgamma, \tZgamma, \tWZ, \WpWp, and \WZ
+    \item ``\textbf{Rare}'': \ttt, \tttW, \ZZ, \WH, \ZH, \WZgamma, \WWgamma, \tZgamma, \tWZ, \WpWp, \WZ, and \WW
     \item ``$\mathbf{\ttVV}$'': \ttWW, \ttWZ, \ttZZ, \ttWH, \ttZH, and \ttHH
 \end{itemize}
 
 Or, for the inclusive SUSY analysis, there are three additional categories:
 \begin{itemize}
-    \item ``\textbf{Rare}'': \ttt, \tttW, \ZZ, \WH, \ZH, \WZgamma, \WWgamma, \tZgamma, \tWZ, \ttWW, \ttWZ, \ttZZ, \ttWH, \ttZH, \ttHH, and \tttt
+    \item ``\textbf{Rare}'': \ttt, \tttW, \ZZ, \WW, \WH, \ZH, \WZgamma, \WWgamma, \tZgamma, \tWZ, \ttWW, \ttWZ, \ttZZ, \ttWH, \ttZH, \ttHH, and \tttt
     \item ``\textbf{WZ}'': \WZ
     \item ``\textbf{WW}'': \WpWp
 \end{itemize}
+
+Two important processes for the \smft search are \ttW and \ttZ, which have cross sections
+of 630\ifb and 840\ifb~\cite{CMS:Sirunyan2017uzs}, respectively, almost a couple orders of magnitude larger than that of
+\tttt (12\ifb).
 
 A breakdown of the individual processes of the ``Rare'' category in the 
 \smft analysis signal regions
@@ -93,7 +98,230 @@ of $1.26^{+0.31}_{-0.26}$.
 \FloatBarrier
 
 \section{Nonprompt leptons}
-\mytodo{todo}
+
+
+Estimating the background from fake leptons requires care as simply
+using fake leptons out of the box from simulation makes heavy assumptions on 
+the accuracy of the simulation. It is better to somehow use data itself to estimate
+the fake leptons from data.  We use the ``fake rate'', or ``tight-loose'', method
+to estimate this background in a data-driven fashion via an extrapolation.
+
+Recalling the two working points for lepton identification/isolation, loose and tight,
+we use an orthogonal sideband (``application region'') of tight-loose-not-tight SS dilepton events 
+(where one lepton is tight and the other is loose but not tight)
+to estimate the fake contribution in the SRs (tight-tight SS dilepton events). 
+
+The application region events can be weighted by a ``tight-to-loose'' ratio
+(the probability for a loose non-prompt lepton to also pass the tight lepton selections)
+to form the SR prediction. Defining $f$ as this probability, the fake contribution
+in the SRs, $\mathrm{N}_\text{TT, fake}$  is given by
+\begin{equation}
+  N_\text{TT, fake} = \left(\frac{f}{1-f}\right) N_\text{TL}
+  - \left(\frac{f}{1-f}\right)^2 N_\text{LL}
+\end{equation}
+where $N_\text{TL}$ represents the number of events in the application region
+and $N_\text{LL}$ represents a similar, but smaller, application region where both
+leptons pass the loose lepton selections but not the tight selections. The probability 
+$f$ is parameterized by a modified lepton \pt (\ptcorr), lepton $\eta$, lepton flavor ($e$ or $\mu$),
+data collection year, and trigger strategy (isolated, non-isolated). The minus sign
+is needed for this ``double fake'' contribution to avoid overcounting (since
+both tight-loose and loose-tight events are present in the application region and 
+are extrapolated to the signal regions).
+
+Now, unsurprisingly, $f \equiv f(\ptcorr,\eta)$ is measured in the ``measurement region''.
+The measurement region is a sample of QCD multijet events, and thus, 
+enriched in non-prompt leptons, with an event selection of
+\begin{itemize}
+\item specific auxiliary trigger, listed in Table~\ref{tab:frtrigs}
+\item only one loose/denominator lepton (``fakeable object''/``FO'')
+\item at least one jet with $\Delta R(\mathrm{jet},\mathrm{FO})>1$
+\item $\ptmiss<20\GeV$
+\item $\MT<20\GeV$
+\end{itemize}
+to make sure we select as much QCD in data in possible while minimizing
+the amount of prompt leptons leaking into the measurement region.
+Due to different trigger requirements and data collection periods, we derive
+a total of 12 versions of the 2-dimensional \pt-$\eta$-binned fake rate
+(electrons/muons, isolated triggers/non-isolated triggers, 2016/2017/2018)
+
+We use a corrected lepton \pt, \ptcorr, to parameterize the fake rate
+estimation in the fake rate estimation in order to reduce the dependency to
+the mother parton \pt and the flavor composition of the
+sample~\cite{CMS:AN14261}:
+
+\begin{equation}
+  \ptcorr = \left\{
+        \begin{array}{ll}
+            \pt \cdot (1+\max(0,I_\mathrm{mini}-I_1)) & \quad \text{if} \,\,\, \ptrel > I_3 \\[10pt]
+            \max(\pt,\pt(\mathrm{jet}) \cdot I_2) & \quad \text{if} \,\,\, \ptrel \leq I_3
+        \end{array}
+      \right.
+\end{equation}
+
+
+While the requirements on \ptmiss and \MT suppress the
+contribution from prompt leptons in the measurement region,
+residual contributions from DY/\wjets/\ttjets (electroweak contamination)
+need to be estimated and subtracted properly from the fake rate.
+For this, we use simulation, but normalize in a high \MT/\ptmiss region.
+Since the fake rate $f$ is the ratio of the number of tight leptons
+to the number of loose leptons ($f=N_\mathrm{T}/N_\mathrm{L}$)
+in the measurement region, we need to calculate $k$ for this region
+($\MT>30\GeV$, $\ptmiss>30\GeV$) 
+region and subtract from the numerator and denominator:
+\begin{equation}
+  f = \frac{N_\mathrm{T} - k \cdot N_\mathrm{T}^\text{EWK}}{N_\mathrm{L} - k \cdot N_\mathrm{L}^\text{EWK}}
+\end{equation}
+where $N^\text{EWK}$ represents the electroweak contamination.
+These correction factors, $k$, are obtained by fitting the sum of two templates
+derived from MC, one for QCD and one for the sum of electroweak processes
+(DY, \wjets, \ttjets). The normalization of the elctroweak processes is extracted
+from the fit and yields $k$. Since the shape of the non-prompt component
+might not be well-modeled, we performa cross-check by repeating the fit and replacing the QCD
+MC template with a data-drive template from events failing the isolation requirements.
+The nominal and alternative fits for electrons and muons are shown in 
+Fig.~\ref{fig:EWKnormalization2017iso} for 2017 data with isolated triggers, for example.
+The resulting normalization corrections for the the full set of years and both trigger types
+are shown in Table~\ref{tab:ewkfits}.
+
+Two-dimensional fake rate maps for isolated triggers for 2017 data and QCD simulation
+are shown in Fig.~\ref{fig:QCDFRMuEleRaw2017iso}.
+One can see that prior to the electroweak subtraction, the fake rates increase drastically
+at high lepton \pt. This is expected, as the probability for true/prompt leptons
+from electroweak proceesses to pass the tight selection is large (Otherwise our lepton
+selections would not be doing their job in the first place.)
+To better visualize the fake rates, 
+one-dimensional projections onto the \ptcorr axis for each of the three years
+are shown in Figs.~\ref{fig:QCDFRMuEle2016isoandnoniso}, \ref{fig:QCDFRMuEle2017isoandnoniso},
+and \ref{fig:QCDFRMuEle2018isoandnoniso}. One sees good agreement between
+the data-driven fake rate and fake rate calculated directly with QCD MC, though
+this is not at all expected or needed. Also note the large uncertainties at high \ptcorr,
+which is due to the uncertainty associated with the electroweak subtraction procedure.
+
+
+\begin{figure}[!hbtp]
+  \centering
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_el_iso_mt_lin_postfit_mctemp.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_mu_iso_mt_lin_postfit_mctemp.pdf} \\
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_el_iso_mt_lin_postfit_datatemp.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_mu_iso_mt_lin_postfit_datatemp.pdf}
+  \caption{ 
+  Fitted $M_T$ distribution used to derive the
+  normalization of electroweak samples (DY, \wjets, \ttjets) in the fake rate measurement region.
+  Electrons are shown on the left, muons on the right.
+  From top to bottom, the results from the nominal selection ($\ptmiss>30~\GeV$ and 
+  lepton $\pt > 20~\GeV$) with the QCD MC template and alternative data QCD template are shown. 
+  Data and MC conditions correspond to isolated triggers in 2017.
+  }
+  \label{fig:EWKnormalization2017iso}
+  \end{figure}
+
+\begin{table}[htbp]
+  \begin{center}
+      \small
+    {\renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{ll|cc|cc}
+          \hline
+          & & \multicolumn{2}{c|}{isolated triggers} & \multicolumn{2}{c}{non-isolated triggers} \\ %\cline{3-6}
+                    & & $e$ &  $\mu$ & $e$ & $\mu$ \\ \hline
+          \multirow{2}{*}{2016} & MC template        & 1.240 & 1.189 & 1.258 & 1.164 \\
+                & data template      & 1.294 & 1.154 & 1.337 & 1.131 \\ \hline
+          \multirow{2}{*}{2017} & MC  template       & 1.215 & 1.222 & 1.208 & 1.202 \\
+                & data template      & 1.277 & 1.195 & 1.298 & 1.178 \\ \hline
+          \multirow{2}{*}{2018} & MC  template       & 1.216 & 1.277 & 1.195 & 1.286 \\
+                & data template      & 1.285 & 1.247 & 1.300 & 1.249 \\ \hline
+      \end{tabular}}
+      \caption{Normalization scale factors for electroweak samples derived with two different $M_T$ templates for QCD: MC and data (the data template refers to the inverted isolation region).}
+      \label{tab:ewkfits}
+  \end{center}
+\end{table}
+
+\FloatBarrier
+
+  \begin{figure}[!hbtp]
+    \centering
+    \includegraphics[width=.42\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_mu_fr_cone_data_mu_LooseEMVA_IsoTrigs.pdf}
+    \includegraphics[width=.42\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_el_fr_cone_data_el_LooseEMVA_IsoTrigs.pdf}
+    \includegraphics[width=.42\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_ewkCorFR_muon_IsoTrigs.pdf}
+    \includegraphics[width=.42\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_ewkCorFR_electron_IsoTrigs.pdf}
+    \includegraphics[width=.42\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_mu_fr_cone_qcd_mu_LooseEMVA_IsoTrigs.pdf}
+    \includegraphics[width=.42\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_el_fr_cone_qcd_el_LooseEMVA_IsoTrigs.pdf}
+        \caption{  Two-dimensional fake rate maps for isolated triggers for muons (left) and electrons (right),
+        for 2017 data uncorrected (top),
+        2017 data corrected for electroweak contamination (middle) and 2017 QCD simulation (bottom).
+        }
+    \label{fig:QCDFRMuEleRaw2017iso}
+    \end{figure}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!hbtp]
+  \centering
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2016/y2016_mu_1dfr_cone_LooseEMVA_IsoTrigs.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2016/y2016_el_1dfr_cone_LooseEMVA_IsoTrigs.pdf} \\
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2016/y2016_mu_1dfr_cone_LooseEMVA.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2016/y2016_el_1dfr_cone_LooseEMVA.pdf}
+  \caption{Electroweak contamination-corrected data fake rate projected vs \pt for 2016 data (black) and 2016 QCD simulation (red),
+   for muons (left) and electrons (right). Isolated triggers are on top and non-isolated triggers on bottom.
+      The shaded band in the projection is the systematic uncertainty related to the electroweak contamination.}
+  \label{fig:QCDFRMuEle2016isoandnoniso}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[!hbtp]
+  \centering
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_mu_1dfr_cone_LooseEMVA_IsoTrigs.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_el_1dfr_cone_LooseEMVA_IsoTrigs.pdf} \\
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_mu_1dfr_cone_LooseEMVA.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2017/y2017_el_1dfr_cone_LooseEMVA.pdf}
+  \caption{Electroweak contamination-corrected data fake rate projected vs \pt for 2017 data (black) and 2017 QCD simulation (red),
+   for muons (left) and electrons (right). Isolated triggers are on top and non-isolated triggers on bottom.
+      The shaded band in the projection is the systematic uncertainty related to the electroweak contamination.}
+  \label{fig:QCDFRMuEle2017isoandnoniso}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[!hbtp]
+  \centering
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2018/y2018_mu_1dfr_cone_LooseEMVA_IsoTrigs.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2018/y2018_el_1dfr_cone_LooseEMVA_IsoTrigs.pdf} \\
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2018/y2018_mu_1dfr_cone_LooseEMVA.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/derivation/y2018/y2018_el_1dfr_cone_LooseEMVA.pdf}
+  \caption{Electroweak contamination-corrected data fake rate projected vs \pt for 2018 data (black) and 2018 QCD simulation (red),
+   for muons (left) and electrons (right). Isolated triggers are on top and non-isolated triggers on bottom.
+      The shaded band in the projection is the systematic uncertainty related to the electroweak contamination.}
+  \label{fig:QCDFRMuEle2018isoandnoniso}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FloatBarrier
+
+We test the closure of this method in simulation after making the inclusive
+SUSY analysis baseline selection for various kinematic distributions in
+\ref{fig:QCDFakesAll2017}. The filled histograms are events with one lepton
+matched to a prompt lepton at generator lepton and another lepton not matched
+to a prompt lepton (prompt-nonprompt events), separately for \ttjets and
+\wjets simulation samples. The histogram with black points represents
+application region events (one tight lepton and one loose-not-tight lepton,
+at reconstruction-level) which are reweighted by the fake rate transfer
+factor to form a prediction. The level of closure observed in the plots is
+typically at 30\% or better, motivating a corresponding 30\% normalization
+systematic uncertainty on the nonprompt lepton background.
+
+\begin{figure}[!hbtp]
+  \centering
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/application/y2017/y2017_L1PT.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/application/y2017/y2017_L2PT.pdf} \\
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/application/y2017/y2017_HT.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/application/y2017/y2017_MET.pdf} \\
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/application/y2017/y2017_NJET.pdf}
+  \includegraphics[width=.45\textwidth]{figs/ssan/fakerate/application/y2017/y2017_NB.pdf} \\
+  \caption{ Electron+muon fake rate closure for QCD measurement in simulation.
+  From left to right and top to bottom, the distributions are leading lepton \pt, subleading lepton \pt,
+  \HT, \ptmiss, \Njets, and \Nbjets.}
+  \label{fig:QCDFakesAll2017}
+  \end{figure}
+
+\FloatBarrier
 
 \section{Charge misidentification}
 
@@ -198,12 +426,91 @@ apply some dedicated corrections to simulation to bring better agreement between
 and simulation.
 
 \mytodo{ttbb}
-
 \mytodo{nisr}
+
+\subsection{ttbb/ttjj}
+
+  To improve the modeling of the flavor of additional jets, the \ttW, \ttZ
+  and \ttH simulation is also corrected to account for the measured ratio of
+  $\ttbar \bbbar / \ttbar jj$ cross sec reported in TOP-16-010
+
+\subsection{ISR/FSR jet multiplicity}
+
+To improve on the MadGraph modeling of the
+multiplicity of additional jets from initial-state radiation (ISR) and
+final-state radiation (FSR),
+ \ttW and \ttZ MC events are reweighted based on the
+number of ISR or FSR jets ($\Njets^{\rm ISR/FSR}$).
+NOTE from paper about why no TTH NOTE.
+The reweighing is based on the Data/MC ratio in the light-flavor jet
+multiplicity in dilepton \ttbar events (using MadGraph MC), as shown in Figure~\ref{fig:isrweight}
+and described in Ref.~\cite{CMS:isrweight} for 2016 Data and MC.
+The method requires exactly two b-tagged jets, and assumes that all other jets are ISR or FSR.
+The reweighting factors vary between 0.86 and 0.77 for
+$\Njets^{\rm ISR/FSR}$ between 1 and 4 (where dilepton ttV plus 4 ISR/FSR jets results in \Njets=8, corresponding to our highest SR bin).
+For 2017 MC, new weights were derived since the MC uses a new Pythia tune.
+The corresponding Data/MC ratios are shown in Figure~\ref{fig:isrweight2}, where the different plots
+are based on different number of partons simulated at the matrix element.
+Reweighting factors are applied to \ttW, \ttZ, and \ttbar (from inclusive sample reweighting).
+Following the procedure used in the SUSY group,
+we take one half of the deviation
+from unity as the systematic uncertainty in these reweighting factors.
+
+As introduced in Section~\ref{sec:samples}, \ttW and \ttZ MC events are reweighted based on $N_J^{\rm ISR/FSR}$, and a
+systematic corresponding to half of the reweighting factor deviation from unity is used (Section~\ref{sec:systematics}).
+
+The size of the systematic comes from deviations observed in an orthogonal single-lepton channel.
+
+The tunes for 2016 (TuneCUETP8M1) and 2017/2018 (TuneCP5) are different, so both need to be checked separately. For the case of 2016,
+the study documented in Ref.~\cite{CMS:isrweight} 
+assesses a systematic of half of the reweighting factor deviation from unity.
+Below, we check the 2018 dataset explicitly to verify this is also the case for the new tune, TuneCP5.
+
+Following Ref.~\cite{CMS:isrweight}, 
+we make a tight single-lepton selection with analysis jet, b-tagging, and lepton selections.
+Selected events have lepton $\pt>25\GeV$, $\ptmiss>50\GeV$, $\HT>300\GeV$, and 2 b tagged jets. MC integral is normalized to
+data to account for trigger and lepton scale factors.
+
+Figure~\ref{fig:isrweightsyst} shows the jet multiplicity distribution for 2018 data/MC before (left) and after (right)
+applying the 2018-derived reweighting factors. The systematic uncertainty of half of the deviation from unity covers
+variations present in the reweighted single lepton jet multiplicity distributions for the updated TuneCP5.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.65\textwidth]{figs/ftan/isr/njets_raw.pdf} \\
+\includegraphics[width=0.65\textwidth]{figs/ftan/isr/njets_corr.pdf}
+\caption{
+    Jet multiplicity distribution for 2018 data/MC before (top) and after (bottom)
+    applying the 2018-derived reweighting factors. The ``other'' category includes
+    leading diboson, \ttW, and \ttZ contributions.
+}
+\label{fig:isrweightsyst}
+\end{figure}
+
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figs/ftan/isr/y2017_isrrw_nisrjets0.pdf}
+  \includegraphics[width=0.45\textwidth]{figs/ftan/isr/y2017_isrrw_nisrjets1.pdf} \\
+  \includegraphics[width=0.45\textwidth]{figs/ftan/isr/y2018_isrrw_nisrjets0.pdf}
+  \includegraphics[width=0.45\textwidth]{figs/ftan/isr/y2018_isrrw_nisrjets1.pdf}
+  \caption{
+      Distribution of the number of light jets in a dilepton \ttbar sample with 0
+      additional partons (left) or 1 additional parton (right) for 2017 data
+      (top) and 2018 data (bottom) compared to their respective MC samples.
+      In the case of 0 additional partons, the reweighing factor in the last bin
+      is taken instead from the previous bin.
+  }
+  \label{fig:isrweight2}
+  \end{figure}
+
+\FloatBarrier
 
 \section{Control regions}
 \mytodo{todo}
 
+\FloatBarrier
+
 \section{Systematic uncertainties}
 \mytodo{todo}
 
+\FloatBarrier
