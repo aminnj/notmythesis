@@ -418,62 +418,80 @@ show the observed charge flip events in MC (SS).
 \FloatBarrier
 
 \section{Corrections}
-\mytodo{todo}
 
 In addition to corrections associated with JEC, \PQb-tagging, lepton scale factors,
 and trigger scale factors, mentioned throughout previous sections and chapters, we
-apply some dedicated corrections to simulation to bring better agreement between data
-and simulation.
+apply two more dedicated corrections to simulation to bring better agreement between data
+and simulation. Both corrections deal with \Njets and \Nbjets for the
+\ttW, \ttZ, and \ttH processes,
+whose distributions need to be estimated correctly at high multiplicities,
+which is especially important for the SM \tttt analysis, as these are
+the leading background processes.
 
-\mytodo{ttbb}
-\mytodo{nisr}
 
-\subsection{ttbb/ttjj}
+\subsection{Gluon splitting}
 
-  To improve the modeling of the flavor of additional jets, the \ttW, \ttZ
-  and \ttH simulation is also corrected to account for the measured ratio of
-  $\ttbar \bbbar / \ttbar jj$ cross sec reported in TOP-16-010
+The \ttW, \ttZ, and \ttH processes need an additional source of \cPqb quarks
+in order to populate the $\Nbjets\geq 3$ bins of the SM \tttt analysis, as
+they should only have up to 2 hard \cPqb jets from the \ttbar decay.
+If simulation does not model the gluon splitting process $g\rightarrow \bbbar$,
+the contributions in these high \Nbjets bins can be drastically wrong.
+In fact, Ref.~\cite{CMS:ttbb} measures that the ratio of cross sections
+of $\ttbar\bbbar$ to $\ttbar jj$ is about $1.7\pm0.6$ times as high in data
+compared to simulation. As a result, events with additional \cPqb quarks
+in these three background processes are scaled up by a factor of 
+$1.7\pm0.6$ and the uncertainty is translated into
+a systematic uncertainty affecting analysis results. 
 
 \subsection{ISR/FSR jet multiplicity}
+\mytodo{nisr}
 
-To improve on the MadGraph modeling of the
+Similarly, \ttW and \ttZ processes need an additional source of jets
+in order to populate the $\Njets \geq 4$ bins of the analyses.
+To improve on the modeling of the
 multiplicity of additional jets from initial-state radiation (ISR) and
-final-state radiation (FSR),
- \ttW and \ttZ MC events are reweighted based on the
+final-state radiation (FSR) in MadGraph,
+\ttW and \ttZ MC events are reweighted based on the
 number of ISR or FSR jets ($\Njets^{\rm ISR/FSR}$).
-NOTE from paper about why no TTH NOTE.
-The reweighing is based on the Data/MC ratio in the light-flavor jet
-multiplicity in dilepton \ttbar events (using MadGraph MC), as shown in Figure~\ref{fig:isrweight}
-and described in Ref.~\cite{CMS:isrweight} for 2016 Data and MC.
-The method requires exactly two b-tagged jets, and assumes that all other jets are ISR or FSR.
-The reweighting factors vary between 0.86 and 0.77 for
-$\Njets^{\rm ISR/FSR}$ between 1 and 4 (where dilepton ttV plus 4 ISR/FSR jets results in \Njets=8, corresponding to our highest SR bin).
-For 2017 MC, new weights were derived since the MC uses a new Pythia tune.
-The corresponding Data/MC ratios are shown in Figure~\ref{fig:isrweight2}, where the different plots
-are based on different number of partons simulated at the matrix element.
-Reweighting factors are applied to \ttW, \ttZ, and \ttbar (from inclusive sample reweighting).
-Following the procedure used in the SUSY group,
-we take one half of the deviation
-from unity as the systematic uncertainty in these reweighting factors.
+The \ttH process is not considered for this reweighting as
+the $\PH\rightarrow \PW\PW^*$ decay will result in extra jets from one
+of the \PW bosons.
 
-As introduced in Section~\ref{sec:samples}, \ttW and \ttZ MC events are reweighted based on $N_J^{\rm ISR/FSR}$, and a
-systematic corresponding to half of the reweighting factor deviation from unity is used (Section~\ref{sec:systematics}).
+The reweighting method, developed in Ref.~\cite{CMS:isrweight} for 2016
+simulation samples, is based on the Data/MC ratio in the light-flavor jet
+multiplicity in dilepton \ttbar events (using MadGraph MC), as shown in
+Figure~\ref{fig:isrweight2} for the 2017 and 2018 simulation samples. The
+method requires exactly two b-tagged jets, and assumes that all other jets
+are ISR or FSR. The reweighting factors vary within the range of
+$[0.77,1.46]$ for $\Njets^{\rm ISR/FSR}$ between 1 and 4. The corresponding
+Data/MC ratios are shown in Figure~\ref{fig:isrweight2}, where the different
+plots are based on different number of partons simulated at the matrix
+element. We take one half of the deviation from unity as the systematic
+uncertainty in these reweighting factors.
 
-The size of the systematic comes from deviations observed in an orthogonal single-lepton channel.
-
-The tunes for 2016 (TuneCUETP8M1) and 2017/2018 (TuneCP5) are different, so both need to be checked separately. For the case of 2016,
-the study documented in Ref.~\cite{CMS:isrweight} 
-assesses a systematic of half of the reweighting factor deviation from unity.
-Below, we check the 2018 dataset explicitly to verify this is also the case for the new tune, TuneCP5.
-
-Following Ref.~\cite{CMS:isrweight}, 
-we make a tight single-lepton selection with analysis jet, b-tagging, and lepton selections.
-Selected events have lepton $\pt>25\GeV$, $\ptmiss>50\GeV$, $\HT>300\GeV$, and 2 b tagged jets. MC integral is normalized to
-data to account for trigger and lepton scale factors.
-
-Figure~\ref{fig:isrweightsyst} shows the jet multiplicity distribution for 2018 data/MC before (left) and after (right)
+The size of the systematic comes from deviations observed in an orthogonal
+single-lepton channel. We make a tight single-lepton selection with tight
+lepton $\pt>25\GeV$, $\ptmiss>50\GeV$, $\HT>300\GeV$, and 2 \PQb tagged jets. 
+The simulation is normalized to data to account for trigger and lepton efficiencies.
+Figure~\ref{fig:isrweightsyst} shows the jet multiplicity distribution for 2018 data/MC before and after
 applying the 2018-derived reweighting factors. The systematic uncertainty of half of the deviation from unity covers
-variations present in the reweighted single lepton jet multiplicity distributions for the updated TuneCP5.
+variations present in the reweighted single lepton jet multiplicity distributions.
+
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.48\textwidth]{figs/ftan/isr/y2017_isrrw_nisrjets0.pdf}
+  \includegraphics[width=0.48\textwidth]{figs/ftan/isr/y2017_isrrw_nisrjets1.pdf} \\
+  \includegraphics[width=0.48\textwidth]{figs/ftan/isr/y2018_isrrw_nisrjets0.pdf}
+  \includegraphics[width=0.48\textwidth]{figs/ftan/isr/y2018_isrrw_nisrjets1.pdf}
+  \caption{
+      Distribution of the number of light jets in a dilepton \ttbar sample with 0
+      additional partons (left) or 1 additional parton (right) for 2017 data
+      (top) and 2018 data (bottom) compared to their respective MC samples.
+      In the case of 0 additional partons, the reweighing factor in the last bin
+      is taken instead from the previous bin.
+  }
+  \label{fig:isrweight2}
+  \end{figure}
 
 \begin{figure}[h!]
 \centering
@@ -487,26 +505,302 @@ variations present in the reweighted single lepton jet multiplicity distribution
 \label{fig:isrweightsyst}
 \end{figure}
 
-  \begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.45\textwidth]{figs/ftan/isr/y2017_isrrw_nisrjets0.pdf}
-  \includegraphics[width=0.45\textwidth]{figs/ftan/isr/y2017_isrrw_nisrjets1.pdf} \\
-  \includegraphics[width=0.45\textwidth]{figs/ftan/isr/y2018_isrrw_nisrjets0.pdf}
-  \includegraphics[width=0.45\textwidth]{figs/ftan/isr/y2018_isrrw_nisrjets1.pdf}
-  \caption{
-      Distribution of the number of light jets in a dilepton \ttbar sample with 0
-      additional partons (left) or 1 additional parton (right) for 2017 data
-      (top) and 2018 data (bottom) compared to their respective MC samples.
-      In the case of 0 additional partons, the reweighing factor in the last bin
-      is taken instead from the previous bin.
-  }
-  \label{fig:isrweight2}
-  \end{figure}
 
 \FloatBarrier
 
 \section{Control regions}
+
 \mytodo{todo}
+
+In this section we describe the control regions (CRs) used to validate our background
+prediction methods with data for the main kinematic variables
+we use in defining our SRs: $\HT$, $\ptmiss$, $\MTmin$,
+$\Njets$, $\Nbjets$, and for the case of the \smft analysis, the input variables
+to the event-level BDT. In general, we observe good agreement across these CRs.
+
+
+\subsection{SUSY: OS events}
+
+In this CR, the same requirements on $\HT$, $\ptmiss$ and $\Njets$ as in the
+inclusive SUSY analysis baseline selection are applied, except we require two
+OS tight leptons. This CR thus coincides with the application region usd for
+the data-driven charge flip background estimate. Distributions are shown in
+Fig.~\ref{fig:OSBaselineMET}. The variables are plotted again with a
+selection that relaxes the baseline $\ptmiss$ cut in
+Fig.~\ref{fig:OSBaselineNoMET}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osmet_ht_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osmet_met_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osmet_mtmin_in.pdf}
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osmet_njets_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osmet_nbtags_in.pdf}  \\
+\caption{ Data to simulation comparisons. From left to right  and top to bottom,
+the $\HT$, $\ptmiss$, $\MTmin$, $\Njets$, $\Nbjets$ distributions are
+shown for the OS CR.}
+\label{fig:OSBaselineMET}
+\end{figure}
+
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osnomet_ht_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osnomet_met_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osnomet_mtmin_in.pdf}
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osnomet_njets_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_osnomet_nbtags_in.pdf}  \\
+\caption{ Data to simulation comparisons. From left to right  and top to bottom,
+the $\HT$, $\ptmiss$, $\MTmin$, $\Njets$, $\Nbjets$ distributions are
+shown for the OS CR, relaxing the $\ptmiss$ cut.}
+\label{fig:OSBaselineNoMET}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{SUSY: SS tight-loose dilepton events}
+
+This tight-loose (TL) CR has selections coinciding with the inclusive SUSY
+analysis baseline selection except with one tight lepton and one lepton
+failing the tight requirements (but passing the loose requirements). This CR
+roughly corresponds to the application region used for the nonprompt lepton
+background estimate. The variables are plotted again with a selection that
+relaxes the baseline $\ptmiss$ cut in Fig.~\ref{fig:TLBaselineNoMET}.
+
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlmet_ht_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlmet_met_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlmet_mtmin_in.pdf}
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlmet_njets_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlmet_nbtags_in.pdf}  \\
+\caption{ Data to simulation comparisons. From left to right  and top to bottom,
+the $\HT$, $\ptmiss$, $\MTmin$, $\Njets$, $\Nbjets$ distributions are
+shown for the TL CR.}
+\label{fig:TLBaselineMET}
+\end{figure}
+
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlnomet_ht_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlnomet_met_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlnomet_mtmin_in.pdf}
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlnomet_njets_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_tlnomet_nbtags_in.pdf}  \\
+\caption{ Data to simulation comparisons. From left to right  and top to bottom,
+the $\HT$, $\ptmiss$, $\MTmin$, $\Njets$, $\Nbjets$ distributions are
+shown for the TL CR, relaxing the $\ptmiss$ cut.}
+\label{fig:TLBaselineNoMET}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{SUSY: Low $\ptmiss$ on-Z multi-lepton events}\label{LowMetOnZCR}
+
+In this CR, the same requirements on $\HT$
+and $\Njets$ as in the inclusive SUSY analysis baseline selection are applied,
+and we also apply the same requirements
+as for the on-Z multi-lepton kinematic regions, except the $\ptmiss$ cut is inverted, 
+becoming $\ptmiss < 50 \GeV$.
+Distributions are shown in Fig.~\ref{fig:MLLowMetBaseline}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_mlonz_ht_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_mlonz_met_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_mlonz_mtmin_in.pdf}
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_mlonz_njets_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_mlonz_nbtags_in.pdf}  \\
+\caption{ Data to simulation comparisons. From left to right  and top to bottom,
+the $\HT$, $\ptmiss$, $\MTmin$, $\Njets$, $\Nbjets$ distributions are
+shown for the low $\ptmiss$ on-Z multi-lepton region}
+\label{fig:MLLowMetBaseline}
+\end{figure}
+
+
+\FloatBarrier
+
+\subsection{SUSY: Low $\ptmiss$ SS events}\label{LowMetSS}
+
+This CR is the low-$\HT$ version of the low \ptmiss inclusive SUSY analysis SRs, so selections
+are identical except we require $\HT<300 \GeV$ to be orthogonal to the SR definitions.
+Distributions are shown in Fig.~\ref{fig:LowMetSSBaseline}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_lowmetlowht_ht_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_lowmetlowht_met_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_lowmetlowht_mtmin_in.pdf}
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_lowmetlowht_njets_in.pdf} 
+\includegraphics[width=0.19\linewidth]{figs/ssan/cr/run2_lowmetlowht_nbtags_in.pdf}  \\
+\caption{ Data to simulation comparisons. From left to right  and top to bottom,
+the $\HT$, $\ptmiss$, $\MTmin$, $\Njets$, $\Nbjets$ distributions are
+shown for the low $\ptmiss$ CR}
+\label{fig:LowMetSSBaseline}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{\smft: Opposite-sign dilepton events}\label{sec:OSCR}
+
+In this control region, the same requirements on $\HT$, $\ptmiss$
+and $\Njets$ as in our inclusive \emph{baseline} selection are applied,
+ but we require two opposite sign tight
+leptons and we remove the $\PZ/\gamma^*$ veto. This control region
+coincides with the application region we use for the data-driven
+method to estimate the \emph{Charge flips} background.
+
+Distributions are shown in Fig.~\ref{fig:OSBaselineRun2} for the main variables, 
+and Fig.~\ref{fig:OSBaselineExtraRun2} for additional variables used in the BDT. 
+The overall agreement is very good, but there
+are some discrepancies in the \Nbjets and BDT distributions that we will monitor as we include additional
+corrections to the MC. 
+% The ISR/FSR corrections described in Section~\ref{sec:samples}, corresponding to Figure~\ref{fig:isrweight2},
+% is applied to the \ttbar sample here. 
+% Note that quantities like the \pt for jet 7,8
+% correspond to high (5+) ISR/FSR jet multiplicities in OS \ttbar. These are anyway not directly probed in the signal regions,
+% consisting mainly of \ttW and \ttZ for which the matrix element provides more partons.
+
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_os_ht_in.pdf} 
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_os_met_in.pdf}  
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_os_njets_in.pdf}  
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_os_nbtags_in.pdf} 
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_os_type_in.pdf} 
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_os_eventbdt_in.pdf} 
+\caption{ Data to simulation comparisons for 2016+2017+2018. From left top to right bottom
+  the $\HT$, $\ptmiss$, $\Njets$, $\Nbjets$, lepton flavor and raw BDT discriminant distributions are
+shown for the opposite-sign dilepton baseline region. Shaded band shows MC stat uncertainty,
+except in the case of the discriminator distribution, where it has been added in quadrature with
+    scale, btag, JEC, and JER variations}
+\label{fig:OSBaselineRun2}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_htb_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_nlb40_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_ntb40_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_dphil1l2_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_detal1l2_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_pt1_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_pt2_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_q1_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_ml1j1_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_maxmjoverpt_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_ptj1_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_ptj6_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_ptj7_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_os_ptj8_in.pdf}
+\caption{ Data to simulation comparisons for 2016+2017+2018, for the additional variables used by the BDT. From left top to right bottom,
+$H_T^b$, Nlooseb, Ntightb, $\Delta \phi(\ell_{1},\ell_2)$, 
+$\Delta \eta(\ell_{1},\ell_{2})$, $p_T(\ell_1)$, $p_T(\ell_2)$, $p_T(\ell_3)$,
+    $q_1$, $m(\ell_1,j_1)$, max($m(j)/p_T(j)$) and the \pt for jets 1,6,7, and 8;
+shown for the opposite-sign dilepton baseline region. }
+\label{fig:OSBaselineExtraRun2}
+\end{figure}
+
+\FloatBarrier
+  
+\subsection{\smft: Same-sign tight+fail dilepton events}\label{sec:TLCR}
+
+In this control region, the same requirements on $\HT$, $\ptmiss$
+and $\Njets$ as in our inclusive \emph{baseline} selection are applied
+, but we require one tight lepton and
+one same-sign lepton failing the tight requirement. The control region is
+enriched in events with one fake lepton. It corresponds to the application region for the \emph{fake-rate} method, the data-driven
+estimate of backgrounds with fake-leptons. The only difference is that in the
+fake-rate application we also allow events where the two leptons fail the tight requirements.
+
+Distributions are shown in Fig.~\ref{fig:TightFailBaselineRun2} for the main variables, 
+and Fig.~\ref{fig:TightFailBaselineExtraRun2} for additional variables used in the BDT. 
+There is an overall underestimate, consistent with what was seen 
+in 2016. The underestimate is flavor-independent, and does not show large trends in the main kinematics.
+Such an underestimate in loose-not-tight leptons, if paired with a data FakeRate equal or larger to the MC one,
+ can indicate that the Nonprompt lepton background is underestimated by a pure MC prediction.
+ Since this background is predicted from data, that is not an issue with the analysis strategy. 
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_tl_ht_in.pdf} 
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_tl_met_in.pdf}  
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_tl_njets_in.pdf}  
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_tl_nbtags_in.pdf} 
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_tl_type_in.pdf} 
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_tl_eventbdt_in.pdf} 
+\caption{ Data to simulation comparisons for 2016+2017+2018. From left top to right bottom
+  the $\HT$, $\ptmiss$, $\Njets$, $\Nbjets$, lepton flavor and raw BDT discriminant distributions are
+shown for the same-sign tight+fail dilepton baseline region. Shaded band shows MC stat uncertainty,
+except in the case of the discriminator distribution, where it has been added in quadrature with
+    scale, btag, JEC, and JER variations}
+\label{fig:TightFailBaselineRun2}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_htb_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_nlb40_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_ntb40_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_dphil1l2_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_detal1l2_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_pt1_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_pt2_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_pt3_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_q1_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_ml1j1_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_maxmjoverpt_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_ptj1_in.pdf} 
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_ptj6_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_ptj7_in.pdf}
+\includegraphics[width=0.32\linewidth]{figs/ftan/cr/run2_tl_ptj8_in.pdf}
+\caption{ Data to simulation comparisons for 2016+2017+2018, for the additional variables used by the BDT. From left top to right bottom,
+    $H_{T}^b$, Nlooseb, Ntightb, $\Delta \phi(\ell_{1},\ell_2)$, 
+$\Delta \eta(\ell_{1},\ell_{2})$, $p_T(\ell_1)$, $p_T(\ell_2)$, $p_T(\ell_3)$,
+    $q_1$, $m(\ell_1,j_1)$, max($m(j)/p_T(j)$) and the \pt for jets 1,6,7, and 8;
+shown for the same-sign tight+fail dilepton baseline region. }
+\label{fig:TightFailBaselineExtraRun2}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{SM tttt: Fake-enriched validation region in data}\label{sec:FECR}
+
+In this control region, the same requirements on $\HT$, $\ptmiss$
+and $\Njets$ as in our inclusive \emph{baseline} selection are applied
+, except we relax the $\HT$ requirement
+and require $\Nbjets=1$.
+This region has a significant non-prompt component and allows us to check the
+overall closure of the method in data. In the plots, the fake background is data-driven.
+Distributions are shown in Figs.~\ref{fig:FakeEnrichedBaselineRun2}.
+The overall data/MC normalization factor in this region is 1.06. If fakes are entirely responsible
+for this discrepancy, and given that fakes constitute half of the background, this
+represents a 12\% normalization increase of fakes, well within the 30\% normalization
+uncertainty taken on this process.
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_htnb1_ht_in.pdf} 
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_htnb1_met_in.pdf}  
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_htnb1_njets_in.pdf}  
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_htnb1_nbtags_in.pdf} 
+\includegraphics[width=0.44\linewidth]{figs/ftan/cr/run2_htnb1_type_in.pdf} 
+\caption{ Data to simulation comparisons for 2016+2017+2018. From left top to right bottom
+  the $\HT$, $\ptmiss$, $\Njets$, $\Nbjets$, lepton flavor and raw BDT discriminant distributions are
+shown for the same-sign dilepton region with $\Nbjets=1$, $\Njets\geq 2$, $\ptmiss\geq50$. Shaded band shows MC stat uncertainty.
+    }
+\label{fig:FakeEnrichedBaselineRun2}
+\end{figure}
 
 \FloatBarrier
 
