@@ -1,32 +1,38 @@
 \chapter{Results and interpretations}
 \label{sec:results}
 
-\mytodo{make todo}
-\mytodo{merge/factor out common info}
-\mytodo{make sure nothing plagiarized}
+The following sections describe the results of the inclusive SUSY and \smft
+analyses after making the SR selections and performing 
+background estimations. The yields in the SRs are used to draw statistical
+conclusions about different signal hypotheses with likelihood-based
+techniques. For example, to exclude certain
+hypotheses on the basis of the observed data distributions across the SRs,
+or to quote a statistical significance for an expected signal.
+While these statistical techniques will be labeled where they are used
+(and can be quite sophisticated),
+a toy example illustrating the profile likelihood method with a single nuisance
+parameter is available in Appendix~\ref{app:statistics}.
 
 \section{SUSY results}
 \label{sec:ssresults}
-\mytodo{to reword}
 
 The distributions of the variables used to define the SRs after the event selection are
 shown in Fig.~\ref{fig:kinem}.
 Background yields shown as stacked histograms in Figs.~\ref{fig:kinem}, \ref{fig:SRrun2}, and \ref{fig:SRrun2b} are
 those determined following baseline selections for the inclusive SUSY analysis.
 The overall data yields exceed expectation by an amount close to the systematic uncertainty.
-However, no particular trend that is not covered by the uncertainties discussed in the previous sections,
-is seen in the distributions.
-The significance of the excess is of similar magnitude in all categories, with a maximum of around 2 standard deviations (s.d.) in the off-\PZ ML category. 
+However, there is no trend observed that is beyond the systematic uncertainties.
+is seen in the distributions,
+the significance of the excess is of similar magnitude in all categories, with a maximum of around 2 standard deviations (s.d.) in the off-\PZ ML category. 
 
-The results of the search, broken down by SR,
+The results of the search, broken down by kinematic category and SR,
 are presented in Figs.~\ref{fig:SRrun2} and~\ref{fig:SRrun2b}.
-Expected background event yields, total uncertainties, and observed event yields in the SRs used in this search
+THe expected background event yields, total uncertainties, and observed event yields in the SRs used in this search
 are summarized in Table~\ref{tab:slimyields}.
-No significant deviation with respect to the SM background prediction is observed.
+Unfortunately (or fortunately), {\it no significant deviation with respect to the SM background prediction is observed.}
 The largest excess of events found by fitting the data with the background-only
-hypothesis is in HH SR54,
-corresponding to a local significance of 2.6 s.d.
-Its neighboring bin, HH SR55, which is adjacent along the \HT dimension, has a
+hypothesis is in HH SR54 with a local significance of 2.6 s.d.
+However, its neighboring bin, HH SR55, adjacent in kinematic phase space along the \HT dimension, has a
 deficit of events in the data corresponding to a
 significance of $1.8$ s.d.
 
@@ -80,77 +86,135 @@ The hatched area represents the total statistical and systematic uncertainty in 
 \label{sec:ssinterpretations}
 
 \subsection{Model-dependent}
-\mytodo{to reword}
 
-These results are then interpreted as experimental constraints on the cross sections for
-the various signal models. For each model,
-event yields in all SRs are used to obtain exclusion limits
-on the production cross section at 95\% confidence level (\CL) with
-an asymptotic formulation of the modified frequentist \CLs
+The results are interpreted as constraints on the cross sections for signal
+models. Event yields in all SRs are used to obtain exclusion limits on the
+production cross section of each model at 95\% confidence level (\CL) with an
+asymptotic formulation of the modified frequentist \CLs
 criterion~\cite{STAT:Junk1999kv,STAT:Read2002hq,STAT:ATLPHYSPUB2011011,STAT:Cowan2010js},
-where uncertainties are incorporated as nuisance parameters and profiled~\cite{STAT:ATLPHYSPUB2011011}.
-This procedure takes advantage of the differences in the distribution of events amongst the SR between the various SM backgrounds and the signal considered.
-The normalizations of the various backgrounds are in particular allowed to float within their uncertainties in the global fit, resulting in several backgrounds (nonprompt lepton, $\ttbar \PW/\PZ/\PH$ and rare processes) being pulled up by around $1$ s.d. for most of the signal points considered, which are often characterized by a distinctive distribution of events across the SRs. 
-This observation is consistent with the current measurements of $\ttbar \PW$ and $\ttbar \PZ$ processes performed by the ATLAS and CMS Collaborations~\cite{ATLAS:ttV,CMS:ttV}.
-The limits obtained are then used together with the theoretical cross section
-calculations to exclude regions of SUSY parameter space.
+where uncertainties are incorporated as nuisance parameters and
+profiled~\cite{STAT:ATLPHYSPUB2011011}. Since the normalizations of the
+various backgrounds allowed to vary within their uncertainties in the
+likelihood fit, several backgrounds (nonprompt lepton, $\ttbar \PW/\PZ/\PH$
+and rare processes) are pulled up by around $1$ s.d. This is consistent with
+the latest measurements of $\ttbar \PW$ and $\ttbar \PZ$ processes performed
+by the ATLAS and CMS Collaborations~\cite{ATLAS:ttV,CMS:ttV}.
 
 
-Figure~\ref{fig:t1ttxx_scan_xsec} shows observed and expected exclusion limits
-for simplified models of gluino pair production with each gluino decaying
-to off- or on-shell third-generation squarks,
-\Totttt, \TfttbbWW, \Tftttt, and \Tfttcc.
-Similarly, Figs.~\ref{fig:t5qqqqvv_scan_xsec} and~\ref{fig:t5qqqqww_scan_xsec} show the corresponding limits for \TfqqqqWZ and \TfqqqqWW, with
-two different assumptions on the chargino mass.
-Note that the \TfqqqqWZ model assumes equal probabilities for
-the decay of the gluino into \chiplus, \chiminus, and \neutralinotwo.
-The exclusion limits for \TsttWW and \TsttHZ are displayed in
-Figs.~\ref{fig:t6ttww_scan_xsec} and~\ref{fig:t6tthz_scan_xsec},
+Figure~\ref{fig:t1ttxx_scan_xsec} shows observed and expected exclusion
+limits for simplified models of gluino pair production with each gluino
+decaying to off- or on-shell third-generation squarks, \Totttt, \TfttbbWW,
+\Tftttt, and \Tfttcc. Figs.~\ref{fig:t5qqqqvv_scan_xsec}
+and~\ref{fig:t5qqqqww_scan_xsec} show the corresponding limits for \TfqqqqWZ
+and \TfqqqqWW, with two different assumptions on the chargino mass. The
+\TfqqqqWZ model assumes equal probabilities for the decay of the gluino into
+\chiplus, \chiminus, and \neutralinotwo. The exclusion limits for \TsttWW and
+\TsttHZ are displayed in Figs.~\ref{fig:t6ttww_scan_xsec}
+and~\ref{fig:t6tthz_scan_xsec}, respectively. The three sets of exclusion
+limits shown in Fig.~\ref{fig:t6tthz_scan_xsec} correspond to the branching
+fraction $\mathcal{B}(\susytoptwo\to\susytopone\PZ)$ having values of 0, 50,
+and 100\%.
+
+For the RPV models, Fig.~\ref{fig:rpvlimits} 
+shows observed and expected limits on the
+cross section of gluino pair production as a function of the gluino masses.
+Both the observed and expected exclusions on the gluino mass
+are similar and reach 2.1 and 1.7 \TeV for the \ToqqqqL and \Totbs models,
 respectively.
-In the \TsttHZ model, the heavier top squark decays
-into a lighter top squark and a \PZ\ or \PH\ boson. The three
-sets of exclusion limits shown in Fig.~\ref{fig:t6tthz_scan_xsec}
-correspond to the branching fraction $\mathcal{B}(\susytoptwo\to\susytopone\PZ)$ having values of
-0, 50, and 100\%.
 
-Finally, Fig.~\ref{fig:rpvlimits} shows observed and expected limits on
-the cross section of gluino pair production as a function of the gluino masses in
-the two RPV models.
-The observed and expected exclusions on the gluino mass are similar and reach 2.1 and 1.7 \TeV for the \ToqqqqL and \Totbs models, respectively.
+As there are many SRs and many topologically diverse signal models,
+it can be hard to associate sensitivity and performance with particular
+SRs or kinematic categories. To help with this,
+Table~\ref{tab:toprankedSRs} presents the top five SRs for several
+representative models, ranked based on the largest values of
+$N_\text{sig.}/\sqrt{N_\text{bkg.} + N_\text{sig.}}$, where $N_\text{sig.}$
+and $N_\text{bkg.}$ are the signal and total background yields in each SR,
+respectively. At a glance, one sees that high $\ptmiss$ and high $\HT$ regions
+in the HH kinematic category provide sensitivity for many high mass splitting
+topologies, while the LL category provides sensitivity for more compressed
+topologies.
 
-The analysis sensitivity for the various models studied in Figs.~\ref{fig:t1ttxx_scan_xsec}--\ref{fig:t6tthz_scan_xsec} is often driven by the event yields in a few SRs (off-\PZ ML21, HH53 and HH52), where a slight excess of data is observed.
-This in particular applies to the uncompressed mass regime, resulting in an observed limit weaker than the expected one by one or two s.d.
-In the compressed mass regime, however, other SRs can become dominant, for example when the hadronic activity becomes limited. 
-This happens in the \TfqqqqWZ and \TfqqqqWW models where the gluino and the lightest neutralino present a limited mass splitting (the region close to the diagonal in the left plots of Figs.~\ref{fig:t5qqqqvv_scan_xsec} and ~\ref{fig:t5qqqqww_scan_xsec}). In those scenarios the on-\PZ ML4 and HH3 SRs provide the best sensitivity, respectively. 
-Additionally, if the intermediate chargino is nearly degenerate in mass with the lightest neutralino, both leptons become soft and LL SRs such as LL2 become relevant. Such a situation is encountered in the phase space region close to the diagonal in the right plots of Figs.~\ref{fig:t5qqqqvv_scan_xsec} and ~\ref{fig:t5qqqqww_scan_xsec}.
-On-\PZ SRs (especially on-\PZ ML23) become important for models where an on-shell \PZ boson is produced (bottom plot in Fig.~\ref{fig:t6tthz_scan_xsec}).
-The limits on the RPV models presented in Fig.~\ref{fig:rpvlimits} are mostly driven by another set of SRs (HH62 and LM11, the latter becoming more relevant for lower masses).
+\begin{table}
+\footnotesize
+\begin{center}
+    \caption{
+        Top five SRs for several representative models, ranked based on the largest values of $N_\text{sig.}/\sqrt{N_\text{bkg.} + N_\text{sig.}}$,
+    where $N_\text{sig.}$ and $N_\text{bkg.}$ are the signal and total background yields in each SR, respectively.
+    }
+\label{tab:toprankedSRs}
+\resizebox{0.99\textwidth}{!}{
+{\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{ccc}\hline
+model      & mass point   & top SRs \\
+\hline
+\Totttt                                               & $m_{\gluino}=1400, m_{\lsp}=400$           & off-Z ML21, HH53, HH52, HH51, HH50 \\
+\Totttt                                               & $m_{\gluino}=2000, m_{\lsp}=100$           & HH53, HH52, off-Z ML21, HL39, HH49 \\
+\Totttt                                               & $m_{\gluino}=1800, m_{\lsp}=100$           & HH53, off-Z ML21, HH52, HL39, HH51 \\
+\Totttt                                               & $m_{\gluino}=1800, m_{\lsp}=1000$          & off-Z ML21, HH53, HH52, HH51, HH50 \\
+\Totttt                                               & $m_{\gluino}=1800, m_{\lsp}=1550$          & HH53, HL39, off-Z ML21, HH49, HH52 \\
+\TsttWW                                               & $m_{\sbottomone}=1000, m_{\chiplmin}=600$  & off-Z ML21, HH53, HH51, HH50, HH52 \\
+\TsttWW                                               & $m_{\sbottomone}=900, m_{\chiplmin}=400$   & off-Z ML21, HH51, HH50, HH53, off-Z ML20 \\
+\TsttWW                                               & $m_{\sbottomone}=800, m_{\chiplmin}=400$   & off-Z ML21, HH51, HH50, HH34, off-Z ML20 \\
+\TfqqqqWZ                                             & $m_{\gluino}=1400, m_{\lsp}=1$             & on-Z ML23, HH53, HH52, HH51, HH49 \\
+\TfqqqqWZ                                             & $m_{\gluino}=900, m_{\lsp}=600$            & on-Z ML4, HH3, HH10, on-Z ML23, HH4 \\
+\TfqqqqWW                                             & $m_{\gluino}=1400, m_{\lsp}=1$             & HH53, HH52, HH49, HH51, HH50 \\
+\TfqqqqWW                                             & $m_{\gluino}=900, m_{\lsp}=600$            & HH3, HH10, HH4, HH7, HH50 \\
+\TfqqqqWZ ($m_{\chiplmin} = m_{\lsp} + 20\GeV$)       & $m_{\gluino}=1400, m_{\lsp}=1$             & HH59, HH53, HH52, HH62, HH51 \\
+\TfqqqqWZ ($m_{\chiplmin} = m_{\lsp} + 20\GeV$)       & $m_{\gluino}=900, m_{\lsp}=600$            & LL2, LL1, LL4, HL39, HL37 \\
+\TfqqqqWW ($m_{\chiplmin} = m_{\lsp} + 20\GeV$)       & $m_{\gluino}=1400, m_{\lsp}=1$             & HH59, HH53, HH52, HH51, HH62 \\
+\TfqqqqWW ($m_{\chiplmin} = m_{\lsp} + 20\GeV$)       & $m_{\gluino}=900, m_{\lsp}=600$            & LL2, LL4, HL39, LL1, HL37 \\
+\TsttHZ ($\mathcal{B}(\susytoptwo\to\susytopone\PZ)$=1) & $m_{\susytoptwo}=850, m_{\susytopone}=625$ & on-Z ML23, on-Z ML21, on-Z ML16, on-Z ML14, on-Z ML17 \\
+\TsttHZ ($\mathcal{B}(\susytoptwo\to\susytopone\PZ)$=0.5) & $m_{\susytoptwo}=850, m_{\susytopone}=625$ & on-Z ML17, on-Z ML23, on-Z ML21, on-Z ML14, on-Z ML16 \\
+\TsttHZ ($\mathcal{B}(\susytoptwo\to\susytopone\PZ)$=0) & $m_{\susytoptwo}=850, m_{\susytopone}=625$ & off-Z ML15, HH40, HH39, HH45, HH44 \\
+\ToqqqqL                                              & $m_{\gluino}=1600$                         & HH62, LM11, HH59, HH61, HH51 \\
+\ToqqqqL                                              & $m_{\gluino}=2400$                         & HH62, LM11, HH59, HH53, HH52 \\
+\Totbs                                                & $m_{\gluino}=1200$                         & HH62, HH50, HH59, HH61, HH58 \\
+\Totbs                                                & $m_{\gluino}=1700$                         & HH62, HH59, HH50, HH52, LM11 \\
+\hline
+\end{tabular}}}
+\end{center}
+\end{table}
+
+% The analysis sensitivity for the various models studied in
+% Figs.~\ref{fig:t1ttxx_scan_xsec}--\ref{fig:t6tthz_scan_xsec} is often driven
+% by the event yields in a few SRs (off-\PZ ML21, HH53 and HH52), where a
+% slight excess of data is observed. This in particular applies to the
+% uncompressed mass regime, resulting in an observed limit weaker than the
+% expected one by one or two s.d. In the compressed mass regime, however, other
+% SRs can become dominant, for example when the hadronic activity becomes
+% limited. This happens in the \TfqqqqWZ and \TfqqqqWW models where the gluino
+% and the lightest neutralino present a limited mass splitting (the region
+% close to the diagonal in the left plots of Figs.~\ref{fig:t5qqqqvv_scan_xsec}
+% and ~\ref{fig:t5qqqqww_scan_xsec}). In those scenarios the on-\PZ ML4 and HH3
+% SRs provide the best sensitivity, respectively. Additionally, if the
+% intermediate chargino is nearly degenerate in mass with the lightest
+% neutralino, both leptons become soft and LL SRs such as LL2 become relevant.
+% Such a situation is encountered in the phase space region close to the
+% diagonal in the right plots of Figs.~\ref{fig:t5qqqqvv_scan_xsec} and
+% ~\ref{fig:t5qqqqww_scan_xsec}. On-\PZ SRs (especially on-\PZ ML23) become
+% important for models where an on-shell \PZ boson is produced (bottom plot in
+% Fig.~\ref{fig:t6tthz_scan_xsec}). The limits on the RPV models presented in
+% Fig.~\ref{fig:rpvlimits} are mostly driven by another set of SRs (HH62 and
+% LM11, the latter becoming more relevant for lower masses).
 
 
-Compared to the previous versions of the
-analysis~\cite{CMS:mySUS2016,CMS:SUS16041}, the limits for the RPC models
-extend the gluino and squark mass observed and expected exclusions by up to
-200\GeV because of the increase in the integrated luminosity and the
-corresponding re-optimization of SR definitions. These results also
-complement searches for gluino pair production conducted by CMS in final
-states with 0 or 1
-lepton~\cite{CMS:2019tlp,CMS:Sirunyan2019ctn,CMS:Sirunyan2019xwh}. 
-For the \Totttt
-scenario, the expected sensitivity of this analysis suffers from a lower
-branching fraction that makes it uncompetitive in the uncompressed mass
-regime. However, for a nearly degenerate mass spectrum, the SM background
-becomes of higher importance and the presence of an SS lepton pair
-significantly reduces it, leading to a similar sensitivity. The constraints
-on the two RPV models that were not previously included demonstrate the
-sensitivity of the analysis to RPV scenarios. The final state is particularly
-well suited to study the \ToqqqqL model since no leptonic branching fraction
-penalty applies, resulting in exclusion limits on the gluino mass beyond 2.1
-TeV, comparable to other results in fully hadronic final
-states~\cite{CMS:Sirunyan2019ctn,CMS:Sirunyan2019xwh}. The limits obtained on the
-\Totbs model are stronger than those previously obtained in the one-lepton
-channel based on the analysis of the 2016 dataset~\cite{CMS:Sirunyan2017dhe}.
-They are expected to remain competitive after an update with the full Run 2
-dataset.
+Compared to previous versions of this
+analysis~\cite{CMS:mySUS2016,CMS:SUS16041}, limits for the RPC models extend
+the gluino and squark mass observed and expected exclusions by up to 200\GeV
+primarily due to the increase in the integrated luminosity
+($35.9\rightarrow\mathrm{\sslumi}$) and the corresponding re-optimization of
+SR definitions. These results also complement searches for gluino pair
+production conducted by CMS in final states with 0 or 1
+lepton~\cite{CMS:2019tlp,CMS:Sirunyan2019ctn,CMS:Sirunyan2019xwh}. The
+constraints on the two RPV models that were not previously included
+demonstrate the sensitivity of the analysis to RPV scenarios. The final state
+is particularly well suited to study the \ToqqqqL model as there is no
+penalty from leptonic branching fraction, which results in exclusion limits
+on the gluino mass beyond 2.1 TeV, comparable to other results in fully
+hadronic final states~\cite{CMS:Sirunyan2019ctn,CMS:Sirunyan2019xwh}. The
+limits obtained on the \Totbs model are stronger than those previously
+obtained in the one-lepton channel based on the analysis of the 2016
+dataset~\cite{CMS:Sirunyan2017dhe}.
 
 \begin{figure*}[!hbtp]
 \centering
@@ -308,14 +372,15 @@ for the production of an SS lepton pair with at least two jets, as a function of
 
 \section{\smft results}
 \label{sec:ftresults}
-\mytodo{to reword}
 
-Distributions of the main kinematic variables (\Njets, \Nbjets, \HT, and
-\ptmiss) for events in the four top analysis baseline region are shown in Fig.~\ref{fig:kinemsr} and compared
-to the SM background predictions. The \Njets and \Nbjets distributions for
-the CRW and CRZ are shown in Fig.~\ref{fig:kinemcr}. The expected SM \tttt
-signal, normalized to its predicted cross section, is shown in both figures.
-The SM predictions are statistically consistent with the observations.
+Distributions of the main kinematic variables in the \smft analysis (\Njets, \Nbjets, \HT, and
+\ptmiss) for events passing the baseline selections are shown in Fig.~\ref{fig:kinemsr} and compared
+to the SM background predictions. 
+The \Njets and \Nbjets distributions for
+the \ttW and \ttZ control regions, CRW and CRZ, are shown in Fig.~\ref{fig:kinemcr}. 
+In both figures, the expected SM \tttt
+signal is normalized to its predicted cross section.
+Again, fortunately (or unfortunately), {\it the SM predictions are statistically consistent with the observations.}
 
 \begin{figure*}[!hbt]
 \centering
@@ -345,32 +410,35 @@ The hatched areas represent the  uncertainties in the SM signal and background p
 \label{fig:kinemcr}
 \end{figure*}
 
-A binned likelihood is constructed using the yields from the signal regions,
-the CRZ, as well as the CRW for the cut-based analysis only, incorporating
-experimental and theoretical uncertainties as ``nuisance'' parameters. 
+The yields from the SRs, CRZ, and CRW (for the cut-based analysis only),
+incorporating experimental and theoretical uncertainties as ``nuisance''
+parameters, are used to construct a binned likelihood function.
 The measured cross
-section for \tttt and the significance of the observation relative to the
+section for \tttt and the statistical significance of the observation relative to the
 background-only hypothesis are obtained from a profile maximum-likelihood
 fit, in which the parameter of interest is \xsectttt and all nuisance
 parameters are profiled, following the procedures described in
-Refs.~\cite{STAT:ATLPHYSPUB2011011,STAT:PDG}. In addition, an upper limit at 95\%
-confidence level (\CL) is set on \xsectttt using the modified frequentist
-\CLs criterion~\cite{STAT:Junk1999kv,STAT:Read2002hq}, with the profile likelihood
-ratio test statistic and asymptotic approximation~\cite{STAT:Cowan2010js}. We
-verified the consistency between the asymptotic and fully toy-based methods.
+Refs.~\cite{STAT:ATLPHYSPUB2011011,STAT:PDG}. 
+An upper limit at 95\%
+confidence level (\CL) is set on \xsectttt using the 
+\CLs criterion~\cite{STAT:Junk1999kv,STAT:Read2002hq}, 
+and asymptotic approximation~\cite{STAT:Cowan2010js}. 
 Alternatively, by considering the SM, including the \tttt process with the SM
 cross section and uncertainty~\cite{THEORY:Frederix2017wme}, as the null
 hypothesis, the fit provides cross section upper limits on BSM processes with
-new scalar and pseudoscalar particles.
+new scalar and pseudoscalar particles, which will come into play when
+considering the interpretations in the upcoming sections.
 
-The values and uncertainties of most nuisance parameters are unchanged by the
-fit, but the ones significantly affected include those corresponding to the
+While the values of most nuisance parameters are unchanged by the
+fit, the ones significantly affected include those corresponding to the
 \ttW and \ttZ normalizations, which are both scaled by $1.3\pm0.2$ by the
-fit, in agreement with the ATLAS and CMS measurements of these
-processes~\cite{ATLAS:Aaboud2019njj, CMS:Sirunyan2017uzs, CMS:2019too}. The
-predicted yields after the maximum-likelihood fit (post-fit) are compared to
-data in Fig.~\ref{fig:srcr} for the cut-based (upper) and BDT (lower)
-analyses, where the fitted \tttt signal contribution is added to the
+fit. This is in agreement with recent ATLAS and CMS measurements of these
+processes~\cite{ATLAS:Aaboud2019njj, CMS:Sirunyan2017uzs, CMS:2019too}, which
+measures an underprediction of \ttW and \ttZ processes at NLO when compared to
+data, by approximately 20-30\%. The
+post-fit predicted yields are compared to
+data in Fig.~\ref{fig:srcr} for the cut-based and BDT 
+analyses, where the fitted \tttt signal contribution is stacked on to the
 background predictions. The corresponding yields are shown in
 Tables~\ref{tab:srcryields} and \ref{tab:srdiscyields} for the cut-based and
 BDT analysis, respectively.
@@ -386,13 +454,9 @@ $22.5\unit{fb}$ in the BDT analyses. The corresponding expected upper limits
 on the \tttt cross section, assuming no SM \tttt contribution to the data,
 are $9.4^{+4.3}_{-2.9}\unit{fb}$ (cut-based) and $8.5^{+3.9}_{-2.6}\unit{fb}$
 (BDT), a significant improvement relative to the value of
-$20.8^{+11.2}_{-6.9}\unit{fb}$ of Ref.~\cite{CMS:myTOP2016}. We consider the BDT
-analysis as the primary result of this paper, as it provides a higher
-expected measurement precision, and use the results from it for further
-interpretations in the following section.
-
-
-
+$20.8^{+11.2}_{-6.9}\unit{fb}$ of Ref.~\cite{CMS:myTOP2016}. Because it 
+provides a higher expected measurement precision, we consider the BDT
+analysis as the primary result with which to perform further interpretations.
 
 \begin{figure}[!hbtp]
 \centering
@@ -408,7 +472,7 @@ The lower panels show the ratios of the observed event yield to the total predic
 \end{figure}
 
 
-\begin{table*}[htb!]
+\begin{table}[htb!]
 \centering
 \label{tab:srcryields}
 {\renewcommand{\arraystretch}{1.2}
@@ -437,12 +501,12 @@ SR14 & $0.87\pm0.30$    & $0.80\pm0.45$ & $1.67\pm0.52$    & 1 \\
           their total uncertainties and the observed number of events
           in the control and signal regions in data for the cut-based analysis.
 }
-\end{table*}
+\end{table}
 
 
 
 
-\begin{table*}[htb!]
+\begin{table}[htb!]
 \centering
 \label{tab:srdiscyields}
 {\renewcommand{\arraystretch}{1.2}
@@ -476,68 +540,60 @@ SR17 & $0.57\pm0.36$    & $1.08\pm0.42$ & $1.65\pm0.50$    & 3 \\
           in the control and signal regions in data for the BDT analysis.
 }
 
-\end{table*}
+\end{table}
 
 \FloatBarrier
 
 \section{\smft interpretations}
 \label{sec:ftinterpretations}
-\mytodo{to reword}
 
-The BDT-based results are used to constrain SM parameters, as well as production of
-BSM particles and operators that can affect the \tttt production rate. The
-existence of \tttt Feynman diagrams with virtual Higgs bosons allows
-interpreting the upper limit on \xsectttt as a constraint on the Yukawa
-coupling, $y_{\PQt}$, between the top quark and the Higgs
-boson~\cite{THEORY:TopYukawaTTTT, THEORY:TopYukawaTTTTnew}. Similarly, the
+The BDT-based results are used to constrain SM parameters, as well as
+production of BSM particles and operators that can affect the \tttt
+production rate. The existence of \tttt Feynman diagrams with virtual Higgs
+bosons allows interpreting the upper limit on \xsectttt as a constraint on
+the Yukawa coupling, $y_{\PQt}$, between the top quark and the Higgs
+boson, as introduced in Section~\ref{sec:ftyukawa}. Similarly, the
 measurement can be interpreted as a constraint on the Higgs boson oblique
-parameter $\hat{H}$, defined as the Wilson coefficient of the dimension-six
-BSM operator modifying the Higgs boson propagator~\cite{THEORY:ObliqueHiggs2019}.
-More generically, Feynman diagrams where the virtual Higgs boson is replaced
-by a virtual BSM scalar ($\phi$) or vector ($\cPZpr$) particle with mass
-smaller than twice the top quark mass ($m < 2m_\PQt$), are used to interpret
-the result as a constraint on the couplings of such new
-particles~\cite{THEORY:Alvarez2016nrz}. In addition, new particles with $m >
-2m_\PQt$, such as a heavy scalar (\PH) or pseudoscalar (\PSA), can be
-produced on-shell in association with top quarks. They can subsequently decay
-into top quark pairs, generating final states with three or four top quarks.
-Constraints on the production of such heavy particles can be interpreted in
-terms of 2HDM parameters~\cite{THEORY:Dicus1994bm,THEORY:Craig2015jba,THEORY:Craig2016ygr},
-or in the framework of simplified models of dark matter~\cite{THEORY:Boveia2016mrp,
-THEORY:Albert2017onk}.
+parameter $\hat{H}$, as described in Section~\ref{sec:fthhat}. 
+Feynman diagrams
+where the virtual Higgs boson is replaced by a virtual BSM scalar ($\phi$) or
+vector ($\cPZpr$) particle with mass smaller than twice the top quark mass
+($m < 2m_\PQt$), are used to interpret the result as a constraint on the
+couplings of such new particles, as described in Section~\ref{sec:ftzprimephi}. 
+In addition,
+new particles with $m > 2m_\PQt$, such as a heavy scalar (\PH) or
+pseudoscalar (\PSA), can be produced on-shell in association with top quarks.
+They can subsequently decay into top quark pairs, generating final states
+with three or four top quarks. Constraints on the production of such heavy
+particles can be interpreted in terms of 2HDM
+parameters (as described in Section~\ref{sec:ft2hdm})
+or in the framework of simplified models of dark
+matter (as described in Section~\ref{sec:ftdm}).
 
 \FloatBarrier
 
 \subsection{Top quark yukawa coupling}
-\mytodo{to reword}
 
-When using our \tttt to determine a constraint on $y_{\PQt}$, we verified
-using a LO simulation that the signal acceptance is not affected by the
-relative contribution of the virtual Higgs boson Feynman diagrams. We take
+When using the \tttt results to determine a constraint on $y_{\PQt}$, we take
 into account the dependence of the backgrounds on $y_{\PQt}$ by scaling the
 \ttH cross section by $\abs{y_{\PQt}/y_{\PQt}^{\mathrm{SM}}}^2$ prior to the
 fit, where $y_{\PQt}^{\mathrm{SM}}$ represents the SM value of the top quark
 Yukawa coupling. As a result of the \ttH background rescaling, the measured
 \xsectttt depends on $\abs{y_{\PQt}/y_{\PQt}^{\mathrm{SM}}}$, as shown in
-Fig.~\ref{fig:yukawa}. The measurement is compared to the theoretical
-prediction obtained from the LO calculation of Ref.~\cite{THEORY:TopYukawaTTTT},
-scaled to the $12.0^{+2.2}_{-2.5}\unit{fb}$ cross section obtained in
-Ref.~\cite{THEORY:Frederix2017wme}, and including the uncertainty associated with
-doubling and halving the renormalization and factorization scales. Comparing
-the observed limit on \xsectttt with the central, upper, and lower values of
-its theoretical prediction, we obtain 95\% \CL limits of
+Fig.~\ref{fig:yukawa}, becoming smaller at higher values of $y_{\PQt}$. The
+measurement is compared to the theoretical prediction obtained from
+Ref.~\cite{THEORY:TopYukawaTTTT}, scaled to the latest NLO cross section for
+\tttt, $12.0^{+2.2}_{-2.5}\unit{fb}$. Comparing the observed limit on
+\xsectttt with the central, upper, and lower values of its theoretical
+prediction, we obtain 95\% \CL limits of
 $\abs{y_{\PQt}/y_{\PQt}^{\mathrm{SM}}} < 1.7$, $1.4$, and $2.0$,
-respectively, an improvement over the previous CMS
-result~\cite{CMS:myTOP2016}. Alternatively, assuming that the on-shell Yukawa
-coupling is equal to that of the SM, we do not rescale the \ttH background
-with respect to its SM prediction, and obtain corresponding limits on the
-off-shell Yukawa coupling of $\abs{y_{\PQt}/y_{\PQt}^{\mathrm{SM}}} < 1.8$,
-$1.5$, and $2.1$. Since $y_{\PQt}$ affects the Higgs boson production cross
-section in both the gluon fusion and \ttH modes, constraints on $y_{\PQt}$
-can also be obtained from a combination of Higgs boson
-measurements~\cite{STAT:AtlasCmsHiggsComb}. However, these constraints require
-assumptions about the total width of the Higgs boson, while the \tttt-based
-limit does not. 
+respectively, improving on the previous CMS \tttt
+result~\cite{CMS:myTOP2016}. The $y_{\PQt}$ constant affects the Higgs boson
+production cross section in both the gluon fusion and \ttH modes, so
+constraints can also be obtained from a combination of Higgs boson
+measurements~\cite{STAT:AtlasCmsHiggsComb}, however, these constraints
+require assumptions about the total width of the Higgs boson, while the
+\tttt-based limit presented here does not.
 
 \begin{figure}[!hbtp]
 \centering
@@ -570,24 +626,22 @@ obtained a constraint of $\hat{H} < 0.16$ at 95\% \CL.
 
 
 \subsection{Off-shell particles}
-\mytodo{to reword}
 
-To study the off-shell effect of new particles with $m < 2m_\PQt$, we first
-consider neutral scalar ($\phi$) and neutral vector ($\cPZpr$) particles that
-couple to top quarks. Such particles are at present only weakly constrained,
-while they can give significant contributions to the \tttt cross
-section~\cite{THEORY:Alvarez2016nrz}. Having verified in LO simulation that these
-new particles affect the signal acceptance by less than 10\%, we recalculate
-the \xsectttt upper limit of the BDT analysis including an additional 10\%
+In order to study the off-shell effect of new particles with $m < 2m_\PQt$,
+we first consider neutral scalar ($\phi$) and neutral vector ($\cPZpr$)
+particles that couple to top quarks. Based on simulation, these new particles
+affect the signal acceptance by less than 10\%, so we recalculate the
+\xsectttt upper limit of the BDT analysis including an additional 10\%
 uncertainty in the acceptance, and obtain the 95\% \CL upper limit of
 23.0\unit{fb} on the total \tttt cross section, slightly weaker than the
-22.5\unit{fb} limit obtained in Section~\ref{sec:results}. Comparing this
-upper limit to the predicted cross section in models where \tttt production
-includes a $\phi$ or a $\cPZpr$ in addition to SM contributions and
-associated interference, we set limits on the masses and couplings of these
-new particles, shown in Fig.~\ref{fig:ZprimePhiExclusions}. These limits
-exclude couplings larger than 1.2 for $m_{\phi}$ in the 25--340\GeV range and
-larger than 0.1 (0.9) for $m_{\cPZpr} = 25$ (300)\GeV.
+nominal limit of 22.5\unit{fb}. Comparing this upper limit to the predicted
+cross section in models where \tttt production includes a $\phi$ or a
+$\cPZpr$ in addition to SM contributions, we set limits on the masses and
+couplings of these new particles, shown in
+Fig.~\ref{fig:ZprimePhiExclusions}. These two-dimensional limits 
+exclude couplings larger
+than 1.2 for $m_{\phi}$ in the 25--340\GeV range and larger than 0.1 (0.9)
+for $m_{\cPZpr} = 25$ (300)\GeV.
 
 \begin{figure}[!hbtp]
 \centering
@@ -603,34 +657,46 @@ larger than 0.1 (0.9) for $m_{\cPZpr} = 25$ (300)\GeV.
 \FloatBarrier
 
 \subsection{On-shell particles}
-\mytodo{to reword}
 
-We consider on-shell effects from new scalar and pseudoscalar particles with $m > 2m_\PQt$. At such masses, the production rate of these particles
-in association with a single top quark ($\PQt\PQq\PH/\PSA$, $\PQt\PW\PH/\PSA$) becomes significant,
-so we include these processes in addition to $\PQt\overline{\PQt}\PH/\PSA$.
-As pointed out in Ref.~\cite{THEORY:Craig2016ygr}, these processes do not suffer significant interference with the SM \tttt process.
-To obtain upper limits on the sum of these processes followed by the decay $\PH/\PSA\to \ttbar$,
-we use the BDT analysis and treat the SM \tttt process as a background.
-Figure~\ref{fig:HiggsLimits} shows the excluded cross section as a function of the mass of the scalar (left) and pseudoscalar (right).
-Comparing these limits with the Type-II 2HDM cross sections with $\tan\beta = 1$ in the alignment limit,
-we exclude scalar (pseudoscalar) masses up to 470~(550)\GeV, improving by more than 100\GeV with respect to the previous CMS limits~\cite{CMS:mySUS2016}.
-Alternatively, we consider the simplified model of dark matter defined in Ref.~\cite{CMS:DMsingletop},
-which includes a Dirac fermion dark matter candidate, $\chi$, in addition to $\PH/\PSA$, and where the couplings of $\PH/\PSA$
-to SM fermions and $\chi$ are determined by parameters $g_\mathrm{SM}$ and $g_\mathrm{DM}$, respectively.
-In this model, exclusions similar to those from 2HDM are reached by assuming $g_\mathrm{SM} = 1$ and $g_\mathrm{DM} = 1$,
-and taking  $m_{\PH/\PSA} < 2 m_\chi$.
-Relaxing the 2HDM assumption of $\tan\beta = 1$, Fig.~\ref{fig:HiggsLimitsTB} shows the 2HDM limit as a function of $\PH/\PSA$ mass and $\tan\beta$,
-considering one new particle at a time and also including a scenario with  $m_\PH = m_\PSA$ inspired by
-a special case of Type-II 2HDM, the hMSSM~\cite{THEORY:Djouadi2013uqa}.
-Values of $\tan\beta$ up to 0.8--1.6 are excluded, depending on the assumptions made.
-These exclusions are comparable to those of a recent CMS search for the resonant production of $\PH/\PSA$ in the
-$\Pp\to \PH/\PSA \to \ttbar$ channel~\cite{CMS:HIG17027}.
-Relaxing the $m_{\PH/\PSA} < 2 m_\chi$ assumption in the dark matter model, Fig.~\ref{fig:DMLimits} shows the
-limit in this model as a function of the masses of both $\PH/\PSA$ and $\chi$,
-for $g_\mathrm{DM} = 1$ and for two different assumptions of $g_\mathrm{SM}$.
-Large sections of the phase space of simplified dark matter models are excluded, and the reach of this analysis is complementary
-to that of analyses
-considering decays of $\PH/\PSA$ into invisible dark matter candidates, such as those of Refs.~\cite{CMS:DMsingletop, ATLAS:Aaboud2017rzf}.
+We finally consider on-shell effects from new scalar and pseudoscalar
+particles with $m > 2m_\PQt$. The production rate of these
+particles in association with a single top quark ($\PQt\PQq\PH/\PSA$,
+$\PQt\PW\PH/\PSA$) is significant, so we include these processes in
+addition to $\PQt\overline{\PQt}\PH/\PSA$. These processes 
+also do not suffer significant
+interference with the SM \tttt process. To obtain upper limits on the sum of
+these processes followed by the decay $\PH/\PSA\to \ttbar$, we use the BDT
+analysis and treat the SM \tttt process as a background.
+Figure~\ref{fig:HiggsLimits} shows excluded cross sections as a function
+of the mass of the scalar and pseudoscalar particles. Comparing these
+limits with the Type-II 2HDM cross sections with $\tan\beta = 1$ in the
+alignment limit, we exclude scalar (pseudoscalar) masses up to 470~(550)\GeV,
+which improves the limits from a previous CMS analysis~\cite{CMS:mySUS2016}
+by more than 100\GeV.
+Similarly, we consider a simplified model
+of dark matter which includes a Dirac
+fermion dark matter candidate, $\chi$, in addition to $\PH/\PSA$, and where
+the couplings of $\PH/\PSA$ to SM fermions and $\chi$ are determined by
+parameters $g_\mathrm{SM}$ and $g_\mathrm{DM}$, respectively. 
+Exclusions similar to those from 2HDM are reached by assuming $g_\mathrm{SM}
+= 1$ and $g_\mathrm{DM} = 1$, and taking $m_{\PH/\PSA} < 2 m_\chi$. 
+Relaxing
+the 2HDM assumption of $\tan\beta = 1$, Fig.~\ref{fig:HiggsLimitsTB} shows
+the 2HDM limit as a function of $\PH/\PSA$ mass and $\tan\beta$, considering
+one new particle at a time and also including a scenario with $m_\PH =
+m_\PSA$. Values of $\tan\beta$ up to 0.8--1.6 are
+excluded. These exclusions are comparable
+to those of a recent CMS search for the resonant production of $\PH/\PSA$ in
+the $\Pp\to \PH/\PSA \to \ttbar$ channel~\cite{CMS:HIG17027}. Relaxing the
+$m_{\PH/\PSA} < 2 m_\chi$ assumption in the dark matter model,
+we obtain
+Fig.~\ref{fig:DMLimits}, which shows the limit 
+as a function of the
+masses of both $\PH/\PSA$ and $\chi$, for $g_\mathrm{DM} = 1$ and for two
+different assumptions of $g_\mathrm{SM}$. Large sections of the phase space
+are excluded, which is
+is complementary to that of analyses considering invisible decays of $\PH/\PSA$
+ such as in Refs.~\cite{CMS:DMsingletop, ATLAS:Aaboud2017rzf}.
 
 \begin{figure*}[!hbtp]
 \centering
