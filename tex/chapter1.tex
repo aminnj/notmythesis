@@ -2,19 +2,20 @@
 
 
 \section{Standard model}
+\mytodo{todo}
 
-\mytodo{describe SM}
-\mytodo{table of particles}
+% \mytodo{describe SM}
+% \mytodo{table of particles}
 
 \section{Beyond the standard model}
+\mytodo{todo}
 
-\mytodo{issues with sm, higgs mass, hierarchy problem}
-\mytodo{dark mass, neutrino masses, matter asymmetry}
-\mytodo{SUSY}
-
-Stable LSP means conservation of symmetry called R-parity
-$P_R=(-1)^{3B+L+2s}$ where $B$ is baryon number, $L$ is lepton number,
-and $s$ is spin.
+% \mytodo{issues with sm, higgs mass, hierarchy problem}
+% \mytodo{dark mass, neutrino masses, matter asymmetry}
+% \mytodo{SUSY}
+% Stable LSP means conservation of symmetry called R-parity
+% $P_R=(-1)^{3B+L+2s}$ where $B$ is baryon number, $L$ is lepton number,
+% and $s$ is spin.
 
 \section{LHC}
 \mytodo{todo}
@@ -22,57 +23,168 @@ and $s$ is spin.
 % https://twiki.cern.ch/twiki/bin/viewauth/CMS/Internal/PubDetector
 
 LHC~\cite{LHC:Evans1129806}
-CMS~\cite{CMS:Chatrchyan2008zzk,CMS:PTDR2}
-Tracker~\cite{CMS:TRK11001,CMS:Dominguez1481838}
-ECAL~\cite{CMS:Khachatryan2015hwa}
-HCAL~\cite{CMS:PTDR2}
-Muon~\cite{CMS:Sirunyan2018fpa}
-Trigger~\cite{CMS:Khachatryan2016bia}
-PF~\cite{CMS:PRF14001}
 
-$N = \sigma \cdot L_\text{int}$
-
-instantaneous luminosity is on the order of $10^{34} \unit{cm}^{-2} \unit{s}^{-1}$.
-The metric unit for a area (b/barn), commonly used to express cross sections and luminosities,
-is equivalent to $10^{-24} \unit{cm}^2$. Thus, the LHC instantaneous luminosity can
-be roughly written as $1 \unit{fb}^{-1} \unit{day}^{-1}$
+% $N = \sigma \cdot L_\text{int}$
+% instantaneous luminosity is on the order of $10^{34} \unit{cm}^{-2} \unit{s}^{-1}$.
+% The metric unit for a area (b/barn), commonly used to express cross sections and luminosities,
+% is equivalent to $10^{-24} \unit{cm}^2$. Thus, the LHC instantaneous luminosity can
+% be roughly written as $1 \unit{fb}^{-1} \unit{day}^{-1}$
 
 
 \section{CMS}
 \mytodo{todo}
 
-The Compact Muon Solenoid (CMS) detector is one of the general purpose detectors
-situated on the LHC ring.
+CMS~\cite{CMS:Chatrchyan2008zzk,CMS:PTDR2}
+% Tracker~\cite{CMS:TRK11001,CMS:Dominguez1481838}
+% ECAL~\cite{CMS:Khachatryan2015hwa}
+% HCAL~\cite{CMS:PTDR2}
+% Muon~\cite{CMS:Sirunyan2018fpa}
+% Trigger~\cite{CMS:Khachatryan2016bia}
+% PF~\cite{CMS:PRF14001}
+
+
+% The Compact Muon Solenoid (CMS) detector is one of the general purpose detectors
+% situated on the LHC ring.
+
+transverse momentum (\pt).
+
+pseudorapidity $\eta \equiv -\ln (\tan (\theta/2))$
+
+Let us now turn to the individual subsystems that comprise the CMS detector
+starting from the center, working our way radially outward. A cutaway view of
+the CMS detector, highlighting these subsystems, is shown in
+Figure~\ref{fig:cmsdetector}.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.99\linewidth]{figs/misc/cms.png}
+    \caption{
+        A cutaway view of the CMS detector.
+    }
+    \label{fig:cmsdetector}
+\end{figure}
+
+\FloatBarrier
 
 \subsection{Tracker}
-\mytodo{todo}
 
-% pg 15 of http://cds.cern.ch/record/1481838/files/CMS-TDR-011.pdf
-3 layers ranging between 4.4cm and 10.2cm (2016)
-4 layers ranging between 3.0cm and 16.0cm (2017-2018)
+The innermost subdetector is the
+tracker~\cite{CMS:TRK11001,CMS:Dominguez1481838}, which is composed of an
+inner pixel detector and an outer strip tracker. Both use silicon technology
+which allows for the formation of electron-hole pairs when a charged particle
+passes through.
+There are 3 layers of inner
+pixel detectors with a transverse radial position ranging between $4.4\unit{cm}$ and $10.2\unit{cm}$. In 2017,
+these were replaced with 4 layers ranging between $3.0\unit{cm}$ and $16.0\unit{cm}$.
+The outer strip tracker consists of 10 layers in the central barrel region, extending
+out to $1.1\unit{m}$. The endcaps consist of 2 disks for the inner pixel detector
+and 12 disks in the strip tracker.
 
-% Just outside the beampipe within which collisions occur
+The tracker allows for precise reconstruction of particle trajectories and 
+vertexing up to $|\eta|=2.5$ and for full range of azimuthal angles.
+
+% % pg 15 of http://cds.cern.ch/record/1481838/files/CMS-TDR-011.pdf
+% 3 layers ranging between 4.4cm and 10.2cm (2016)
+% 4 layers ranging between 3.0cm and 16.0cm (2017-2018)
 
 \subsection{Electromagnetic calorimeter}
-\mytodo{todo}
 
-\subsection{Hadronic caolorimeter}
-\mytodo{todo}
+Sitting just outside of the tracker is the electromagnetic calorimeter (ECAL).
+The ECAL is composed of nearly 80,000 lead tungstate scintillating crystals tiled to form a cylinder,
+and is split into a barrel section and two endcap sections~\cite{CMS:Khachatryan2015hwa}.
+Together, these sections provide full azimuthal coverage and coverage up to $|\eta|=3.0$.
+
+The high-density lead tungstate crystals, which are $22\unit{cm}$ in depth
+and point toward the center of the CMS detector,
+have a radiation length of $0.85\unit{cm}$. Consequently, the 25 radiation
+lengths in each crystal allow electromagnetic showers to be almost completely
+longitudinally contained within the single layer of crystals. The small
+Moli\'ere radius of the crystals ($2.2\unit{cm}$), which coincides with the
+width of the crystals themselves ($2.2\unit{cm}$ in the barrel and
+$2.9\unit{cm}$ in the endcaps), ensures that the transverse profile of
+showers is mostly contained within just a single crystal.
+
+\subsection{Hadronic calorimeter}
+
+Outside of the ECAL is the hadronic calorimeter (HCAL)~\cite{CMS:PTDR2},
+which is split into four sets of calorimeters to cover different geometrical
+regions: barrel (HB), endcap (HE), outer (HO), and forward (HF) calorimeters.
+Similar to the ECAL, the first three sections collectively coverage of hadronic showers 
+up to $|\eta|=3.0$, and the HF extends the coverage to $|\eta|=5.0$.
+
+The sampling calorimeters of the HCAL are made of alternating layers of
+absorber (brass or steel) that induce hadronic showers, and plastic
+scintillators. In the barrel, the brass absorbers have a total of nearly 6
+interaction lengths, and along with the plastic scintillators, have
+transverse segmentation with $\eta$ and $\phi$ widths of 0.087.
 
 \subsection{Muon system}
-\mytodo{todo}
+
+Last, but not least, is the namesake muon system~\cite{CMS:Sirunyan2018fpa} outside of the calorimeters
+and interspersed between parts of the steel return yoke. The muon system
+uses three main technologies: Drift Tubes (DTs) in the barrel, Cathode
+Strip Chambers (CSCs) in the endcaps, and Resistive Plate Chambers (RPCs)
+in the barrel and endcaps. Together, the muon system covers up to $|\eta|=2.4$.
+
+The barrel DTs are arranged into four stations of concentric cylinders,
+and use an ionizing gas mixture of Ar/CO${}_2$ and sensitive gold-plated steel wires
+to detect the ionization of throughgoing muons. Each DT has two or three layers
+with wires that are either perpendicular to the beam line (to measure the $z$ coordinate),
+or parallel (to measure the $\phi$ coordinate). Cylindrical stacking of
+DTs provides a measurement of the $r$ coordinate.
+
+The trapezoidal endcap CSCs cover trajectories at high-$|\eta|$. Each
+detector is a multiwire proportional chamber with 6 anode wire planes alternated
+with 7 cathode strip panels. Wires are oriented azimuthally and allow the measurement
+of a trajectory's $r$ coordinate. Strips are oriented radially and precisely measure
+the $\phi$ coordinate. CSCs provide a spatial resolution on the order of $100~\mathrm{\mu m}$.
+
+While not as spatially precise as DTs and CSCs, the gas-filled parallel-plate RPC detectors provide excellent
+time resolution (several nanoseconds) to help tag the time/bunch crossing of muon hits.
 
 \subsection{Trigger and reconstruction}
-\mytodo{todo, PF}
 
+With the extremely high rate of collisions delievered to the CMS detector by the LHC,
+it is not feasible to store and reconstruct collision information for every event.
+A trigger system provides a solution to this problem by evaluating if
+an event is potentially useful enough to keep. This is implemented
+as a two-tiered system: a Level-1 (L1) trigger and a subsequent High-Level Trigger (HLT)~\cite{CMS:Khachatryan2016bia}.
+
+The L1 trigger stage uses custom hardware with FPGAs and look up tables to
+roughly calculate various particle momenta and positions based
+on information from different subdetectors
+as fast as possible, in order to evaluate if an event passes specific quality
+criteria. The L1 trigger reduces the event rate by a factor of a million, and is designed
+to output events at less than 100 kHz.
+
+After an event passes the L1 trigger, it is passed through the HLT stage
+which is implemented in pure software and runs on a farm of computers.
+Events are partially reconstructed with more precision than with the L1
+stage. This HLT stage reduces the event rate to less than 1 kHz. At this point,
+events are passed along to be fully reconstructed and persisted at storage facilities.
+
+CMS uses particle-flow (PF) reconstruction algorithms~\cite{CMS:PRF14001} to
+utilize information from all subdetectors to reconstruct particles within an
+event. At the lowest level, particle trajectories are reconstructed from hits
+in sensitive layers of detectors. Reconstruction of certain particles can
+then be loosely identified with different subdetectors. For example,
+electrons and photons are reconstructed with information from the tracker and
+ECAL. Charged and neutral hadrons use information from the ECAL and HCAL.
+Muons are reconstructed with information from the tracker and muon system.
+Neutrinos are not reconstructed as they pass through the detector without
+interacting, but their presence can be inferred from an imbalance of energy
+in an event.
+$\newline$
 
 The remaining sections of the thesis are structured as follows.
 Chapter~\ref{chap:ssdl} introduces the same-sign dilepton final state,
-a promising avenue to explore new and rare physics, and its
-SM and BSM physical sources. Chapter~\ref{chap:objects} discusses analysis
+a promising avenue to explore new and rare physics. 
+Chapter~\ref{chap:objects} discusses analysis
 objects and selections for two related analyses: one is an inclusive search
 for BSM, focusing on a variety of SUSY signals; the second is a SM search for the production
-for four top quarks. Chapter~\ref{chap:backgrounds} describes the
+for four top quarks. Both utilize data delivered by the LHC
+and collected by the CMS detector from 2016--2018, totaling $137$~\fbinv. 
+Chapter~\ref{chap:backgrounds} describes the
 SM backgrounds to these analyses. Chapter~\ref{chap:results} presents the
 final results for each, and a summary with concluding remarks is given in
 Chapter~\ref{chap:summary}. The results and techniques presented throughout

@@ -6,8 +6,11 @@
 \subsection{Jets}
 Jets are reconstructed from charged PF candidates clustered with the
 anti-$\mathrm{k_t}$ algorithm~\cite{CMS:Cacciari2008gp, CMS:Cacciari2011ma}
-using a distance parameter of 0.4. The jet \pt, calculated as the vector sum
-of the constituent PF candidates, is susceptible to contributions from pileup
+using a distance parameter of 0.4. Charged particles
+not originating from the primary vertex (PV), taken to be the reconstructed vertex with the largest value of $\Sigma \pt^2$,
+are removed before clustering the jets. While this is a direct mitigation of the effect of 
+pileup, the jet \pt, calculated as the vector sum
+of the constituent PF candidates, is susceptible to further contributions from pileup
 and detector effects. However, jet energy corrections, primarily
 parameterized by jet \pt and $\eta$, are derived using data and simulation to
 counteract these effects on a jet-by-jet basis~\cite{CMS:Khachatryan2016kdb, CMS:PASJME16003}.
@@ -153,11 +156,10 @@ Electrons must also have agreement between three different methods used to compu
 For both electrons and muons, we require $|d_\mathrm{xy}| < 0.05\unit{cm}$,
 $|d_\mathrm{z}| < 0.1\unit{cm}$,
 $\mathrm{SIP}_\mathrm{3D} < 4$. The variables $|d_\mathrm{xy}|$ and $|d_\mathrm{z}|$ are the transverse and longitudinal
-displacements between the primary interaction vertex (PV) and the point of closest approach (PCA) of the lepton's 
+displacements between the PV and the point of closest approach (PCA) of the lepton's 
 track, respectively. The 3D impact parameter significance, $\mathrm{SIP}_\mathrm{3D}$,
 is defined as the 3D displacement between the PCA and PV divided by the measurement uncertainty.
-The reconstructed vertex with the largest value of $\Sigma \pt^2$ is taken as
-the PV. These variables and selections make sure the leptons are produced in a prompt fashion.
+These variables and selections make sure the leptons are produced in a prompt fashion.
 
 The final lepton reconstruction and identification efficiency is between
 45\% and 70\% for electrons with $\pt > 25\GeV$, and between 70\% and 90\%
@@ -210,7 +212,7 @@ to classify leptons as isolated:
     This variable is a measure of the relative transverse separation between the lepton 
     and matching jet. For leptons arising from the decay of B mesons, for example,
     this quantity exhibits a kinematic cutoff of a few GeV. For leptons that
-    happen to overlap accidentally with jets, \ptrel compares too uncorrelated
+    happen to overlap accidentally with jets, \ptrel compares two uncorrelated
     quantities and exhibits no kinematic cutoff, so this quantity can be large.
     This property allows us to recover leptons that would be labeled non-isolated
     by the previous two variables.
@@ -233,7 +235,7 @@ of the flavor of the lepton. These values are tabulated in Table~\ref{tab:isoWPs
         & e/$\mu$ loose WP &  $\mu$ tight WP & e tight WP \\ \hline 
         $I_1$ & 0.4 & 0.16 (2016), 0.11 (2017/2018) & 0.12 (2016), 0.07 (2017/2018) \\
         $I_2$ & 0  & 0.76 (2016), 0.74 (2017/2018) & 0.80 (2016), 0.78 (2017/2018) \\
-        $I_3$ & 0  & 7.2 (2016), 6.8 (2017/2018) & 7.2 (2016), 8.0 (2017/2018) \\ \hline
+        $I_3$ (\GeVns) & 0  & 7.2 (2016), 6.8 (2017/2018) & 7.2 (2016), 8.0 (2017/2018) \\ \hline
     \end{tabular}}
     \caption{Isolation working points }
 \end{table}
@@ -288,6 +290,12 @@ we only consider muons (electrons) with \pt of at least 10 (15) \GeV.
 For events with lepton $\pt < 25\GeV$ for both SS leptons, the set of signal triggers, depending on year
 and SS lepton pair flavor, is given in Table~\ref{tab:sstrigslow}, otherwise, the signal triggers in 
 Table~\ref{tab:sstrigshigh} are used.
+For example, the HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ trigger
+requires at least one electron with $\pt>23~\GeV$ and another with $\pt>12~\GeV$,
+which meet some loose amount of identification and isolation criteria and a
+cut on $d_\mathrm{z}$. For other triggers, the substring ``PFHT350'' specifies a requirement
+of $\HT>350~\GeV$ at the HLT. Note that there is no pair charge enforced by the trigger, 
+so both opposite- and same-sign pairs can pass these dilepton triggers.
 
 The \smft analysis considers muons and electrons with \pt of at least 20 \GeV. As a result,
 the modified signal trigger strategy summarized in Table~\ref{tab:fttrigs} is used.
@@ -303,7 +311,8 @@ will be discussed in the following chapter.
 Triggers are required for all events in data and simulation, and residual
 differences are corrected via trigger scale factors, which are applied to
 simulation to bring agreement with data. These scale factors are computed via
-the tag and probe method to measure the efficiencies in data and simulation
+the tag and probe method~\cite{CMS:TagAndProbe}
+to measure the efficiencies in data and simulation
 before taking the ratio. Efficiencies for dilepton triggers are the product
 of efficiencies for individual lepton selections (``lepton legs''). The tag
 and probe method defines the efficiency for a lepton leg as the number of

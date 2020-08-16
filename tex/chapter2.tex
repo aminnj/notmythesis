@@ -15,18 +15,20 @@ as SUSY processes follow
 similar patterns and will be dicussed in more detail in the subsequent section.
 The four top quarks of SM \tttt will each decay into a \PQb quark and \PW boson.
 A \PW boson decays into a charged lepton and matching neutrino 
-($e\bar\nu_e$, $\mu\bar\nu_\mu$, $\tau\bar\nu_\tau$) approximately 1/3 probability.
+($e\bar\nu_e$, $\mu\bar\nu_\mu$, $\tau\bar\nu_\tau$) with approximately 1/3 probability.
 For four \PW bosons ($\PW^+\PW^+\PW^-\PW^-$), the lepton multiplicities and characteristics are summarized in
 Fig~\ref{fig:fourtoppie}. Up to 12\% of SM \tttt can be selected by requiring
-a same-sign (SS) dilepton in the final state. 
+a same-sign (SS) dilepton ($e$ or $\mu$) in the final state, which includes the
+leptonic branching ratio of $\tau$ to $e$ or $\mu$. 
 
 Turning to background SM processes, to first order, requiring two leptons
-(SS or not) eliminates QCD processes  with only quarks/gluons (u, d, s, c, b, g) in the final state.
+(SS or not) directly eliminates QCD processes  with only quarks/gluons (u, d, s, c, b, g) in the final state.
 Figure~\ref{fig:SMxsecs} summarizes
 CMS measurements of many other SM processes.
 Three of the highest cross section processes 
-are $\PW$, $\PZ$, and $\ttbar$, which give one lepton or two opposite sign leptons.
-In fact, continuing down the mountain, the first process that can give prompt
+are $\PW$, $\PZ$, and $\ttbar$, which give one lepton or two opposite sign leptons,
+and would also be eliminated by requiring SS dileptons.
+In fact, continuing down the mountain of processes, the first process that can give prompt
 SS dileptons is $\PW\PZ$. Thus, the SS dilepton selection is an effective
 ``cut'' that rejects processes above $\mathrm{O}(10)\unit{pb}$. Compared to many other
 search strategies, which exploit extreme event kinematics, the SS dilepton selection allows probing softer
@@ -59,6 +61,10 @@ of the points in this plot!)
 
 Many SUSY models with strong pair production mechanisms result in
 final states with a number of leptons, ideal for SS final states.
+Here, we consider simplified models of SUSY with a reduced number of
+parameters~\cite{ref:CMS:SMS}, where signal model hypotheses are specified
+by a production and decay process with one or two SUSY particle masses
+fixed to particular masses that are ``scanned'' over.
 Cross sections of pair production models with gluinos and squarks 
 are shown in Fig.~\ref{fig:susy_xsecs}, and are as low as a few \fbinv 
 for gluino/squark masses between 1.5\TeV and 2\TeV.
@@ -83,7 +89,7 @@ The first scenario, displayed in Fig.~\ref{fig:susy_diag_set1}a and denoted
 \Totttt, includes an off-shell top squark ($\susytop$) leading to a
 three-body decay of the gluino, $\gluino \to \ttbar\lsp$, and resulting in events
 with four \PW\ bosons and four \cPqb\ quarks. This topology is thus similar
-to SM \tttt with the addition of missing energy from the LSP.
+to SM \tttt with the addition of missing energy from the invisible LSP.
 Figure~\ref{fig:susy_diag_set1}b presents a similar model (\TfttbbWW) but where
 the gluino decay results in a chargino that decays into a neutralino
 and a \PW\ boson. The model shown in Fig.~\ref{fig:susy_diag_set1}c (\Tftttt)
@@ -119,8 +125,10 @@ In this model the \lsp mass is fixed such that
 $m(\susytopone)-m(\lsp)=m_{\cPqt}$.
 
 The R parity violating (RPV) decays considered in the SUSY analysis are \ToqqqqL
-(Fig.~\ref{fig:susy_diag_set3}a) and \Totbs (Fig.~\ref{fig:susy_diag_set3}b). In
-\ToqqqqL, the gluino decays to the lightest squark ($\gluino \to \susyq
+(Fig.~\ref{fig:susy_diag_set3}a) and \Totbs (Fig.~\ref{fig:susy_diag_set3}b). 
+Unlike the previously discussed processes, these RPV processes do not have a stable
+LSP.
+In \ToqqqqL, the gluino decays to the lightest squark ($\gluino \to \susyq
 \cPq$), which decays to a quark ($\susyq \to \cPq \lsp$)
 with an off shell $\lsp$ decaying into two quarks and a charged
 lepton, giving rise to a prompt 5-body decay of the gluino. In the \Totbs model, the
@@ -182,7 +190,7 @@ Model & Process & Constraint & Mass 1 & Mass 2 & RPV & \#W & \#Z & \#H & \#b\\
 \Totbs & $\gluino\to\cPqt\cPqb\cPqs$ & \NA & $m_{\gluino}$ & \NA & Yes  & 2 & 0 & 0 & 4 \\
 \hline
 \end{tabular}}}
-\caption{Summary of simplified SUSY models considered in this analysis. The fourth and
+\caption{Summary of simplified SUSY models considered in this thesis. The fourth and
 and fifth columns give the one or two masses which are scanned over for simplified interpretations.
 The sixth column
 marks processes with R parity violation. The remaining columns give the final state multiplicities
@@ -227,11 +235,12 @@ of $\PW$, $\PZ$, and Higgs bosons, and \PQb quarks, respectively.}
 \section{Contributions to \tttt production}
 
 SM \tttt production has a next-to-leading-order (NLO) cross section of 
-$\xsectttt = 12.0^{+2.2}_{-2.5}\unit{fb}$
+$\xsectttt = 12.0^{+2.2}_{-2.5}~\unit{fb}$
 at 13\TeV, calculated in Ref.~\cite{THEORY:Frederix2017wme},
 with representative leading-order Feynman diagrams shown in
 Fig.~\ref{fig:ftdiags}.
-
+While it is interesting in its own right to measure a rare SM process,
+searching for SM \tttt could provide hints of BSM physics.
 Contributions from BSM physics to \tttt production at CMS can be 
 broadly categorized as on-shell (usually involving heavy BSM intermediate particles coupling
 to $\ttbar$), or off-shell (usually involving light BSM intermediate particles, or
@@ -241,7 +250,7 @@ modifications to the SM Higgs boson propagator or couplings).
 \centering
 \includegraphics[width=0.35\textwidth]{figs/ftp/ftdiag1.pdf}
 \includegraphics[width=0.35\textwidth]{figs/ftp/ftdiag2.pdf} \\
-\includegraphics[width=0.35\textwidth]{figs/ftp/ftdiag3.pdf}
+\includegraphics[width=0.35\textwidth]{figs/ftp/ftdiag4.pdf}
 \caption{Typical Feynman diagrams for \tttt production at leasting order in the SM.}
 \label{fig:ftdiags}
 \end{figure}
@@ -258,25 +267,25 @@ has two Higgs doublets instead of the SM's single doublet.
 Two doublets provides for five physical states: 
 a light scalar boson $h$, a heavy scalar boson $\PH$, a heavy pseudoscalar boson $\PSA$, and
 two charged bosons $\PH^\pm$. Their masses ($m_h, m_\PH, m_\PSA, m_{\PH^\pm}$)
-consitute four of the six parameters used in the 2HDM. The other two are $\tan\beta$,
+constitute four of the six parameters used in the 2HDM. The other two are $\tan\beta$,
 which is the ratio of vacuum expectation values of the two Higgs doublets,
 and $\alpha$, which is the rotation angle that diagonalizes the mass matrix of the
 two CP-even scalar states $h$ and $\PH$.
 
-Given that observation of a new boson in 2012~\cite{CMS:HiggsObservation,ATLAS:HiggsObservation},
-has since been shown to have very SM Higgs-like properties,
+Given the observation of a new boson in 2012~\cite{CMS:HiggsObservation,ATLAS:HiggsObservation},
+which has since been shown to have very SM Higgs-like properties,
 there should be a phenomenological constraint on 2HDM theories to
 account for this. Fortunately, in a Type-II 2HDM in the alignment limit,
 $\sin(\beta-\alpha)\rightarrow 1$,
 the CP-even scalar $h$ has
-couplings which are SM-like, meaning it can be identified with the particle
-discovered, and other states constitute new physics to be discovered.
+couplings which are SM-like, meaning it can be identified with the discovered particle,
+and other states constitute new physics to be discovered.
 
 In Type-II 2HDM, the couplings of the heavy scalar and pseudoscalar to SM
 vector bosons are also suppressed, and vanish as
 $\cos(\beta-\alpha)\rightarrow 0$. In this limit, production happens mainly
 through gluon-fusion. However, the direct search for such new physics via
-resonant \ttbar production is hampered by interference with the massive SM
+resonant \ttbar production is hampered by interference with the large SM
 production of \ttbar~\cite{THEORY:Gaemers1984sj,THEORY:Dicus1994bm}. As an
 alternative to direct production, since the branching ratio of the heavy
 scalar state $\PH$ to up-type quarks (e.g., the top quark) is proportional to
@@ -285,8 +294,8 @@ top quark final states provide a relatively clean handle to probe Type-II
 2HDM scenarios~\cite{THEORY:Craig2015jba,THEORY:Craig2016ygr}. The one or two top quark
 associated production modes are shown in Fig.~\ref{fig:thdm_diagrams}, where
 the intermediate heavy boson decays into $\ttbar$ at low $\tan\beta$, resulting in
-final states of $\tttt$, $\PQt\bar{\PQt}\PQt\PQq$, and $\PQt\bar{\PQt}\PQt\PW$, respectively.
-Heavy boson with masses above twice that of the top quark ($m_{\PH/\PSA}>350\GeV$)
+final states of $\tttt$, $\PQt\bar{\PQt}\PQt\PW$, and $\PQt\bar{\PQt}\PQt\PQq$, respectively.
+Heavy boson with masses above twice that of the top quark ($m_{\PH/\PSA}>350~\GeV$)
 almost exclusively decay into \ttbar.
 Thus, a SM search for \tttt would be optimized to directly probe the first of these three final states,
 while still retaining sensitivity to the latter two, for sufficiently massive 
@@ -304,15 +313,18 @@ one or two top quarks.}
 
 \FloatBarrier
 
-Leading order cross sections (times branching ratio into \ttbar) for a Type-II 2HDM scenario in the exact alignment limit 
-are shown in Fig.~\ref{fig:thdm_2d_xsecs}, as a function of mediator mass and $\tan\beta$.
-Processes with $\PH$ and $\PSA$ mediators
-are considered separately and the charged bosons $\PH^\pm$ are decoupled by setting their
-masses to $10\TeV$. Cross sections are generally slowly falling as a function of increasing mass
-and sharply falling for increasing $\tan\beta$. One dimensional cross sections
-for three particular values of $\tan\beta$ are shown in Fig.~\ref{fig:thdm_1d_xsec},
-and range from approximately 45\ifb at the $2m_\PQt$ threshold to 9\ifb at $m_\PH=650\GeV$
-for $\tan\beta=1$.
+Leading order cross sections (times branching ratio into \ttbar),
+obtained similarly to Ref.~\cite{THEORY:Craig2016ygr},
+for a
+Type-II 2HDM scenario in the exact alignment limit are shown in
+Fig.~\ref{fig:thdm_2d_xsecs}, as a function of mediator mass and $\tan\beta$.
+Processes with $\PH$ and $\PSA$ mediators are considered separately and the
+charged bosons $\PH^\pm$ are decoupled by setting their masses to 10\TeV.
+Cross sections are generally slowly falling as a function of increasing mass
+and sharply falling for increasing $\tan\beta$. One dimensional cross
+section plots for three particular values of $\tan\beta$ are shown in
+Fig.~\ref{fig:thdm_1d_xsec}, and range from approximately $45\unit{fb}$ at the
+$2m_\PQt$ threshold to $9\unit{fb}$ at $m_\PH=650~\GeV$ for $\tan\beta=1$.
 
 \begin{figure}[htb!]
     \centering
@@ -374,10 +386,12 @@ and $\tan\beta$, and $\phi/\mathrm{a}$ can be identified as $\PH/\PSA$.
 In this way, the three or four top quark final states
 allow complementarity with the CMS analysis from Ref.~\cite{CMS:DMsingletop} which relied on
 a final state with \ttbar and missing transverse energy, provided that
-the DM mass is sufficiently large to allow for on-shell decays of the mediator into \ttbar.
+the mediator mass is sufficiently large to allow for on-shell decays of the mediator into \ttbar.
+Lower mediator masses are more effectively probed by Ref.~\cite{CMS:DMsingletop}.
 
 The product of cross section and branching ratio of the mediators into \ttbar,
-under the assumption of $g_\mathrm{DM}=g_\mathrm{SM}=1$, is shown in 
+under the assumption of $g_\mathrm{DM}=g_\mathrm{SM}=1$,
+calculated as in Ref.~\cite{CMS:DMsingletop}, is shown in 
 Fig.~\ref{fig:dm_2d_xsecs}. Note that when $2 m_{\chi}>m_{\PH/\PSA}$,
 the decay of the mediators into DM is suppressed in favor of the next-leading mode,
 \ttbar, and thus the cross sections become independent of $m_\chi$ above the
@@ -400,7 +414,7 @@ a pair of invisible DM particles $\chi\bar{\chi}$.}
     \centering
     \includegraphics[width=0.60\textwidth]{figs/ftan/plot_2d_dmscalar_xsec_totsm} \\
     \includegraphics[width=0.60\textwidth]{figs/ftan/plot_2d_dmpseudo_xsec_totsm}
-\caption{Cross sections (times branching ratio into $\ttbar$), assuming
+\caption{Cross sections (times branching ratio into $\ttbar$), in units of $\unit{fb}$, assuming
 $g_\mathrm{DM}=g_\mathrm{SM}=1$, in the plane of $m_\chi$ versus $m_{\PH/\PSA}$ (top/bottom).
 }
 \label{fig:dm_2d_xsecs}
@@ -420,7 +434,7 @@ as shown in Fig.~\ref{fig:feynYukawa}.
 The amplitude corresponding to these diagrams is 
 proportional to the square of the top Yukawa coupling,
 and thus, the cross section of SM \tttt provides
-a promising probe into the top Yukawa coupling.
+a probe of the top quark Yukawa coupling.
 
 \begin{figure}[!hbtp]
 \centering
@@ -447,7 +461,7 @@ constraints on $|y_t/y_t^{\text{SM}}|$.
 The authors of Reference~\cite{THEORY:TopYukawaTTTT} have calculated the cross section terms at LO.
 These are given in Table~\ref{tab:yukawa} and are shown in Fig.~\ref{fig:cross_section_yt},
 where the figure shows a curve normalized such that the prediction matches the NLO calculation of 
-the \tttt cross section of $12.0^{+2.2}_{-2.5}\unit{fb}$.
+the \tttt cross section of $12.0^{+2.2}_{-2.5}~\unit{fb}$.
 The upper and lower values given in Table~\ref{tab:yukawa} correspond to variations
 of the renormalization and factorization scale up and down by a factor of two, respectively.
 
@@ -490,20 +504,19 @@ The production of \tttt may also be influenced by a neutral scalar mediator
 masses less than twice the mass of the top quark, distinguishing them from
 from similar processes within the 2HDM framework, for example. The off-shell contributions
 to the SM \tttt production can be large, as shown in
-Ref.~\cite{THEORY:Alvarez2016nrz}. For a large range of masses, the authors have
-shown that kinematics are identical when considering these additional
+Ref.~\cite{THEORY:Alvarez2016nrz}. For a large range of masses, kinematics are identical when considering these additional
 processes, so that the total \tttt cross section is subject to a simple
-rescaling.  Corresponding coupling terms in the lagrangian of the form
+rescaling.  Corresponding coupling terms in the lagrangian are of the form
 \begin{equation}
     \mathcal{L}_{Z'}=-g_{t Z'}\bar{t}_R \slashed{Z}' t_R
     \quad\quad\quad
     \mathcal{L}_{\phi}=-g_{t \phi}\bar{t}_L \phi t_R
 \end{equation}
-There is an approximate independence of kinematics on the coupling strength and mediator mass,
+There is an approximate independence of kinematics on the coupling strength and mediator mass~\cite{THEORY:Alvarez2016nrz},
 so a single upper limit on the \tttt cross section can be used to place constraints 
 on couplings $g_{tZ'}$ and $g_{t\phi}$ as a function of masses $m_{Z'}$ and $m_{\phi}$,
 respectively.
-Cross sections of \tttt (normalized to SM) as a function of $g_{tZ'}$ 
+Cross sections of \tttt (normalized to SM, and calculated as in Ref.~\cite{THEORY:Alvarez2016nrz}) as a function of $g_{tZ'}$ 
 and $g_{t\phi}$, for different assumptions of $m_{Z'}$ and $m_{\phi}$,
 are shown in Fig.~\ref{fig:cross_section_zprimephi}. To illustrate a particular example,
 the horizontal dotted line in the figures represents excluding cross sections more than
@@ -546,11 +559,11 @@ couplings
 \end{equation}
 
 Using the latest combined fits from the ATLAS experiment for the (on-shell) fermionic couplings,
-with 80$\mathrm{fb}^{-1}$ of 13TeV data, the authors of Ref.~\cite{THEORY:ObliqueHiggs2019} find a constraint on
+with 80$\mathrm{fb}^{-1}$ of 13\TeV data, Ref.~\cite{THEORY:ObliqueHiggs2019} finds a constraint on
 the oblique parameter of $\hat{H} < 0.16$ at 95\% CL.
 
-The authors also calculate that the cross section of (off-shell) \tttt is subject to a fractional modification (with respect to the SM cross section)
-at 14 TeV, given by,
+Ref.~\cite{THEORY:ObliqueHiggs2019} also calculates that the cross section of (off-shell) \tttt is subject to a fractional modification (with respect to the SM cross section)
+at 14\TeV, given by,
 \begin{equation}
     \frac{\sigma_{\hat{H}+\mathrm{SM}}}{\sigma_\mathrm{SM}} = 1 + 0.03\left(\frac{\hat{H}}{0.04}\right) + 0.15\left(\frac{\hat{H}}{0.04}\right)^2.
 \end{equation}
@@ -576,7 +589,7 @@ $y_\mathrm{t}^2=(1-\hat{H})^2$ ($\approx 0.74$ at $\hat{H}=0.14$).
     \includegraphics[width=0.75\linewidth]{figs/ftan/higgs_oblique.pdf}
     \caption{
         Cross section (normalized to SM) as a function of oblique parameter $\hat{H}$.
-        The green curve is a calculation from MadGraph at 13TeV, and
+        The green curve is a calculation from MadGraph at 13\TeV, and
         the solid black curve is a cubic fit to the calculation.
     }
     \label{fig:higgs_oblique_madgraph}

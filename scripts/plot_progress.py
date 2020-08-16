@@ -37,14 +37,14 @@ df = df.set_index("date")["2020-07-23":].reset_index()
 
 fig,ax = plt.subplots()
 ax.plot(df["date"],df["pages"],label="actual", marker=".")
-ax.set_ylim([0.,200.])
+ax.set_ylim([0.,230.])
 ax.set_ylabel("PDF page count")
 
-deadline = datetime.date(2020,8,12)
+deadline = datetime.date(2020,8,24)
 plt.axvline(deadline,color="gray")
 ax.text(deadline,ax.get_ylim()[1],"actual deadline  ",horizontalalignment="right",verticalalignment="top",rotation=90,color="gray",fontsize=12)
 
-p = mpl.patches.Rectangle((0.,0.),height=1.0,width=0.56,transform=ax.transAxes)
+p = mpl.patches.Rectangle((0.,0.),height=1.0,width=0.68,transform=ax.transAxes)
 ax.grid(axis="both",linewidth=0.5,alpha=0.5,clip_path=p)
 
 xdeadline = mpl.dates.date2num(deadline)
