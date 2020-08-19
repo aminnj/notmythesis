@@ -5,15 +5,15 @@
 
 The Standard Model (SM) of particle physics is a
 quantum field theory that describes fundamental particles and most of their
-interactions.~\cite{THEORY:Glashow1961tr,THEORY:Weinberg1967tq,THEORY:Salam1968rm}
+interactions~\cite{THEORY:Glashow1961tr,THEORY:Weinberg1967tq,THEORY:Salam1968rm}.
 Elementary matter particles in the SM have half-integer spin
 (fermions) and particles responsible for interactions (force-mediators) have
 integer spin (bosons).
 
 As shown in Figure~\ref{fig:smtable}, SM matter particles are either quarks
 (up, down, charm, strange, top, and bottom) or leptons (electron, muon, tau,
-and three neutrinos). The massless photon, charged W bosons, and neutral Z
-boson, together mediate electroweak interactions. Massless gluons mediate the
+and three corresponding neutrinos). Together, the massless photon, the massive charged W bosons, and the massive neutral Z
+boson mediate electroweak interactions. Massless gluons mediate the
 strong force. Fermions acquire mass through their interaction with the field
 associated with the
 recently-discovered~\cite{CMS:HiggsObservation,ATLAS:HiggsObservation} Higgs
@@ -39,30 +39,108 @@ of compelling reasons to say that the SM is not a complete theory.
 
 \section{Beyond the standard model}
 
-\mytodo{todo}
+There is variety of evidence that point to beyond the SM
+(BSM) physics.
+A notable few concern dark matter, neutrino masses,
+and the Higgs boson mass.
+$\newline$
 
-% \mytodo{issues with sm, higgs mass, hierarchy problem}
-% \mytodo{dark mass, neutrino masses, matter asymmetry}
-% \mytodo{SUSY}
-% Stable LSP means conservation of symmetry called R-parity
-% $P_R=(-1)^{3B+L+2s}$ where $B$ is baryon number, $L$ is lepton number,
-% and $s$ is spin.
+\noindent\textit{Dark matter}\newline
+Astronomical observations of velocity of objects around galactic centers
+have shown a clear deviation\cite{THEORY:Zwicky1933} from predictions that assume gravitational
+effects only arose from matter that we can see. This is clear evidence
+for the existence of ``dark'' matter (DM) which we cannot directly observe.
+In fact, about 85\% of the mass in the universe is dark~\cite{THEORY:Trimble1987}.
+Furthermore, DM explains observed galactic formation and 
+structure as well as gravitational lensing effects~\cite{THEORY:DMstructure}.
+$\newline$
 
-\section{LHC}
-\mytodo{todo}
+\noindent\textit{Neutrino masses}\newline
+The current formulation of the SM does not account for neutrino masses,
+yet oscillations between neutrino flavors 
+have been observed~\cite{THEORY:Fukuda1998mi},
+which implies non-zero, albeit very small, neutrino masses.
+$\newline$
+
+\noindent\textit{Higgs boson mass}\newline
+Because the SM does not incorporate quantum gravity,
+there is an energy (or equivalently, length) scale cutoff above which we do not expect
+the SM to hold. Such a cutoff, given by the Planck mass, is on the order 
+of $10^{19}~\mathrm{GeV}$, approximately $10^{17}$ times larger than the electroweak scale.
+We would then expect the Higgs boson mass, which recieves loop corrections from massive particles,
+to be on the order of the Planck scale. However, the Higgs boson was
+observed to have a mass of 125\GeV. While inelegant, this is not inherently
+impossible as parameters in the theory could be ``fine-tuned'' to have
+very large cancellations and result in a light Higgs boson mass.
+The fine-tuning of the Higgs mass could point toward a new symmetry in the SM.
+$\newline$
+
+One popular possible solution to problems with the SM is the theory of
+Supersymmetry (SUSY), which posits there is a symmetry between fermions and
+bosons: each SM particle has a corresponding superpartner with spin differing
+by 1/2 (fermions$~\leftrightarrow~$bosons)~\cite{THEORY:MARTIN1998}. This
+must not be a perfect symmetry, otherwise we would have observed partner
+particles with the same mass for the currently known SM particles. These
+additional SUSY partner particles help to cancel out corrections to the Higgs
+boson mass, alleviating the issue of fine-tuning (provided the masses of the
+superpartners are not too much larger than the SM counterparts).
+
+
+SUSY theories can be chosen to be R-parity conserving~\cite{THEORY:mohapatra2015}. That is, if $(-1)^{R} =
+(-1)^{3B+L+2s}$ where $B$ is baryon number, $L$ is lepton number, and $s$ is
+spin, then SM particles have $R=1$ while SUSY superpartners have $R=-1$. For
+conservation of R-parity, there must be a lightest SUSY particle (LSP) which
+cannot decay into two SM particles. This stable LSP is an ideal candidate for
+DM.
+
+\section{Large Hadron Collider}
 
 % https://twiki.cern.ch/twiki/bin/viewauth/CMS/Internal/PubDetector
 
-LHC~\cite{LHC:Evans1129806}
+We now turn to a massive machine whose 
+design goal was to discover the Higgs boson and to
+look for hints of (or, hopefully, discover) BSM physics
+at TeV-scale energies.
 
-% $N = \sigma \cdot L_\text{int}$
-% instantaneous luminosity is on the order of $10^{34} \unit{cm}^{-2} \unit{s}^{-1}$.
-% The metric unit for a area (b/barn), commonly used to express cross sections and luminosities,
-% is equivalent to $10^{-24} \unit{cm}^2$. Thus, the LHC instantaneous luminosity can
-% be roughly written as $1 \unit{fb}^{-1} \unit{day}^{-1}$
+This machine, the Large Hadron Collider (LHC)~\cite{LHC:Evans1129806}, is the largest and highest-energy
+particle collider in the world.
+Built by the European Organization
+for Nuclear Research (CERN) through an international collaboration
+involving over a hundred countries,
+it first started operation in 2008 after a decade of construction. 
+The collider resides in a tunnel with a 27-kilometer circumference,
+around 100 meters below ground, and straddles the border of
+France and Switzerland, near Geneva. With the help of smaller particle
+accelerators situated near the LHC ring, the LHC accelerates two opposing 
+beams of protons to energies of 6.5\TeV per beam and collides them by
+magnetically steering the beams to cross at specified points around the ring. 
+Large detectors are built around these specified point to analyze the
+high energy collision products.
+
+Proton bunches with billions of protons each are injected into the LHC ring and 
+spaced apart such that bunch crossings happen up to a rate of 40 MHz.
+The billions of proton-proton collisions delivered by the LHC per second
+allow for many physics processes to take place. The simple formula
+$N = \sigma \cdot L_\text{int}$,
+gives the number of events/occurrences $N$ of a physics process
+with cross-section $\sigma$ (a measure of the
+quantum mechanical probability of occurrence) 
+in a sample of collision data with integrated luminosity
+$L_\text{int}$.
+The instantaneous luminosity of LHC beams
+is on the order of $10^{34} \unit{cm}^{-2} \unit{s}^{-1}$.
+A barn (b), the metric unit for area, is commonly used to express cross sections and luminosities,
+and is equivalent to $10^{-24} \unit{cm}^2$. Thus, the LHC instantaneous luminosity can
+be roughly written as $1 \unit{fb}^{-1} \unit{day}^{-1}$.
+So, a potential new physics process with a cross-section of 1 fb could
+manifest itself as an event in a day of collected data.
+That needle would need to be found in the haystack of 
+other more mundane processes. Due to the many protons per bunch,
+we expect about 30 proton-proton interaction events per crossing (pileup interactions)
+to disentangle from exotic signals.
 
 
-\section{CMS}
+\section{Compact Muon Solenoid}
 
 The Compact Muon Solenoid (CMS)
 detector~\cite{CMS:Chatrchyan2008zzk,CMS:PTDR2} is one of the general purpose
@@ -224,5 +302,5 @@ Chapter~\ref{chap:backgrounds} describes the
 SM backgrounds to these analyses. Chapter~\ref{chap:results} presents the
 final results for each, and a summary with concluding remarks is given in
 Chapter~\ref{chap:summary}. The results and techniques presented throughout
-this thesis correspond to the published results in
-Refs.~\cite{CMS:myTOPRun2,CMS:mySUSRun2PAS,CMS:myTOP2016,CMS:mySUS2016}.
+this thesis correspond to the published results 
+in~Refs.~\cite{CMS:myTOPRun2,CMS:mySUSRun2PAS,CMS:myTOP2016,CMS:mySUS2016}.
