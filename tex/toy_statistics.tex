@@ -6,7 +6,7 @@
 
 This section presents an introduction to the profile likelihood method
 (used for the statistical results of this thesis) with a concrete toy example.
-The toy example consists of one signal, one background, and one shape-based
+The frequentist toy example consists of one signal, one background, and one shape-based
 nuisance parameter. Complete details of the method are in Reference~\cite{STAT:Cowan2010js}.
 
 
@@ -146,7 +146,7 @@ Negative log likelihood as a function of $\theta$ for $\mu$ fixed to 0 and $\hat
 \end{figure}
 
 Let's define the LHC profiled test statistic $q_\mu$ as 
-\begin{equation}
+\begin{equation}\label{eq:qmu}
 q_\mu = q(\mu) = -2\ln\frac{\mathcal{L}(\mu,\hat{\theta}_\mu)}{\mathcal{L}(\hat{\mu},\hat{\theta})}
 \end{equation}
  where $\hat{\theta}_\mu$ is the $\theta$ that maximizes
@@ -221,5 +221,44 @@ as systematics encoded by the nuisance parameters. This is done to understand an
 without looking at the real data.
 
 \end{subsection}
+
+\begin{subsection}{Upper limits}
+
+For the purposes of setting upper limits on signal strengths, 
+a modified version of Equation~\ref{eq:qmu} is used as the 
+test statistic:
+
+\begin{equation}
+q_\mu = q(\mu) = -2\ln\frac{\mathcal{L}(\mu,\hat{\theta}_\mu)}{\mathcal{L}(\hat{\mu},\hat{\theta})}
+\qquad \text{if}~\hat{\mu}\leq\mu\qquad \text{else}\qquad 0
+\end{equation}
+
+This is done so that data where $\hat{\mu}>\mu$ isn't penalized
+for representing poorer compatibility with $\mu$ from actual data.
+Armed with this modified test statistic,
+to set upper limits with the 
+\CLs method~\cite{STAT:Junk1999kv,STAT:Read2002hq,STAT:ATLPHYSPUB2011011,STAT:Cowan2010js},
+we find
+\begin{equation}
+\mathrm{CL}_s(\mu) 
+= \frac{\mathrm{CL}_{s+b}}{\mathrm{CL}_{b}}
+= \frac{p(q_\mu \geq q_\mu^\text{obs} | \mu s + b)}{p(q_\mu \geq q_\mu^\text{obs} | b)}
+= \frac{\text{R}}{1-\text{L}}
+\end{equation}
+and scan the quantity over $\mu$ until $\mathrm{CL}_s = 5\%$.
+The last equality allows the equation to be identified schematically
+with Figure~\ref{fig:ulschematic}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figs/toy_statistics/ulschematic.pdf}
+    \caption{
+        Schematic diagram illustrating the \CLs method as described in the text.
+    }
+    \label{fig:ulschematic}
+\end{figure}
+
+
+\end{subsection}
+
 
 \end{section}
